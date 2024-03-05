@@ -6,20 +6,14 @@ package group_24_condominium_owners_association;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author ASUS
  */
-public class RulesAndPolicyManagerDashboardController implements Initializable {
-
-    @FXML
-    private TextField tf_visitorName;
+public class AssociationDocumentationUI_REMController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -28,9 +22,5 @@ public class RulesAndPolicyManagerDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void showVisitorListOnButtonClick(ActionEvent event) {
-    }
     
 }
