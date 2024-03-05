@@ -9,7 +9,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -20,15 +23,26 @@ public class LogInUIController implements Initializable {
     @FXML
     private Label label;
     
+    //@FXML
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
+    private TextField tf_userId;
+    @FXML
+    private PasswordField pw_userPass;
+    @FXML
+    private ComboBox<?> cb_userType;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void userRegistraionOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void logInOnClick(ActionEvent event) {
+    }
     
 }
