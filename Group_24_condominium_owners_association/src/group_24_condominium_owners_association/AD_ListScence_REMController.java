@@ -9,23 +9,25 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author ASUS
  */
-public class AssociationDocumentationUI_REMController implements Initializable {
+public class AD_ListScence_REMController implements Initializable {
 
     @FXML
-    private TextArea AssociationDocumentation_ta;
+    private TableView<?> DocumentationTable_tv;
     @FXML
-    private TextField documentName_tf;
+    private TableColumn<?, ?> DocumentName_tc;
     @FXML
-    private DatePicker documentDate_dp;
+    private TableColumn<?, ?> DocumentDate_tc;
+    @FXML
+    private TextArea documentationOutput_label;
 
     /**
      * Initializes the controller class.
@@ -36,15 +38,19 @@ public class AssociationDocumentationUI_REMController implements Initializable {
     }    
 
     @FXML
-    private void addDocumentOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
     private void removeDocumentOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void goBackToHomePageOnButtonClick(ActionEvent event) {
+    private void addDocumentOnButtonClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void goBackOnButtonClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewDocumentOnButtonClick(ActionEvent event) {
     }
     
 }
