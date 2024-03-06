@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="947.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MRcoordinatorController">
+   <children>
+      <Label layoutX="218.0" layoutY="14.0" prefHeight="104.0" prefWidth="444.0" text="Maintenance and Repairs Coordinator Dashbord" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="repairTable" layoutX="44.0" layoutY="179.0" prefHeight="200.0" prefWidth="432.0">
+        <columns>
+          <TableColumn fx:id="tc_repairUnitOwnerId" prefWidth="150.0" text="Unit Owner Id" />
+          <TableColumn fx:id="tc_repairProduct" minWidth="0.0" prefWidth="141.0" text="Repair Product " />
+            <TableColumn fx:id="tc_repairDate" minWidth="0.0" prefWidth="141.0" text="Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="48.0" layoutY="130.0" prefHeight="21.0" prefWidth="211.0" text="Repair Order" />
+      <TableView fx:id="maintenanceTable" layoutX="541.0" layoutY="179.0" prefHeight="200.0" prefWidth="370.0">
+        <columns>
+          <TableColumn fx:id="tc_maintenance" prefWidth="142.0" text="Unit Owner Id" />
+          <TableColumn fx:id="tc_maintenance" minWidth="0.0" prefWidth="227.0" text="Maintenance" />
+        </columns>
+      </TableView>
+      <Label layoutX="48.0" layoutY="406.0" text="Equiment" />
+      <ComboBox fx:id="cb_equipmentList" layoutX="134.0" layoutY="401.0" prefHeight="31.0" prefWidth="200.0" />
+      <TableView fx:id="equipmentTable" layoutX="39.0" layoutY="450.0" prefHeight="200.0" prefWidth="432.0">
+        <columns>
+          <TableColumn fx:id="tc_equipmentId" prefWidth="192.0" text="Equipment Id" />
+          <TableColumn fx:id="tc_equipmentName" prefWidth="239.0" text="Equipment Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="377.0" layoutY="406.0" text="Equiment Id" />
+      <TextField fx:id="tf_equipmentId" layoutX="476.0" layoutY="401.0" prefHeight="31.0" prefWidth="200.0" />
+      <Button layoutX="509.0" layoutY="450.0" mnemonicParsing="false" onAction="#cleanerAndCareTakerOnClick" prefHeight="31.0" prefWidth="402.0" text="Cleaner and Care Taker List" />
+      <Button layoutX="511.0" layoutY="519.0" mnemonicParsing="false" onAction="#technicianOnClick" prefHeight="31.0" prefWidth="402.0" text="Technician" />
+      <Button layoutX="509.0" layoutY="595.0" mnemonicParsing="false" onAction="#budgetOnClick" prefHeight="31.0" prefWidth="134.0" text="Budget" />
+      <Button layoutX="761.0" layoutY="595.0" mnemonicParsing="false" onAction="#makePaymentOnClick" prefHeight="31.0" prefWidth="150.0" text="Make Payment" />
+      <Label layoutX="538.0" layoutY="141.0" prefHeight="21.0" prefWidth="211.0" text="Maintenance" />
+   </children>
+</AnchorPane>
