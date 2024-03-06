@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="779.0" prefWidth="1036.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.FMBudgetController">
+   <children>
+      <Label layoutX="653.0" layoutY="110.0" prefHeight="21.0" prefWidth="81.0" text="Budget" />
+      <TextField fx:id="tf_FMBudget" layoutX="742.0" layoutY="105.0" />
+      <Label layoutX="637.0" layoutY="148.0" prefHeight="21.0" prefWidth="105.0" text="transactionId" />
+      <TextField fx:id="tf_FMtransId" layoutX="742.0" layoutY="143.0" />
+      <Label layoutX="600.0" layoutY="190.0" prefHeight="21.0" prefWidth="150.0" text="transactionAmount" />
+      <TextField fx:id="tf_FMtransAmount" layoutX="742.0" layoutY="185.0" />
+      <Label layoutX="619.0" layoutY="236.0" prefHeight="21.0" prefWidth="113.0" text="currentBudget" />
+      <TextField fx:id="tf_FMcurBudget" layoutX="742.0" layoutY="231.0" />
+      <Label layoutX="619.0" layoutY="281.0" prefHeight="21.0" prefWidth="113.0" text="expenseAmount" />
+      <TextField fx:id="tf_FMexpAmount" layoutX="742.0" layoutY="276.0" />
+      <Label layoutX="633.0" layoutY="329.0" prefHeight="21.0" prefWidth="113.0" text="gymBudget" />
+      <TextField fx:id="tf_FMgymBudget" layoutX="742.0" layoutY="324.0" />
+      <Label layoutX="633.0" layoutY="369.0" prefHeight="21.0" prefWidth="113.0" text="swimBudget" />
+      <TextField fx:id="tf_FMswimBudget" layoutX="742.0" layoutY="364.0" />
+      <TableView fx:id="fmBudgetTableView" layoutX="438.0" layoutY="446.0" prefHeight="200.0" prefWidth="564.0">
+         <columns>
+            <TableColumn fx:id="tc_fmBudget" prefWidth="75.0" text="Budget" />
+            <TableColumn fx:id="tc_fmId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="tc_fmcurBudget" prefWidth="98.0" text="curBudget" />
+            <TableColumn fx:id="tc_fmexpAmount" prefWidth="108.0" text="expAmount" />
+            <TableColumn fx:id="tc_fmgymBudget" prefWidth="95.0" text="gymBudget" />
+            <TableColumn fx:id="tc_fmswimBudget" prefWidth="120.0" text="swimBudget" />
+         </columns>
+      </TableView>
+      <Button layoutX="797.0" layoutY="401.0" mnemonicParsing="false" onAction="#addFMBudgetOnClick" text="Add Budget" />
+   </children>
+</AnchorPane>

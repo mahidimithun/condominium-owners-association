@@ -8,6 +8,7 @@
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwGardeningBookingController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwGardeningBooking.fxml</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwPayment.fxml</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMDashboardController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwBookingController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwBooking.fxml</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwExtraServices.fxml</file>
@@ -15,6 +16,9 @@
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboardController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/Main.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwExtraServicesController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMBudgetController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMBudget.fxml</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMDashboard.fxml</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboard.fxml</file>
         </group>
     </open-files>
