@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="806.0" prefWidth="985.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.CleanerCareTackerController">
+   <children>
+      <Label layoutX="265.0" layoutY="21.0" prefHeight="40.0" prefWidth="397.0" text="Cleaner and Care Taker List">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="90.0" text="Cleaner Id" />
+      <Label layoutX="22.0" layoutY="138.0" text="Cleaner Name" />
+      <Label layoutX="78.0" layoutY="186.0" text="Age" />
+      <Label layoutX="67.0" layoutY="238.0" text="Gender" />
+      <Label layoutX="33.0" layoutY="300.0" text="Cleaner Type" />
+      <TextField fx:id="tf_cleanerId" layoutX="154.0" layoutY="90.0" />
+      <TextField fx:id="tf_cleanerName" layoutX="154.0" layoutY="133.0" />
+      <TextField fx:id="tf_cleanerAge" layoutX="154.0" layoutY="181.0" />
+      <ComboBox fx:id="cb_cleanerGender" layoutX="154.0" layoutY="233.0" prefHeight="31.0" prefWidth="180.0" />
+      <ComboBox fx:id="cb_cleanerType" layoutX="147.0" layoutY="295.0" prefHeight="31.0" prefWidth="180.0" />
+      <TextField fx:id="tf_careTakerId" layoutX="749.0" layoutY="106.0" />
+      <TextField fx:id="tf_careTakerName" layoutX="756.0" layoutY="149.0" />
+      <TextField fx:id="tf_careTakerAge" layoutX="756.0" layoutY="197.0" />
+      <Label layoutX="642.0" layoutY="111.0" text="Care Taker Id" />
+      <Label layoutX="616.0" layoutY="154.0" text="Care Taker Name" />
+      <Label layoutX="686.0" layoutY="202.0" text="Age" />
+      <ComboBox fx:id="cb_careTakerGender" layoutX="760.0" layoutY="244.0" prefHeight="31.0" prefWidth="180.0" />
+      <ComboBox fx:id="cb_careTakerType" layoutX="763.0" layoutY="295.0" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="662.0" layoutY="254.0" text="Gender" />
+      <Label layoutX="634.0" layoutY="300.0" text="Care Taker Type" />
+      <Button layoutX="59.0" layoutY="357.0" mnemonicParsing="false" onAction="#addCleanerOnClick" prefHeight="31.0" prefWidth="289.0" text="Add Cleaner" />
+      <Button layoutX="673.0" layoutY="348.0" mnemonicParsing="false" onAction="#addCareTakerOnClick" prefHeight="31.0" prefWidth="289.0" text="Add Care Taker List" />
+      <TableView fx:id="cleanerTable" layoutX="54.0" layoutY="477.0" prefHeight="200.0" prefWidth="428.0">
+        <columns>
+          <TableColumn fx:id="tc_cleanerId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="tc_cleanerName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="tc_cleanerAge" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="tc_cleanerGender" prefWidth="75.0" text="Gender" />
+            <TableColumn fx:id="tc_cleanerType" prefWidth="127.0" text="Cleaner Type" />
+        </columns>
+      </TableView>
+      <TableView fx:id="careTakerTable" layoutX="534.0" layoutY="486.0" prefHeight="200.0" prefWidth="428.0">
+         <columns>
+            <TableColumn fx:id="tc_careTakerId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="tc_careTakerName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="tc_careTakerAge" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="tc_careTakerGender" prefWidth="75.0" text="Gender" />
+            <TableColumn fx:id="tc_careTakerType" prefWidth="127.0" text="Care TackerType" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
