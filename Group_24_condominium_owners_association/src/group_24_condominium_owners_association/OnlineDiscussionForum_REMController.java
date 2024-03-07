@@ -9,20 +9,20 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
  *
  * @author ASUS
  */
-public class AssociationPolicyAndRules_REMController implements Initializable {
+public class OnlineDiscussionForum_REMController implements Initializable {
 
     @FXML
-    private Label policy_ta;
+    private TableView<?> OnlineDiscussion_tv;
     @FXML
-    private TableView<?> CCTVFootageRecord_tv;
+    private TextArea onlineDiscussion_tf;
 
     /**
      * Initializes the controller class.
@@ -37,19 +37,19 @@ public class AssociationPolicyAndRules_REMController implements Initializable {
     }
 
     @FXML
-    private void addFootageOnButtonClick(ActionEvent event) {
+    private void addOnlineDiscussionOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewFootageListOnButtonClick(ActionEvent event) {
+    private void viewOnlineDiscussionOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void addFootageForTextAreaOnButtonClick(ActionEvent event) {
+    private void addOnlineOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void removeFootageForOnButtonClick(ActionEvent event) {
+    private void removeOnlineDiscussionOnButtonClick(ActionEvent event) {
     }
     
 }
