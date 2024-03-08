@@ -9,13 +9,23 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Meem
  */
-public class EventManagerDashboardController implements Initializable {
+public class EventDetailsController implements Initializable {
+
+    @FXML
+    private TextField TimeTextField;
+    @FXML
+    private DatePicker DateTextField;
+    @FXML
+    private ComboBox<?> EventNameTextField;
 
     /**
      * Initializes the controller class.
@@ -26,23 +36,11 @@ public class EventManagerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void EventTypeButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void EventDetailsButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ContactInformationButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void FeedbackButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void PaymentButtonOnClick(ActionEvent event) {
+    private void DoneButtonOnClick(ActionEvent event) {
     }
     
 }

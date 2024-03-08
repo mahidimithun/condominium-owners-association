@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author Meem
  */
-public class EventManagerDashboardController implements Initializable {
+public class CommercialOwnerDashboardController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -26,23 +26,7 @@ public class EventManagerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void EventTypeButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void EventDetailsButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ContactInformationButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void FeedbackButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void PaymentButtonOnClick(ActionEvent event) {
+    private void buttonOnAction(ActionEvent event) {
     }
     
 }

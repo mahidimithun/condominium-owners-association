@@ -9,13 +9,31 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Meem
  */
-public class EventManagerDashboardController implements Initializable {
+public class Feedback_EMController implements Initializable {
+
+    @FXML
+    private ComboBox<?> EventComboBox;
+    @FXML
+    private CheckBox OneCheckBox;
+    @FXML
+    private CheckBox TwoCheckBox;
+    @FXML
+    private CheckBox ThreeCheckBox;
+    @FXML
+    private TextField NameTextField;
+    @FXML
+    private TextField EmailTextField;
+    @FXML
+    private TextField CommentTextField;
 
     /**
      * Initializes the controller class.
@@ -26,23 +44,11 @@ public class EventManagerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void EventTypeButtonOnClick(ActionEvent event) {
+    private void SubmitButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void EventDetailsButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ContactInformationButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void FeedbackButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void PaymentButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClick(ActionEvent event) {
     }
     
 }
