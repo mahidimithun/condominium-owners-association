@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="345.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.RetailSpaceController">
+   <children>
+      <Label layoutX="66.0" layoutY="71.0" text="Open Hours" />
+      <Label layoutX="66.0" layoutY="162.0" text="Product List" />
+      <Label layoutX="66.0" layoutY="259.0" text="Payment Option" />
+      <ComboBox fx:id="ProductListComboBox" layoutX="201.0" layoutY="158.0" onAction="#ProductListButtonOnClick" prefWidth="150.0" />
+      <Button layoutX="212.0" layoutY="255.0" mnemonicParsing="false" onAction="#CashButtonOnClick" text="Card" />
+      <Button layoutX="335.0" layoutY="255.0" mnemonicParsing="false" onAction="#BkashButtonOnClick" text="Bkash" />
+      <Button layoutX="461.0" layoutY="255.0" mnemonicParsing="false" onAction="#CashButtonOnClick" text="Cash" />
+      <CheckBox fx:id="DayRadioButtonOpenHours" layoutX="180.0" layoutY="71.0" mnemonicParsing="false" onAction="#DayOpenButtonOnClick" text="9am-2pm" />
+      <CheckBox fx:id="NightRadioButtonOpenHours" layoutX="382.0" layoutY="71.0" mnemonicParsing="false" onAction="#NightOpenButtonOnClick" text="4pm-10pm" />
+   </children>
+</AnchorPane>

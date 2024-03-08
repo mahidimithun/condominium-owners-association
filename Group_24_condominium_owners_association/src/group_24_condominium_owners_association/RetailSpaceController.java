@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 
 /**
@@ -16,10 +17,14 @@ import javafx.scene.control.ComboBox;
  *
  * @author Meem
  */
-public class CommercialOwnerDashboardController implements Initializable {
+public class RetailSpaceController implements Initializable {
 
     @FXML
-    private ComboBox<?> FacilityDetailsComboBox;
+    private ComboBox<?> ProductListComboBox;
+    @FXML
+    private CheckBox DayRadioButtonOpenHours;
+    @FXML
+    private CheckBox NightRadioButtonOpenHours;
 
     /**
      * Initializes the controller class.
@@ -30,19 +35,23 @@ public class CommercialOwnerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void CommunicationAndFeedbackOnClick(ActionEvent event) {
+    private void ProductListButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void ContactButtonOnClick(ActionEvent event) {
+    private void CashButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void BookingOnClick(ActionEvent event) {
+    private void BkashButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void FacilityDetailsButtonOnClick(ActionEvent event) {
+    private void DayOpenButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void NightOpenButtonOnClick(ActionEvent event) {
     }
     
 }

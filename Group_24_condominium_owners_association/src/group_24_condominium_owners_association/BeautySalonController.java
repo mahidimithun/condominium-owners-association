@@ -10,16 +10,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Meem
  */
-public class CommercialOwnerDashboardController implements Initializable {
+public class BeautySalonController implements Initializable {
 
     @FXML
-    private ComboBox<?> FacilityDetailsComboBox;
+    private TextField OpenAndCloseHoursTextField;
+    @FXML
+    private ComboBox<?> ServiceOfferComboBox;
 
     /**
      * Initializes the controller class.
@@ -30,19 +33,11 @@ public class CommercialOwnerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void CommunicationAndFeedbackOnClick(ActionEvent event) {
+    private void BookingButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void ContactButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void BookingOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void FacilityDetailsButtonOnClick(ActionEvent event) {
+    private void ServiceOfferButtonOnClick(ActionEvent event) {
     }
     
 }
