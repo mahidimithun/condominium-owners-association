@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.EventTypeController">
+   <children>
+      <Label layoutX="76.0" layoutY="60.0" text="BBQ parties" />
+      <Label layoutX="76.0" layoutY="105.0" text="Fitness and Wellness Activities" />
+      <Label layoutX="76.0" layoutY="153.0" text="Community Meetings" />
+      <Label layoutX="76.0" layoutY="200.0" text="Holiday Gettogether" />
+      <Label layoutX="76.0" layoutY="245.0" text="EducationalWorkshop" />
+      <Label layoutX="76.0" layoutY="299.0" text="GameNights" />
+      <CheckBox layoutX="220.0" layoutY="60.0" mnemonicParsing="false" onAction="#BBQpartiesOnClick" />
+      <CheckBox layoutX="257.0" layoutY="105.0" mnemonicParsing="false" onAction="#FitnessAndWellnessActivitiesOnClick" />
+      <CheckBox layoutX="236.0" layoutY="153.0" mnemonicParsing="false" onAction="#CommunityMeetingsOnClick" />
+      <CheckBox layoutX="221.0" layoutY="245.0" mnemonicParsing="false" onAction="#EducationalWorkshopOnClick" />
+      <CheckBox layoutX="221.0" layoutY="299.0" mnemonicParsing="false" onAction="#GameNightsOnClick" />
+      <CheckBox layoutX="236.0" layoutY="200.0" mnemonicParsing="false" onAction="#HolidayGettogetherOnClick" />
+   </children>
+</AnchorPane>
