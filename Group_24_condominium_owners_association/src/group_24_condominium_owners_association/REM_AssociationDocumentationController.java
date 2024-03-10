@@ -9,20 +9,23 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author ASUS
  */
-public class AssociationPolicyAndRules_REMController implements Initializable {
+public class REM_AssociationDocumentationController implements Initializable {
 
     @FXML
-    private Label policy_ta;
+    private TextArea AssociationDocumentation_ta;
     @FXML
-    private TableView<?> CCTVFootageRecord_tv;
+    private TextField documentName_tf;
+    @FXML
+    private DatePicker documentDate_dp;
 
     /**
      * Initializes the controller class.
@@ -33,23 +36,15 @@ public class AssociationPolicyAndRules_REMController implements Initializable {
     }    
 
     @FXML
-    private void goBackOnButtonClick(ActionEvent event) {
+    private void addDocumentOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void addFootageOnButtonClick(ActionEvent event) {
+    private void removeDocumentOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewFootageListOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void addFootageForTextAreaOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void removeFootageForOnButtonClick(ActionEvent event) {
+    private void goBackToHomePageOnButtonClick(ActionEvent event) {
     }
     
 }

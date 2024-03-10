@@ -11,32 +11,33 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1082.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.VisitorListUI_SCOController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.TrainingSessionGuard_SCOController">
    <children>
-      <Label layoutX="404.0" layoutY="30.0" prefHeight="36.0" prefWidth="439.0" text="Training Program of Guards">
+      <Label layoutX="464.0" layoutY="27.0" text="Training Program of Guards">
          <font>
-            <Font name="System Bold" size="25.0" />
+            <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Line endX="1099.5" endY="9.0" layoutX="102.0" layoutY="86.0" startX="-102.0" startY="9.0" strokeWidth="3.0" />
-      <Button layoutX="77.0" layoutY="32.0" mnemonicParsing="false" onAction="#gOBackOnButtonClick" text="Go Back " />
-      <Button layoutX="787.0" layoutY="539.0" mnemonicParsing="false" onAction="#addTrainingSessionOnButtonClick" prefHeight="31.0" prefWidth="203.0" text="Add Training Session" />
-      <Button layoutX="787.0" layoutY="488.0" mnemonicParsing="false" onAction="#removeTrainingSessionOnButtonClick" prefHeight="31.0" prefWidth="196.0" text="Remove Training Session" />
-      <TableView fx:id="trainingGuard_tv" layoutX="26.0" layoutY="462.0" prefHeight="251.0" prefWidth="712.0">
-         <columns>
-            <TableColumn fx:id="participateName_tc" prefWidth="351.00001525878906" text="Participate Name" />
-            <TableColumn fx:id="TrainingProgramDate_tc" minWidth="0.0" prefWidth="345.0" text="Training Program Date" />
-         </columns>
+      <Button layoutX="111.0" layoutY="31.0" mnemonicParsing="false" onAction="#goBackToHomeOnButtonClick" text="Go Back" />
+      <Button layoutX="579.0" layoutY="131.0" mnemonicParsing="false" onAction="#addTrainingOnButtonClick" text="Add Training Session" />
+      <Line endX="1081.0" layoutX="101.0" layoutY="96.0" startX="-101.0" startY="1.52587890625E-5" strokeWidth="3.0" />
+      <Label layoutX="71.0" layoutY="125.0" text="Participate Name:" />
+      <Label layoutX="53.0" layoutY="181.0" text="Training program Date:" />
+      <TextField fx:id="participateName_tf" layoutX="222.0" layoutY="120.0" prefHeight="31.0" prefWidth="210.0" />
+      <DatePicker fx:id="trainingDate_dp" layoutX="222.0" layoutY="176.0" prefHeight="31.0" prefWidth="210.0" />
+      <Button layoutX="586.0" layoutY="176.0" mnemonicParsing="false" onAction="#cancelOnButtonClick" prefHeight="31.0" prefWidth="154.0" text="Cancel" />
+      <TextArea fx:id="TraingProgram_ta" layoutX="78.0" layoutY="224.0" prefHeight="207.0" prefWidth="977.0" />
+      <TableView fx:id="trainingProgram_tv" layoutX="130.0" layoutY="472.0" prefHeight="225.0" prefWidth="484.0">
+        <columns>
+          <TableColumn fx:id="participateName_tc" prefWidth="240.0" text="Participate Name" />
+          <TableColumn fx:id="traingProgramDate_tc" minWidth="6.0" prefWidth="243.0" text="Training Program Date" />
+        </columns>
       </TableView>
-      <Label fx:id="trainingProgramList_Label" layoutX="209.0" layoutY="739.0" prefHeight="308.0" prefWidth="719.0" style="-fx-background-color: skyblue;" />
-      <Button layoutX="787.0" layoutY="598.0" mnemonicParsing="false" onAction="#viewTrainingSessionOnButtonClick" prefHeight="31.0" prefWidth="216.0" text="View Training Session" />
-      <TextField fx:id="participateName_tf" layoutX="190.0" layoutY="115.0" prefHeight="31.0" prefWidth="203.0" />
-      <Label layoutX="66.0" layoutY="120.0" text="Participate Name:" />
-      <Label layoutX="39.0" layoutY="171.0" text="Training Program Date:" />
-      <DatePicker fx:id="trainingProgramDate_dp" layoutX="195.0" layoutY="166.0" prefHeight="31.0" prefWidth="196.0" />
-      <Button layoutX="483.0" layoutY="166.0" mnemonicParsing="false" onAction="#cancelProgramOnButtonClick" prefHeight="31.0" prefWidth="170.0" text="Cancel" />
-      <TextArea fx:id="Visitor_ta" layoutX="6.0" layoutY="220.0" prefHeight="220.0" prefWidth="998.0" />
-      <Button layoutX="483.0" layoutY="115.0" mnemonicParsing="false" onAction="#addTrainingOnButtonClick" prefHeight="31.0" prefWidth="161.0" text="Add Training Session" />
-      <Line endX="1153.5" endY="9.0" layoutX="46.0" layoutY="723.0" startX="-45.99998474121094" startY="9.0" strokeWidth="3.0" />
+      <Button layoutX="671.0" layoutY="472.0" mnemonicParsing="false" onAction="#removeTrainingOnButtonClick" text="Remove Training Session" />
+      <Button layoutX="671.0" layoutY="526.0" mnemonicParsing="false" onAction="#addtrainingOnButtonClick" prefHeight="31.0" prefWidth="186.0" text="Add Training Session" />
+      <Button layoutX="671.0" layoutY="585.0" mnemonicParsing="false" onAction="#viewTrainingOnButtonClick" prefHeight="31.0" prefWidth="186.0" text="View Training Session" />
+      <Label fx:id="TrainingProgramOutput_Label" layoutX="266.0" layoutY="719.0" prefHeight="197.0" prefWidth="656.0" style="-fx-background-color: aqua;" />
+      <Line endX="1071.0" layoutX="111.0" layoutY="712.0" startX="-111.0" strokeWidth="3.0" />
    </children>
 </AnchorPane>

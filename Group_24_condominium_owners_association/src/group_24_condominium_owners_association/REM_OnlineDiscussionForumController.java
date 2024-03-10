@@ -17,7 +17,7 @@ import javafx.scene.control.TextArea;
  *
  * @author ASUS
  */
-public class OnlineDiscussionForum_REMController implements Initializable {
+public class REM_OnlineDiscussionForumController implements Initializable {
 
     @FXML
     private TableView<?> OnlineDiscussion_tv;

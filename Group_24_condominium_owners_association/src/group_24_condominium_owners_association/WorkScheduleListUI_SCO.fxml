@@ -12,31 +12,31 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="899.0" prefWidth="1284.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.WorkScheduleListUI_SCOController">
    <children>
-      <Label layoutX="404.0" layoutY="24.0" text="Work Schedule List For Security Guard">
+      <Label layoutX="422.0" layoutY="14.0" text="Work  Schedule List For Security Guard">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Line endX="1175.0" endY="-6.0" layoutX="101.0" layoutY="107.0" startX="-90.0" startY="-6.0" strokeWidth="4.0" />
-      <Label layoutX="52.0" layoutY="157.0" text="Schedule Name:" />
-      <Label layoutX="64.0" layoutY="205.0" text="Schedule Date" />
-      <TextField layoutX="171.0" layoutY="152.0" onAction="#ScheduleName_tf" prefHeight="31.0" prefWidth="218.0" />
-      <DatePicker layoutX="171.0" layoutY="200.0" onAction="#scheduleDate_dp" />
-      <Button layoutX="75.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBackToHomePage" text="Go Back" />
-      <Button layoutX="632.0" layoutY="142.0" mnemonicParsing="false" onAction="#addNewScheduleOnButtonClick" text="Add New Schedule" />
-      <Button layoutX="628.0" layoutY="200.0" mnemonicParsing="false" onAction="#cancelScheduleOnButtonClick" prefHeight="31.0" prefWidth="154.0" text="Cancel" />
-      <TextArea fx:id="guardworkscedule_ta" layoutX="125.0" layoutY="256.0" prefHeight="180.0" prefWidth="860.0" />
-      <TableView fx:id="schedule_tv" layoutX="125.0" layoutY="450.0" prefHeight="214.0" prefWidth="639.0">
+      <Button layoutX="115.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToHomePageOnButtonClick" text="Go Back" />
+      <Button layoutX="471.0" layoutY="108.0" mnemonicParsing="false" onAction="#addNewScheduleOnButonClick" text="Add new Schedule" />
+      <Button layoutX="479.0" layoutY="170.0" mnemonicParsing="false" onAction="#cancelScheduleOnButtonClick" prefHeight="31.0" prefWidth="143.0" text="Cancel" />
+      <TextField fx:id="scheduleName_tf" layoutX="170.0" layoutY="108.0" />
+      <DatePicker fx:id="scheduleDate_dp" layoutX="170.0" layoutY="181.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="35.0" layoutY="113.0" text="Schedule Name:" />
+      <Label layoutX="53.0" layoutY="186.0" text="Schedule Date:" />
+      <TextArea fx:id="scheduleList_ta" layoutX="70.0" layoutY="239.0" prefHeight="187.0" prefWidth="824.0" />
+      <Line endX="1125.0" endY="6.0" layoutX="103.0" layoutY="71.0" startX="-100.0" strokeWidth="3.0" />
+      <TableView fx:id="scheduleTable_tv" layoutX="70.0" layoutY="438.0" prefHeight="222.0" prefWidth="801.0">
         <columns>
-          <TableColumn fx:id="scheduleName_tc" prefWidth="310.0" text="                       Schedule Name" />
-          <TableColumn fx:id="schedule_Date_tc" minWidth="0.0" prefWidth="328.0" text="       Schedule Date" />
+          <TableColumn fx:id="scheduleName_tc" prefWidth="310.0" text="Schedule Name" />
+          <TableColumn fx:id="schduleDate_tc" minWidth="0.0" prefWidth="500.0" text="Schedule Date" />
         </columns>
       </TableView>
-      <Button layoutX="852.0" layoutY="526.0" mnemonicParsing="false" onAction="#addNewScheduleOnButtonClick" text="Add New Schedule" />
-      <Button layoutX="862.0" layoutY="577.0" mnemonicParsing="false" onAction="#removeScheduleOnButtonClick" text="Remove Schedule" />
-      <Button layoutX="862.0" layoutY="632.0" mnemonicParsing="false" onAction="#viewScheduleOnButtonClick" prefHeight="31.0" prefWidth="146.0" text="View Schedule" />
-      <Label fx:id="SecurityGuard_label" layoutX="212.0" layoutY="685.0" prefHeight="190.0" prefWidth="773.0" style="-fx-background-color: skyblue;" />
+      <Label fx:id="workScheduleOutput_Label" layoutX="174.0" layoutY="675.0" prefHeight="154.0" prefWidth="737.0" style="-fx-background-color: aqua;" />
+      <Button layoutX="927.0" layoutY="445.0" mnemonicParsing="false" onAction="#addNewScheduleOnButtonClick" text="Add new Schedule" />
+      <Button layoutX="927.0" layoutY="508.0" mnemonicParsing="false" onAction="#removeScheduleOnButtonClick" text="Remove Schedule" />
+      <Button layoutX="927.0" layoutY="567.0" mnemonicParsing="false" onAction="#viewScheduleOnButtonClick" prefHeight="31.0" prefWidth="124.0" text="Vew Schedule" />
    </children>
 </AnchorPane>

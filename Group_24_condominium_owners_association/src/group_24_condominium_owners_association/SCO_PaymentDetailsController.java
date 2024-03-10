@@ -20,7 +20,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author ASUS
  */
-public class PaymentDetails_SCOController implements Initializable {
+public class SCO_PaymentDetailsController implements Initializable {
 
     @FXML
     private TextField payment_tf;

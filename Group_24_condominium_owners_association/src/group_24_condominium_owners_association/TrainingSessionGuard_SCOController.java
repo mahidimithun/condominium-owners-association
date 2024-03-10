@@ -21,22 +21,22 @@ import javafx.scene.control.TextField;
  *
  * @author ASUS
  */
-public class SecurityGuardList_SCOController implements Initializable {
+public class TrainingSessionGuard_SCOController implements Initializable {
 
     @FXML
-    private TextField securityGuard_tf;
+    private TextField participateName_tf;
     @FXML
-    private DatePicker guardJoiningDate_dp;
+    private DatePicker trainingDate_dp;
     @FXML
-    private TextArea GuardList_ta;
+    private TextArea TraingProgram_ta;
     @FXML
-    private TableView<?> Security_tv;
+    private TableView<?> trainingProgram_tv;
     @FXML
-    private TableColumn<?, ?> guardName_tc;
+    private TableColumn<?, ?> participateName_tc;
     @FXML
-    private TableColumn<?, ?> guardJoining_tc;
+    private TableColumn<?, ?> traingProgramDate_tc;
     @FXML
-    private Label GuardOutput_Label;
+    private Label TrainingProgramOutput_Label;
 
     /**
      * Initializes the controller class.
@@ -51,23 +51,23 @@ public class SecurityGuardList_SCOController implements Initializable {
     }
 
     @FXML
-    private void addGuardNameOnButtonClick(ActionEvent event) {
+    private void addTrainingOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void removeGuardOnButtonClick(ActionEvent event) {
+    private void cancelOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewGuardNameOnButtonClick(ActionEvent event) {
+    private void removeTrainingOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void CancelSecurityOnButtonClick(ActionEvent event) {
+    private void addtrainingOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void addGuardListOnButtonClick(ActionEvent event) {
+    private void viewTrainingOnButtonClick(ActionEvent event) {
     }
     
 }

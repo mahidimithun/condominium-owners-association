@@ -21,22 +21,22 @@ import javafx.scene.control.TextField;
  *
  * @author ASUS
  */
-public class WorkScheduleListUI_SCOController implements Initializable {
+public class SCO_SecurityGuardListController implements Initializable {
 
     @FXML
-    private TextField scheduleName_tf;
+    private TextField securityGuard_tf;
     @FXML
-    private DatePicker scheduleDate_dp;
+    private DatePicker guardJoiningDate_dp;
     @FXML
-    private TextArea scheduleList_ta;
+    private TextArea GuardList_ta;
     @FXML
-    private TableView<?> scheduleTable_tv;
+    private TableView<?> Security_tv;
     @FXML
-    private TableColumn<?, ?> scheduleName_tc;
+    private TableColumn<?, ?> guardName_tc;
     @FXML
-    private TableColumn<?, ?> schduleDate_tc;
+    private TableColumn<?, ?> guardJoining_tc;
     @FXML
-    private Label workScheduleOutput_Label;
+    private Label GuardOutput_Label;
 
     /**
      * Initializes the controller class.
@@ -47,27 +47,27 @@ public class WorkScheduleListUI_SCOController implements Initializable {
     }    
 
     @FXML
-    private void goBackToHomePageOnButtonClick(ActionEvent event) {
+    private void goBackToHomeOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void addNewScheduleOnButonClick(ActionEvent event) {
+    private void addGuardNameOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void cancelScheduleOnButtonClick(ActionEvent event) {
+    private void removeGuardOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void addNewScheduleOnButtonClick(ActionEvent event) {
+    private void viewGuardNameOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void removeScheduleOnButtonClick(ActionEvent event) {
+    private void CancelSecurityOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewScheduleOnButtonClick(ActionEvent event) {
+    private void addGuardListOnButtonClick(ActionEvent event) {
     }
     
 }
