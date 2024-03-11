@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MrBudgetController">
+   <children>
+      <Label layoutX="129.0" layoutY="30.0" text="MR coordinator Budget">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="118.0" text="Amont" />
+      <TextField fx:id="tf_amount" layoutX="135.0" layoutY="113.0" prefHeight="31.0" prefWidth="208.0" />
+      <Button layoutX="135.0" layoutY="230.0" mnemonicParsing="false" onAction="#BudgetInfoSentOnClick" prefHeight="31.0" prefWidth="208.0" text="Sent" />
+   </children>
+</AnchorPane>

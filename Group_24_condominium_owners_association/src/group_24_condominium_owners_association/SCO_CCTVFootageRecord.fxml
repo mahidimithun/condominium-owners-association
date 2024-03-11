@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.CCTVFootageRecord_SCOController">
+   <children>
+      <Button layoutX="98.0" layoutY="33.0" mnemonicParsing="false" onAction="#GoBackButtonOnClick" text="Go Back" />
+      <Button layoutX="965.0" layoutY="553.0" mnemonicParsing="false" onAction="#removeFootageOnButtonClick" text="Remove Footage" />
+      <Button layoutX="965.0" layoutY="471.0" mnemonicParsing="false" onAction="#addFootageOnButtonClick" prefHeight="31.0" prefWidth="132.0" text="Add Footage" />
+      <Button layoutX="900.0" layoutY="131.0" mnemonicParsing="false" onAction="#GoBackButtonOnClick" prefHeight="31.0" prefWidth="143.0" text="Add Footage" />
+      <Button layoutX="900.0" layoutY="204.0" mnemonicParsing="false" onAction="#viewFootageListOnButtonClick" text="View Footage List" />
+      <Label layoutX="465.0" layoutY="25.0" text="CCTV  Footage  Record ">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <TableView layoutX="152.0" layoutY="105.0" prefHeight="172.0" prefWidth="514.0">
+        <columns>
+          <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+          <TableColumn prefWidth="493.0" text="CCTV Footage Record" />
+        </columns>
+      </TableView>
+      <Line endX="1110.0" layoutX="101.0" layoutY="100.0" startX="-101.0" startY="-9.0" strokeWidth="3.0" />
+      <Line endX="100.0" endY="-2.878692626953125" layoutX="704.0" layoutY="105.0" startX="100.0" startY="200.0" strokeWidth="3.0" />
+      <Line endX="1128.0" endY="3.0" layoutX="83.0" layoutY="308.0" startX="-101.0" startY="-9.0" strokeWidth="3.0" />
+      <Label fx:id="OutputCCTV_Label" layoutX="105.0" layoutY="471.0" prefHeight="260.0" prefWidth="786.0" style="-fx-background-color: aqua;" />
+   </children>
+</AnchorPane>

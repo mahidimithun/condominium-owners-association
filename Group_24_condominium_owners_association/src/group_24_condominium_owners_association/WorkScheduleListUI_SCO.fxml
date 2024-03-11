@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.WorkScheduleListUI_SCOController">
+   <children>
+      <Label layoutX="422.0" layoutY="14.0" text="Work  Schedule List For Security Guard">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="115.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBackToHomePageOnButtonClick" text="Go Back" />
+      <Button layoutX="471.0" layoutY="108.0" mnemonicParsing="false" onAction="#addNewScheduleOnButonClick" text="Add new Schedule" />
+      <Button layoutX="479.0" layoutY="170.0" mnemonicParsing="false" onAction="#cancelScheduleOnButtonClick" prefHeight="31.0" prefWidth="143.0" text="Cancel" />
+      <TextField fx:id="scheduleName_tf" layoutX="170.0" layoutY="108.0" />
+      <DatePicker fx:id="scheduleDate_dp" layoutX="170.0" layoutY="181.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="35.0" layoutY="113.0" text="Schedule Name:" />
+      <Label layoutX="53.0" layoutY="186.0" text="Schedule Date:" />
+      <TextArea fx:id="scheduleList_ta" layoutX="70.0" layoutY="239.0" prefHeight="187.0" prefWidth="824.0" />
+      <Line endX="1125.0" endY="6.0" layoutX="103.0" layoutY="71.0" startX="-100.0" strokeWidth="3.0" />
+      <TableView fx:id="scheduleTable_tv" layoutX="70.0" layoutY="438.0" prefHeight="222.0" prefWidth="801.0">
+        <columns>
+          <TableColumn fx:id="scheduleName_tc" prefWidth="310.0" text="Schedule Name" />
+          <TableColumn fx:id="schduleDate_tc" minWidth="0.0" prefWidth="500.0" text="Schedule Date" />
+        </columns>
+      </TableView>
+      <Label fx:id="workScheduleOutput_Label" layoutX="174.0" layoutY="675.0" prefHeight="154.0" prefWidth="737.0" style="-fx-background-color: aqua;" />
+      <Button layoutX="927.0" layoutY="445.0" mnemonicParsing="false" onAction="#addNewScheduleOnButtonClick" text="Add new Schedule" />
+      <Button layoutX="927.0" layoutY="508.0" mnemonicParsing="false" onAction="#removeScheduleOnButtonClick" text="Remove Schedule" />
+      <Button layoutX="927.0" layoutY="567.0" mnemonicParsing="false" onAction="#viewScheduleOnButtonClick" prefHeight="31.0" prefWidth="124.0" text="Vew Schedule" />
+   </children>
+</AnchorPane>

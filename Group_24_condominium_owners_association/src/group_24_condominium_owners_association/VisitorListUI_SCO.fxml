@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="970.0" prefWidth="1082.0" style="-fx-background-color: lightgrey;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.VisitorListUI_SCOController">
+   <children>
+      <Label layoutX="391.0" layoutY="29.0" prefHeight="36.0" prefWidth="466.0" text="                        Visitor List">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Line endX="1095.2928466796875" endY="9.0" layoutX="102.0" layoutY="86.0" startX="-102.0" startY="9.0" strokeWidth="3.0" />
+      <Button layoutX="77.0" layoutY="32.0" mnemonicParsing="false" onAction="#gOBackOnButtonClick" text="Go Back " />
+      <Button layoutX="787.0" layoutY="539.0" mnemonicParsing="false" onAction="#addVisitorOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="Add Visitor" />
+      <Button layoutX="787.0" layoutY="488.0" mnemonicParsing="false" onAction="#removeVisitorOnButtonClick" prefHeight="31.0" prefWidth="131.0" text="Remove Visitor" />
+      <TableView fx:id="Visitor_tv" layoutX="26.0" layoutY="462.0" prefHeight="251.0" prefWidth="712.0">
+        <columns>
+          <TableColumn fx:id="visitorName_tc" prefWidth="351.00001525878906" text="Visitor Name" />
+          <TableColumn fx:id="vistingDate_tc" minWidth="0.0" prefWidth="345.0" text="Visiting Date" />
+        </columns>
+      </TableView>
+      <Label fx:id="visitorList_Label" layoutX="209.0" layoutY="739.0" prefHeight="308.0" prefWidth="719.0" style="-fx-background-color: skyblue;" />
+      <Button layoutX="787.0" layoutY="598.0" mnemonicParsing="false" onAction="#viewVisitorOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="View Visitor" />
+      <TextField fx:id="VisitorName_tf" layoutX="171.0" layoutY="115.0" prefHeight="31.0" prefWidth="196.0" />
+      <Label layoutX="58.0" layoutY="120.0" text="Visitor Name:" />
+      <Label layoutX="59.0" layoutY="171.0" text="Visiting Date:" />
+      <DatePicker fx:id="visitorDate_dp" layoutX="171.0" layoutY="162.0" prefHeight="31.0" prefWidth="196.0" />
+      <Button layoutX="483.0" layoutY="166.0" mnemonicParsing="false" onAction="#cancelOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="Cancel" />
+      <TextArea fx:id="Visitor_ta" layoutX="6.0" layoutY="223.0" prefHeight="217.0" prefWidth="959.0" />
+      <Button layoutX="483.0" layoutY="115.0" mnemonicParsing="false" onAction="#addVisitorOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="Add Visitor" />
+      <Line endX="1153.5" endY="9.0" layoutX="46.0" layoutY="723.0" startX="-45.99998474121094" startY="9.0" strokeWidth="3.0" />
+   </children>
+</AnchorPane>
