@@ -47,7 +47,7 @@ public class LogInUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cb_userType.getItems().addAll("UnitOwner", "MR", "MedicalResponseCoordinator", "FinancialManager");
+        cb_userType.getItems().addAll("UnitOwner", "MR", "MedicalResponseCoordinator", "FinancialManager","RuelsAndPolicyManager");
     }
 
     @FXML
@@ -115,7 +115,37 @@ public class LogInUIController implements Initializable {
 
                 currentStage.setScene(studentScene);
                 currentStage.show();
+            } else if (userType.equals("FinancialManager")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("FMDashboard.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
             }
+            
+            else if (userType.equals("RuelsAndPolicyManager")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("RuelsAndPolicyManagerDashboard.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
+            }
+            
+            
 
         } else {
             System.out.println("Invalid username or password!");
