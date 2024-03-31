@@ -4,6 +4,8 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,50 +22,93 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import modelPack.LogInModel;
+
 /**
  *
  * @author HP
  */
 public class LogInUIController implements Initializable {
-    
+
     @FXML
     private Label label;
-    
+
     //@FXML
     @FXML
     private TextField tf_userId;
     @FXML
     private PasswordField pw_userPass;
     @FXML
-    private ComboBox<?> cb_userType;
-    
-    
+    private ComboBox<String> cb_userType;
+
+    private static final String USERS_FILE = "C:\\Users\\HP\\Desktop\\users.txt";
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        cb_userType.getItems().addAll("UnitOwner", "MR");
+    }
 
     @FXML
     private void userRegistraionOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void logInOnClick(ActionEvent event) throws IOException{
-//        Not parmanet it's for only Demonstration
-    
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("UnitOwnerDashboard.fxml")); 
-        Parent parent = loader.load();
+    private void logInOnClick(ActionEvent event) throws IOException {
 
-       Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        String userId = tf_userId.getText();
+        String password = pw_userPass.getText();
+        String userType = cb_userType.getValue();
 
-        Scene studentScene = new Scene(parent);
+        BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE));
+        String line;
+        boolean valid = false;
 
-        currentStage.setScene(studentScene); 
-        currentStage.show();
-        
-//       Alret Its not parment 
-        
-        
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 3 && parts[0].equals(userId) && parts[1].equals(password) && parts[2].equals(userType)) {
+                valid = true;
+                break;
+            }
+        }
+        reader.close();
+
+        if (valid) {
+
+            if (userType.equals("UnitOwner")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("UnitOwnerDashboard.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
+            } else if (userType.equals("MR")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MRcoordinator.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
+            }
+
+        } else {
+            System.out.println("Invalid username or password!");
+        }
+
     }
     
+    
+
 }

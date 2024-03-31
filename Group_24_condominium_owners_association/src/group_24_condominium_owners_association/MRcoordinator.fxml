@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="947.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MRcoordinatorController">
+<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.MRcoordinatorController">
    <children>
       <Label layoutX="218.0" layoutY="14.0" prefHeight="104.0" prefWidth="444.0" text="Maintenance and Repairs Coordinator Dashbord" textAlignment="CENTER" wrapText="true">
          <font>
@@ -46,5 +45,6 @@
       <Button layoutX="509.0" layoutY="595.0" mnemonicParsing="false" onAction="#budgetOnClick" prefHeight="31.0" prefWidth="134.0" text="Budget" />
       <Button layoutX="761.0" layoutY="595.0" mnemonicParsing="false" onAction="#makePaymentOnClick" prefHeight="31.0" prefWidth="150.0" text="Make Payment" />
       <Label layoutX="538.0" layoutY="141.0" prefHeight="21.0" prefWidth="211.0" text="Maintenance" />
+      <Button layoutX="32.0" layoutY="26.0" mnemonicParsing="false" onAction="#maintenanceDashboradBack" text="Back" />
    </children>
 </AnchorPane>
