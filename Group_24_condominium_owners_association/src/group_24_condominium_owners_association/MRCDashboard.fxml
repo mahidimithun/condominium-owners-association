@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="819.0" prefWidth="1154.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MRCDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="819.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.MRCDashboardController">
    <children>
       <Label layoutX="361.0" layoutY="37.0" text="Medical Response Coordinator">
          <font>
@@ -30,5 +29,6 @@
       <Button layoutX="712.0" layoutY="496.0" mnemonicParsing="false" onAction="#MRC_HospitalSeatBooking" text="Hospital Seat Booking" />
       <Button layoutX="261.0" layoutY="496.0" mnemonicParsing="false" onAction="#MRC_MedicalService" prefHeight="31.0" prefWidth="187.0" text="Medical Service" />
       <Button layoutX="466.0" layoutY="496.0" mnemonicParsing="false" onAction="#MRC_EmergencyTreatmentRequest" text="Emergency Treatment Request" />
+      <Button layoutX="50.0" layoutY="30.0" mnemonicParsing="false" onAction="#backMRC" text="Back" />
    </children>
 </AnchorPane>

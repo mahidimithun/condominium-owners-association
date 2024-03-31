@@ -41,12 +41,13 @@ public class LogInUIController implements Initializable {
     @FXML
     private ComboBox<String> cb_userType;
 
-    private static final String USERS_FILE = "C:\\Users\\HP\\Desktop\\users.txt";
+//    private static final String USERS_FILE = "C:\\Users\\HP\\Desktop\\users.txt";
+    private static final String USERS_FILE = "users.txt";
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cb_userType.getItems().addAll("UnitOwner", "MR");
+        cb_userType.getItems().addAll("UnitOwner", "MR", "MedicalResponseCoordinator", "FinancialManager");
     }
 
     @FXML
@@ -101,6 +102,19 @@ public class LogInUIController implements Initializable {
 
                 currentStage.setScene(studentScene);
                 currentStage.show();
+            } else if (userType.equals("MedicalResponseCoordinator")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MRCDashboard.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
             }
 
         } else {
@@ -108,7 +122,5 @@ public class LogInUIController implements Initializable {
         }
 
     }
-    
-    
 
 }
