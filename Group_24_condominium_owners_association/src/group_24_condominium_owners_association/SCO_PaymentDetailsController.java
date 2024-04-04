@@ -6,15 +6,11 @@ package group_24_condominium_owners_association;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 /**
  * FXML Controller class
  *
@@ -22,25 +18,11 @@ import javafx.scene.input.MouseEvent;
  */
 public class SCO_PaymentDetailsController implements Initializable {
 
-    @FXML
-    private TextField payment_tf;
-    @FXML
-    private TextField paymentAmount_tf;
-    @FXML
-    private DatePicker PaymentDate_dp;
-    @FXML
-    private RadioButton paid_rb;
-    @FXML
-    private RadioButton unpaid_rb;
-    @FXML
-    private TableColumn<?, ?> payment_tc;
-    @FXML
-    private TableColumn<?, ?> paymentAmount_tc;
-    @FXML
-    private TableColumn<?, ?> paymentDate_tc;
-    @FXML
-    private TableColumn<?, ?> paymentStatus_tc;
 
+    @FXML
+    private DatePicker paymentDate_dp;
+    @FXML
+    private ComboBox<?> paymentTyoe_SCO_cb;
     /**
      * Initializes the controller class.
      */
@@ -48,25 +30,5 @@ public class SCO_PaymentDetailsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void addPaymentOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void cancelButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void payment_tv(MouseEvent event) {
-    }
-
-    @FXML
-    private void addButtonForTableViewOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void goBackToOnButtonClick(ActionEvent event) {
-    }
     
 }

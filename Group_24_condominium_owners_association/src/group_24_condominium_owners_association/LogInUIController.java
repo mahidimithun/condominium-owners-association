@@ -47,7 +47,7 @@ public class LogInUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cb_userType.getItems().addAll("UnitOwner", "MR", "MedicalResponseCoordinator", "FinancialManager","RuelsAndPolicyManager");
+        cb_userType.getItems().addAll("UnitOwner", "MR", "MedicalResponseCoordinator", "FinancialManager","RuelsAndPolicyManager","SecurityControlOfficer");
     }
 
     @FXML
@@ -144,7 +144,20 @@ public class LogInUIController implements Initializable {
                 currentStage.setScene(studentScene);
                 currentStage.show();
             }
-            
+            else if (userType.equals("SecurityControlOfficer")) {
+
+                System.out.println("Login successful!");
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+                Parent parent = loader.load();
+
+                Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene studentScene = new Scene(parent);
+
+                currentStage.setScene(studentScene);
+                currentStage.show();
+            }
             
 
         } else {
