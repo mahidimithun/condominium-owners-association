@@ -4,3 +4,7 @@ dm,999,MR
 1010ms,333,MedicalResponseCoordinator
 1612jb,1998,FinancialManager
 111dm,777,RuelsAndPolicyManager
+888sb,9090,MR
+222dm,888,SecurityControlOfficer
+888sb,9090,EventManager
+999sb,1010,CommercialOwner

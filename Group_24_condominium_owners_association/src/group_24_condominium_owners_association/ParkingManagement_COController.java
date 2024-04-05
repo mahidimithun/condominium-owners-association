@@ -9,8 +9,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 /**
@@ -18,14 +23,14 @@ import javafx.scene.control.TextField;
  *
  * @author Meem
  */
-public class MedicalPharmacyController implements Initializable {
+public class ParkingManagement_COController implements Initializable {
 
     @FXML
-    private RadioButton MedicineAvailableRadioButton;
+    private PieChart ParkingsituationPieChart;
     @FXML
-    private TextField OpenAndCloseTextField;
+    private ComboBox<?> FilterCB;
     @FXML
-    private TextArea MedicineAvailabilityOutputTextArea;
+    private TextField ParcentageofparkingusageTextField;
 
     /**
      * Initializes the controller class.
@@ -35,16 +40,23 @@ public class MedicalPharmacyController implements Initializable {
         // TODO
     }    
 
+
     @FXML
-    private void MedicineAvailableButtonOnClick(ActionEvent event) {
+    private void FilterButtonOnAction(ActionEvent event) {
+    }
+
+
+    @FXML
+    private void AddingButtonOnAction(ActionEvent event) {
+    }
+
+
+    @FXML
+    private void BackButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void MedicineUnavailableButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void ViewButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

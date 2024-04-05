@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
@@ -9,10 +10,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -22,22 +21,30 @@ import javafx.scene.control.TextField;
  *
  * @author Meem
  */
-public class RetailSpaceController implements Initializable {
+public class ScheduledReminders_COController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> ProductNameTC;
+    private Label ReminderMessageLabel;
     @FXML
-    private TableColumn<?, ?> PriceTC;
+    private TextField ReminderMessageTF;
     @FXML
-    private TableColumn<?, ?> ExpiryDatesTC;
+    private TextField TimeTF;
     @FXML
-    private TableView<?> ProductDetailsTableView;
+    private DatePicker DateDatePicker;
     @FXML
-    private TextField ProductnameTextField;
+    private Label ReminderListLabel;
     @FXML
-    private TextField PriceTextField;
+    private TableView<?> ReminderListTV;
     @FXML
-    private TextField expirydatesTextField;
+    private TableColumn<?, ?> ReminderTitleTC;
+    @FXML
+    private TableColumn<?, ?> DescriptionTC;
+    @FXML
+    private TableColumn<?, ?> DateTC;
+    @FXML
+    private TableColumn<?, ?> TimeTC;
+    @FXML
+    private TextField ReminderTitleTF;
 
     /**
      * Initializes the controller class.
@@ -48,20 +55,19 @@ public class RetailSpaceController implements Initializable {
     }    
 
     @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void AddReminderButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void BackButtonOnClickOnAction(ActionEvent event) {
+    private void SaveButtonOnAction(ActionEvent event) {
     }
 
-
-    private static class C {
-
-        public C() {
-        }
+    @FXML
+    private void EditReminderButtonOnAction(ActionEvent event) {
     }
 
-
+    @FXML
+    private void RefreshButtonOnAction(ActionEvent event) {
+    }
     
 }

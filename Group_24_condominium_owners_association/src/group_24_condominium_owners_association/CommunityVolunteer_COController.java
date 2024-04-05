@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -18,14 +18,18 @@ import javafx.scene.control.TextField;
  *
  * @author Meem
  */
-public class MedicalPharmacyController implements Initializable {
+public class CommunityVolunteer_COController implements Initializable {
 
     @FXML
-    private RadioButton MedicineAvailableRadioButton;
+    private TextField NameTextField;
     @FXML
-    private TextField OpenAndCloseTextField;
+    private TextField EmailTextField;
     @FXML
-    private TextArea MedicineAvailabilityOutputTextArea;
+    private TextField PhonenumberTextField;
+    @FXML
+    private DatePicker JoiningdateDatePicker;
+    @FXML
+    private TextArea VolunteerOpportunityDetailsViewTextArea;
 
     /**
      * Initializes the controller class.
@@ -36,15 +40,15 @@ public class MedicalPharmacyController implements Initializable {
     }    
 
     @FXML
-    private void MedicineAvailableButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void MedicineUnavailableButtonOnClick(ActionEvent event) {
+    private void LogoutButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void ViewButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

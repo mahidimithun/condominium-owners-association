@@ -9,6 +9,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -18,14 +20,20 @@ import javafx.scene.control.TextField;
  *
  * @author Meem
  */
-public class MedicalPharmacyController implements Initializable {
+public class CommonAreaBooking_COController implements Initializable {
 
     @FXML
-    private RadioButton MedicineAvailableRadioButton;
+    private RadioButton AvailabilityYesRadioButton;
     @FXML
-    private TextField OpenAndCloseTextField;
+    private RadioButton AvailabilityNoRadioButton;
     @FXML
-    private TextArea MedicineAvailabilityOutputTextArea;
+    private DatePicker BookingstatusDatePicker;
+    @FXML
+    private TextField TimeTextField;
+    @FXML
+    private ChoiceBox<?> UpcomingEventsChoiceBox;
+    @FXML
+    private TextArea CommomAreaBookingUpdatesTextArea;
 
     /**
      * Initializes the controller class.
@@ -35,16 +43,21 @@ public class MedicalPharmacyController implements Initializable {
         // TODO
     }    
 
+
     @FXML
-    private void MedicineAvailableButtonOnClick(ActionEvent event) {
+    private void BackButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void MedicineUnavailableButtonOnClick(ActionEvent event) {
+    private void SubmitButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void CancelBookingButtonOnClickOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AddbookingButtonOnClickOnAction(ActionEvent event) {
     }
     
 }
