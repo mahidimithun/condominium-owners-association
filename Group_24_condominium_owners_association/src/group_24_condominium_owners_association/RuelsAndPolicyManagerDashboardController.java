@@ -8,7 +8,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,31 +35,127 @@ public class RuelsAndPolicyManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void AssociationDocumentationOnButtonClick(ActionEvent event) {
+    private void associationDocumentationOnButtonClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_AD_ListScence.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void FeedbackAndSuggestionOnButtonClick(ActionEvent event) {
+    private void associationPolicyAndRulesOnButtonClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Association_Policy_Rules.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void NewPolicyAssociationOnButtonClick(ActionEvent event) {
+    private void feedbackAndSuggestionOnButtonClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Feedback_Suggestion.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+        
+    @FXML
+    private void newPolicyAssociationOnButtonClick(ActionEvent event) {
+                try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_New_Policy.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    private void WarningLetterOnButtonClick(ActionEvent event) {
+    private void warningLetterOnButtonClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Warning_Letter.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+             e.printStackTrace();
+
+        }
+    }
+
+    
+   @FXML
+    private void rulesBreakingButtonOnClick(ActionEvent event){
+ try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Rules_Breaking.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+             e.printStackTrace();
+        }
     }
 
     @FXML
-    private void RulesBreakingButtonOnClick(ActionEvent event) {
+    private void arrangeMeetingButtonOnclick(ActionEvent event) {
+ try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Arrange_Meeting.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+             e.printStackTrace();
+        }
     }
 
+    
+    
     @FXML
-    private void ArrangeMeetingButtonOnclick(ActionEvent event) {
-    }
+    private void onlineDiscussionForumButtonOnClick(ActionEvent event) {
+ try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Online_Discussion.fxml"));
+            Scene someScene = new Scene(root);
 
-    @FXML
-    private void OnlineDiscussionForumButtonOnClick(ActionEvent event) {
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+             e.printStackTrace();
+        }
     }
     
 }
+    
+  
+   
+
+    
+
+   
+   
