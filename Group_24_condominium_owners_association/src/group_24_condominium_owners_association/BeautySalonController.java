@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -20,9 +22,13 @@ import javafx.scene.control.TextField;
 public class BeautySalonController implements Initializable {
 
     @FXML
-    private TextField OpenAndCloseHoursTextField;
+    private ComboBox<?> OpenandclosehoursComboBox;
     @FXML
-    private ComboBox<?> ServiceOfferComboBox;
+    private TextField ServiceOfferTextField;
+    @FXML
+    private TextArea BeautySalonBookingUpdatesTextArea;
+    @FXML
+    private DatePicker date_Datepicker;
 
     /**
      * Initializes the controller class.
@@ -33,11 +39,11 @@ public class BeautySalonController implements Initializable {
     }    
 
     @FXML
-    private void BookingButtonOnClick(ActionEvent event) {
+    private void BookedButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void ServiceOfferButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

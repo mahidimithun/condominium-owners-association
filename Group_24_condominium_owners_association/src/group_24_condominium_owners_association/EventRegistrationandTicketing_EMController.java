@@ -9,23 +9,21 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
  *
  * @author Meem
  */
-public class MedicalPharmacyController implements Initializable {
+public class EventRegistrationandTicketing_EMController implements Initializable {
 
     @FXML
-    private RadioButton MedicineAvailableRadioButton;
+    private ComboBox<?> RegistrationFormComboBox;
     @FXML
-    private TextField OpenAndCloseTextField;
+    private ComboBox<?> UpcomingEventsComboBox;
     @FXML
-    private TextArea MedicineAvailabilityOutputTextArea;
+    private ComboBox<?> TicketSelectionComboBox;
 
     /**
      * Initializes the controller class.
@@ -36,15 +34,7 @@ public class MedicalPharmacyController implements Initializable {
     }    
 
     @FXML
-    private void MedicineAvailableButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void MedicineUnavailableButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void GetTicketButtonOnClick(ActionEvent event) {
     }
     
 }

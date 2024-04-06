@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -22,9 +24,11 @@ public class GymnasiumCenterController implements Initializable {
     @FXML
     private RadioButton ServiceOfferRadioButton;
     @FXML
-    private ComboBox<?> OpenHoursComboBox;
+    private ComboBox<?> OpenhoursComboBox;
     @FXML
-    private ComboBox<?> NecessaryEqComboBox;
+    private TextField NecessaryEqTextField;
+    @FXML
+    private TextArea GymnasiumUpdatesTextArea;
 
     /**
      * Initializes the controller class.
@@ -43,11 +47,11 @@ public class GymnasiumCenterController implements Initializable {
     }
 
     @FXML
-    private void OpenHoursButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void NecessaryEqButtonOnClick(ActionEvent event) {
+    private void SaveButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

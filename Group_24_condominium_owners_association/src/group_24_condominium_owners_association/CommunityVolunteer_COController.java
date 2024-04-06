@@ -9,13 +9,27 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Meem
  */
-public class EventTypeController implements Initializable {
+public class CommunityVolunteer_COController implements Initializable {
+
+    @FXML
+    private TextField NameTextField;
+    @FXML
+    private TextField EmailTextField;
+    @FXML
+    private TextField PhonenumberTextField;
+    @FXML
+    private DatePicker JoiningdateDatePicker;
+    @FXML
+    private TextArea VolunteerOpportunityDetailsViewTextArea;
 
     /**
      * Initializes the controller class.
@@ -26,27 +40,15 @@ public class EventTypeController implements Initializable {
     }    
 
     @FXML
-    private void BBQpartiesOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void FitnessAndWellnessActivitiesOnClick(ActionEvent event) {
+    private void LogoutButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void CommunityMeetingsOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void EducationalWorkshopOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void GameNightsOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void HolidayGettogetherOnClick(ActionEvent event) {
+    private void ViewButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

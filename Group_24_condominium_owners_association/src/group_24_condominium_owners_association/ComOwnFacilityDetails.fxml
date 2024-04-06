@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.ComOwnFacilityDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.ComOwnFacilityDetailsController">
    <children>
-      <Label layoutX="53.0" layoutY="90.0" text="Location" />
-      <Label fx:id="OpenHoursRadioButton" layoutX="53.0" layoutY="158.0" text="Open Hours" />
+      <Label layoutX="53.0" layoutY="70.0" text="Location" />
+      <Label layoutX="44.0" layoutY="122.0" text="Open Hours" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClick" text="Back" />
-      <Button layoutX="274.0" layoutY="353.0" mnemonicParsing="false" onAction="#DoneButtonOnClick" text="Done" />
-      <Label layoutX="333.0" layoutY="150.0" text="Beauty Salon" />
-      <Label layoutX="335.0" layoutY="192.0" text="Retail Space" />
-      <TextField fx:id="LocationTextField" layoutX="118.0" layoutY="87.0" />
-      <TextField fx:id="MedicalPharmacyTextField" layoutX="430.0" layoutY="95.0" />
-      <TextField fx:id="BeautySalonTextField" layoutX="430.0" layoutY="142.0" />
-      <TextField fx:id="RetailSpaceTextField" layoutX="430.0" layoutY="188.0" />
-      <TextField fx:id="GymnasiumCenterTextField" layoutX="430.0" layoutY="243.0" />
-      <Label layoutX="319.0" layoutY="91.0" text="Medical Pharmacy" />
-      <Label layoutX="317.0" layoutY="247.0" text="Gymnasium Center" />
-      <RadioButton layoutX="137.0" layoutY="158.0" mnemonicParsing="false" text="8-10" />
-      <RadioButton layoutX="137.0" layoutY="201.0" mnemonicParsing="false" text="12-2" />
-      <RadioButton layoutX="137.0" layoutY="239.0" mnemonicParsing="false" text="3-5" />
-      <RadioButton layoutX="133.0" layoutY="276.0" mnemonicParsing="false" text="7-9" />
+      <Button layoutX="254.0" layoutY="290.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="save" />
+      <TextField fx:id="LocationTextField" layoutX="118.0" layoutY="66.0" />
+      <Button layoutX="333.0" layoutY="87.0" mnemonicParsing="false" onAction="#MedicalPharmacyButtonOnAction" text="Medical Pharmacy" />
+      <Button layoutX="349.0" layoutY="146.0" mnemonicParsing="false" onAction="#BeautySalonButtonOnAction" text="BeautySalon" />
+      <Button layoutX="351.0" layoutY="197.0" mnemonicParsing="false" onAction="#RetailSpaceButtonOnAction" text="RetailSpace" />
+      <Button layoutX="333.0" layoutY="256.0" mnemonicParsing="false" onAction="#GymnasiumCenterButtonOnAction" text="GymnasiumCenter" />
+      <TextArea fx:id="FacilitiesOutputTextArea" layoutX="103.0" layoutY="331.0" prefHeight="200.0" prefWidth="367.0" />
+      <Label layoutX="21.0" layoutY="307.0" text="Facilities Output:" />
+      <ComboBox fx:id="OpenHoursComboBox" layoutX="137.0" layoutY="118.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

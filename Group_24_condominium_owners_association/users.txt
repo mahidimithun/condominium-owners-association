@@ -1,3 +1,21 @@
+<<<<<<< HEAD
 jj,234,RuelsAndPolicyManager
 mh,123,MR
 mh,345,UnitOwner
+=======
+<<<<<<< HEAD
+mh,123,UnitOwner
+jahid,456,MR
+dm,999,MR
+1010ms,333,MedicalResponseCoordinator
+1612jb,1998,FinancialManager
+111dm,777,RuelsAndPolicyManager
+888sb,9090,MR
+222dm,888,SecurityControlOfficer
+888sb,9090,EventManager
+999sb,1010,CommercialOwner
+=======
+
+Monosij,123,RulesAndPolicyManager
+>>>>>>> decb334e57dee3aa21e99ab19f90d179402c1bf7
+>>>>>>> 4fd5a4bef366b7e142e82c8637c67273d86e27ea
