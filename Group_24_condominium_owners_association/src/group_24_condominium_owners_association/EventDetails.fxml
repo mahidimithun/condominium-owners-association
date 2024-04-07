@@ -4,19 +4,21 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.EventDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.EventDetailsController">
    <children>
-      <Label layoutX="87.0" layoutY="95.0" text="Time" />
-      <Label layoutX="87.0" layoutY="152.0" text="Date" />
-      <Label layoutX="87.0" layoutY="213.0" text="Event Name" />
-      <TextField fx:id="TimeTextField" layoutX="165.0" layoutY="91.0" />
-      <DatePicker fx:id="DateTextField" layoutX="153.0" layoutY="148.0" />
-      <ComboBox fx:id="EventNameTextField" layoutX="205.0" layoutY="218.0" prefWidth="150.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClick" text="Back" />
-      <Button layoutX="512.0" layoutY="354.0" mnemonicParsing="false" onAction="#DoneButtonOnClick" text="Done" />
+      <Label layoutX="106.0" layoutY="63.0" text="Time" />
+      <Label layoutX="107.0" layoutY="119.0" text="Date" />
+      <Label layoutX="88.0" layoutY="174.0" text="Event Name" />
+      <TextField fx:id="TimeTextField" layoutX="166.0" layoutY="59.0" />
+      <DatePicker fx:id="DateTextField" layoutX="160.0" layoutY="115.0" />
+      <ComboBox fx:id="EventNameComboBox" layoutX="184.0" layoutY="170.0" prefWidth="150.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" prefHeight="25.0" prefWidth="64.0" text="Back" />
+      <Button layoutX="512.0" layoutY="201.0" mnemonicParsing="false" onAction="#DoneButtonOnClickOnAction" prefHeight="25.0" prefWidth="64.0" text="Done" />
+      <TextArea fx:id="EventDetailsUpdatesTextArea" layoutX="45.0" layoutY="274.0" prefHeight="200.0" prefWidth="486.0" />
+      <Label layoutX="55.0" layoutY="241.0" text="Event Details Updates:" />
    </children>
 </AnchorPane>

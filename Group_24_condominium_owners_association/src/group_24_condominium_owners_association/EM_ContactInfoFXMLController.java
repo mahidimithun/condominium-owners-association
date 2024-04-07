@@ -9,6 +9,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -22,6 +24,12 @@ public class EM_ContactInfoFXMLController implements Initializable {
     private TextField GmailTextField;
     @FXML
     private TextField PhoneNumberTextField;
+    @FXML
+    private ComboBox<?> OfficehoursCB;
+    @FXML
+    private TextField NameTF;
+    @FXML
+    private TextArea EM_ContactInfoDetailsTextArea;
 
     /**
      * Initializes the controller class.
@@ -33,6 +41,14 @@ public class EM_ContactInfoFXMLController implements Initializable {
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void LogoutButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void ViewButtonOnClick(ActionEvent event) {
     }
     
 }

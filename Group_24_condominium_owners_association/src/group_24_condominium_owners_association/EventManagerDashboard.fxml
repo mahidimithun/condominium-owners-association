@@ -6,43 +6,21 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="438.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.EventManagerDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="384.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.EventManagerDashboardController">
    <children>
-      <Button layoutX="73.0" layoutY="155.0" mnemonicParsing="false" onAction="#EventTypeButtonOnClick" prefHeight="31.0" prefWidth="144.0" text="Event Type">
+      <Label layoutX="166.0" layoutY="21.0" prefHeight="37.0" prefWidth="282.0" text="Event Manager Dashboard" textFill="#153d83">
          <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="250.0" layoutY="155.0" mnemonicParsing="false" onAction="#EventDetailsButtonOnClick" prefHeight="25.0" prefWidth="144.0" text="Event Details">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="131.0" layoutY="226.0" mnemonicParsing="false" onAction="#ContactInformationButtonOnClick" text="Contact Information">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="359.0" layoutY="303.0" mnemonicParsing="false" onAction="#FeedbackButtonOnClick" prefHeight="31.0" prefWidth="183.0" text="Feedeback &amp; Reviews">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="161.0" layoutY="303.0" mnemonicParsing="false" onAction="#PaymentButtonOnClick" prefHeight="31.0" prefWidth="154.0" text="Payment">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Label layoutX="152.0" layoutY="76.0" prefHeight="38.0" prefWidth="316.0" text=" Event Manager Dashboard" textAlignment="RIGHT" textFill="#a1a6ff">
-         <font>
-            <Font name="System Italic" size="26.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Line endX="224.0" endY="-6.0" layoutX="274.0" layoutY="124.0" startX="-143.0" startY="-6.0" />
-      <Button layoutX="334.0" layoutY="233.0" mnemonicParsing="false" onAction="#EventRegistrationandTicketingButtonOnClick" text="Event Registration and Ticketing">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button layoutX="577.0" layoutY="394.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="LOG OUT" />
-      <Button layoutX="419.0" layoutY="158.0" mnemonicParsing="false" onAction="#AnnouncementsButtonOnClick" prefHeight="31.0" prefWidth="169.0" text="Announcements">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
+      <Button layoutX="79.0" layoutY="143.0" mnemonicParsing="false" onAction="#EventDetailsButtonOnClick" prefHeight="43.0" prefWidth="125.0" text="Event Details" />
+      <Button layoutX="231.0" layoutY="143.0" mnemonicParsing="false" onAction="#AnnouncementsButtonOnClick" prefHeight="37.0" prefWidth="154.0" text="Announcements" />
+      <Button layoutX="399.0" layoutY="143.0" mnemonicParsing="false" onAction="#EventParticipationButtonOnClick" prefHeight="37.0" prefWidth="146.0" text="Event Participation" />
+      <Button layoutX="70.0" layoutY="213.0" mnemonicParsing="false" onAction="#ContactInformationButtonOnClick" prefHeight="37.0" prefWidth="154.0" text="ContactInformation" />
+      <Button layoutX="248.0" layoutY="213.0" mnemonicParsing="false" onAction="#ResourceManagementButtonOnClick" prefHeight="37.0" prefWidth="168.0" text="Resource Management" />
+      <Button layoutX="434.0" layoutY="213.0" mnemonicParsing="false" onAction="#PaymentButtonOnClick" prefHeight="37.0" prefWidth="125.0" text="Payment" />
+      <Button layoutX="223.0" layoutY="283.0" mnemonicParsing="false" onAction="#FeedbackandReviewsButtonOnClick" prefHeight="37.0" prefWidth="168.0" text="Feedback &amp; Reviews" />
+      <Button layoutX="497.0" layoutY="337.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="26.0" prefWidth="75.0" text="logout" />
+      <Line endX="475.0" layoutX="118.0" layoutY="68.0" startX="-111.0" strokeWidth="3.0" />
    </children>
 </AnchorPane>
