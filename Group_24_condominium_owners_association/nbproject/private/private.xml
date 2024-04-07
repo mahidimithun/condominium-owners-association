@@ -6,12 +6,8 @@
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwRepairController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboardController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/Main.java</file>
-<<<<<<< HEAD
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRrepairOrder.java</file>
-=======
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/PaymentController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/Feedback_EMController.java</file>
->>>>>>> 58e16bbd86627bafa7dac09550f3bc92ab283281
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/MRcoordinatorController.java</file>
         </group>
     </open-files>
 </project-private>
