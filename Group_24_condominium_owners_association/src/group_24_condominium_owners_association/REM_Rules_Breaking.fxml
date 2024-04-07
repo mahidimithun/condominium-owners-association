@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" prefHeight="944.0" prefWidth="1188.0" style="-fx-background-color: LIGHTPINK;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.REM_Rules_BreakingController">
+   <children>
+      <Label layoutX="30.0" layoutY="81.0" text="Policy Name:" />
+      <Label layoutX="20.0" layoutY="146.0" text="Violation Name:" />
+      <Label layoutX="521.0" layoutY="81.0" prefHeight="21.0" prefWidth="147.0" text="Rules  Violation Type:" />
+      <Label layoutX="514.0" layoutY="146.0" text="Name of the violator:" />
+      <Label layoutX="22.0" layoutY="218.0" prefHeight="21.0" prefWidth="141.0" text="  Rules BreakingDate:" />
+      <Line endX="1098.0" endY="25.0" layoutX="90.0" layoutY="34.0" startX="-90.0" startY="25.0" strokeWidth="3.0" />
+      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="31.0" prefWidth="68.0" text="Back" />
+      <Button layoutX="1071.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButtonOnClick" text="Logout" />
+      <TextField fx:id="PolicyName_TextField" layoutX="129.0" layoutY="76.0" prefHeight="31.0" prefWidth="218.0" />
+      <TextField fx:id="violationName_TextField" layoutX="154.0" layoutY="141.0" prefHeight="31.0" prefWidth="212.0" />
+      <ComboBox fx:id="Rulesviolation_ComboBox" layoutX="679.0" layoutY="76.0" prefHeight="31.0" prefWidth="187.0" />
+      <Text fill="#9212ee" layoutX="430.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     Association Rules Breaking and Violation" wrappingWidth="415.220703125">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ViolatorName_TextField" layoutX="679.0" layoutY="146.0" />
+      <DatePicker fx:id="rulesBreaking_DatePicker" layoutX="181.0" layoutY="213.0" prefHeight="31.0" prefWidth="204.0" />
+      <TableView fx:id="RulesBreaking_TableView" layoutX="66.0" layoutY="381.0" prefHeight="470.0" prefWidth="1038.0">
+        <columns>
+          <TableColumn fx:id="PolicyName_TableColumn" prefWidth="268.9999694824219" text="Policy Name" />
+          <TableColumn fx:id="ViolationName_TableColumn" prefWidth="180.0" text="Violation Name" />
+            <TableColumn fx:id="rulesViolation_TableColumn" prefWidth="243.0" text="Rules Violation Type" />
+            <TableColumn fx:id="ViolatorName_TableColumn" prefWidth="166.00006103515625" text="Name of  the violator " />
+            <TableColumn fx:id="rulesBreakingDate_DatePicker" prefWidth="179.0" text="Date" />
+        </columns>
+      </TableView>
+      <Button layoutX="230.0" layoutY="311.0" mnemonicParsing="false" onAction="#addRulesBreakButtonOnClick" text="Add Details" />
+      <Button layoutX="534.0" layoutY="311.0" mnemonicParsing="false" onAction="#viewDetailsButtonOnClick" text="View Details" />
+      <Button layoutX="845.0" layoutY="311.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" text="Cancel" />
+   </children>
 </AnchorPane>

@@ -33,7 +33,7 @@ public class SecurityControlOfficerDashboardController implements Initializable 
     @FXML
     private void VIsitorListOnButtonClick(ActionEvent event) {
            try {
-            Parent root = FXMLLoader.load(getClass().getResource("SCO_Visitor_List.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("VisitorListUI_SCO.fxml"));
             Scene someScene = new Scene(root);
 
             Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -78,7 +78,7 @@ public class SecurityControlOfficerDashboardController implements Initializable 
     @FXML
     private void SecurityGuardListOnButtonClick(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("SCO_Security_Guard_List.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("SCO_SecurityGuardList.fxml"));
             Scene someScene = new Scene(root);
 
             Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

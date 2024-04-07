@@ -9,11 +9,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -21,22 +21,26 @@ import javafx.scene.control.TextField;
  *
  * @author ASUS
  */
-public class SCO_Security_Guard_ListController implements Initializable {
+public class REM_Documentation_ListController implements Initializable {
 
     @FXML
-    private TableView<?> securityGuardList_TableView;
+    private TableView<?> Document_TableView;
     @FXML
-    private TableColumn<?, ?> securityGuardName_TableColumn;
+    private TableColumn<?, ?> DocumentName_TableColumn;
     @FXML
-    private TableColumn<?, ?> guardJoiningDate_TableColumn;
+    private TableColumn<?, ?> documentDate_TableColumn;
     @FXML
-    private TextField securityGuardName_TextField;
+    private TableColumn<?, ?> documentTopic_TableColumn;
     @FXML
-    private DatePicker guardJoiningDate_DatePicker;
+    private TableColumn<?, ?> file_TableColumn;
     @FXML
-    private TextArea securityGuardList_TextArea;
+    private TextField documentName_TextField;
     @FXML
-    private Label securityGuardList_Label;
+    private DatePicker document_dp;
+    @FXML
+    private ComboBox<?> documentTopic_TextField;
+    @FXML
+    private ComboBox<?> fileType_Combobox;
 
     /**
      * Initializes the controller class.
@@ -47,11 +51,11 @@ public class SCO_Security_Guard_ListController implements Initializable {
     }    
 
     @FXML
-    private void logOutOnButtonClick(ActionEvent event) {
+    private void addDocumentButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void addGuardOnButtonClick(ActionEvent event) {
+    private void viewDocumentButtonOnClick(ActionEvent event) {
     }
 
     @FXML
@@ -59,11 +63,11 @@ public class SCO_Security_Guard_ListController implements Initializable {
     }
 
     @FXML
-    private void removeGuardNameOnButtonClick(ActionEvent event) {
+    private void backButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewGuardNameOnButtonClick(ActionEvent event) {
+    private void logOutButtonOnClick(ActionEvent event) {
     }
     
 }

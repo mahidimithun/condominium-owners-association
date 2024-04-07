@@ -4,15 +4,18 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -30,13 +33,11 @@ public class TrainingSessionGuard_SCOController implements Initializable {
     @FXML
     private TextArea TraingProgram_ta;
     @FXML
-    private TableView<?> trainingProgram_tv;
+    private TextField TrainingTime_TF;
     @FXML
-    private TableColumn<?, ?> participateName_tc;
+    private RadioButton TrainingAm_RB;
     @FXML
-    private TableColumn<?, ?> traingProgramDate_tc;
-    @FXML
-    private Label TrainingProgramOutput_Label;
+    private RadioButton TrainingPM_RB;
 
     /**
      * Initializes the controller class.
@@ -52,22 +53,46 @@ public class TrainingSessionGuard_SCOController implements Initializable {
 
     @FXML
     private void addTrainingOnButtonClick(ActionEvent event) {
+        String participantName = participateName_tf.getText();
+        String trainingDate = trainingDate_dp.getValue().toString();
+        String trainingTime = TrainingTime_TF.getText();
+        String amPm = TrainingAm_RB.isSelected() ? "AM" : "PM";
+
+        String trainingSession = participantName + "," + trainingDate + "," + trainingTime + " " + amPm + "\n";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("TrainingProgram.txt", true))) {
+            writer.write(trainingSession);
+            System.out.println("Training session added successfully");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error occurred while adding training session");
+        }
     }
 
     @FXML
     private void cancelOnButtonClick(ActionEvent event) {
+        participateName_tf.clear();
+        trainingDate_dp.getEditor().clear();
+        TrainingTime_TF.clear();
+        TrainingAm_RB.setSelected(false);
+        TrainingPM_RB.setSelected(false);
     }
 
-    @FXML
-    private void removeTrainingOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void addtrainingOnButtonClick(ActionEvent event) {
-    }
 
     @FXML
     private void viewTrainingOnButtonClick(ActionEvent event) {
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader("TrainingProgram.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append("\n");
+            }
+            TraingProgram_ta.setText(content.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error occurred while reading training sessions");
+        }
+    }
     }
     
-}
+

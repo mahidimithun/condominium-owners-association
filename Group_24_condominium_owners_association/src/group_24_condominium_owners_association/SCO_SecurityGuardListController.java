@@ -4,17 +4,26 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -24,50 +33,115 @@ import javafx.scene.control.TextField;
 public class SCO_SecurityGuardListController implements Initializable {
 
     @FXML
-    private TextField securityGuard_tf;
+    private TextField securityGuardName_tf;
     @FXML
     private DatePicker guardJoiningDate_dp;
     @FXML
-    private TextArea GuardList_ta;
+    private TableView<SecurityGuard> Security_tv;
     @FXML
-    private TableView<?> Security_tv;
+    private TableColumn<SecurityGuard, String> guardName_tc;
     @FXML
-    private TableColumn<?, ?> guardName_tc;
+    private TableColumn<SecurityGuard, String> guardID_tc;
     @FXML
-    private TableColumn<?, ?> guardJoining_tc;
+    private TableColumn<SecurityGuard, String> guardType_tc;
     @FXML
-    private Label GuardOutput_Label;
+    private TableColumn<SecurityGuard, LocalDate> guardJoiningDate_tc;
+    @FXML
+    private TableColumn<SecurityGuard, String> dutyTime_tc;
+    @FXML
+    private TextField securityGuardID_tf;
+    @FXML
+    private ComboBox<String> securityGuardType_cb;
+    @FXML
+    private TextField dutytime_tf;
+    @FXML
+    private RadioButton AM_rb;
+    @FXML
+    private RadioButton PM_rb;
+
+    private ObservableList<SecurityGuard> guardList;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        guardList = FXCollections.observableArrayList();
+        
+    guardName_tc.setCellValueFactory(new PropertyValueFactory<>("name"));
+    guardID_tc.setCellValueFactory(new PropertyValueFactory<>("id"));
+    guardType_tc.setCellValueFactory(new PropertyValueFactory<>("type"));
+    guardJoiningDate_tc.setCellValueFactory(new PropertyValueFactory<>("joiningDate"));
+    dutyTime_tc.setCellValueFactory(new PropertyValueFactory<>("dutyTime"));
+ 
+    securityGuardType_cb.getItems().addAll("Type A", "Type B", "Type C");
     }    
 
     @FXML
-    private void goBackToHomeOnButtonClick(ActionEvent event) {
+    private void goBackButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void addGuardNameOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void removeGuardOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void viewGuardNameOnButtonClick(ActionEvent event) {
+    private void viewOnButtonClick(ActionEvent event) {
+         readGuardDetailsFromFile();
     }
 
     @FXML
     private void CancelSecurityOnButtonClick(ActionEvent event) {
+        
+    securityGuardName_tf.clear();
+    securityGuardID_tf.clear();
+    securityGuardType_cb.getSelectionModel().clearSelection();
+    guardJoiningDate_dp.setValue(null);
+    dutytime_tf.clear();
+    AM_rb.setSelected(false);
+    PM_rb.setSelected(false);
+    
+    
+    guardList.clear();
     }
 
     @FXML
-    private void addGuardListOnButtonClick(ActionEvent event) {
+    private void addGuardDetailsOnButtonClick(ActionEvent event) {
+        String name = securityGuardName_tf.getText();
+        String id = securityGuardID_tf.getText();
+        String type = securityGuardType_cb.getValue();
+        LocalDate joiningDate = guardJoiningDate_dp.getValue();
+        String dutyTime = dutytime_tf.getText();
+
+        SecurityGuard guard = new SecurityGuard(name, id, type, joiningDate, dutyTime);
+        guardList.add(guard);
+
+        writeGuardDetailsToFile(guard);
     }
-    
+        private void writeGuardDetailsToFile(SecurityGuard guard) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("SecurityGuardDetails.txt", true))) {
+            writer.write(guard.getName() + "," + guard.getId() + "," + guard.getType() + "," +
+                         guard.getJoiningDate().toString() + "," + guard.getDutyTime() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+private void readGuardDetailsFromFile() {
+    guardList.clear();
+    try (BufferedReader reader = new BufferedReader(new FileReader("SecurityGuardDetails.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 5) {
+                SecurityGuard guard = new SecurityGuard(parts[0], parts[1], parts[2],
+                        LocalDate.parse(parts[3]), parts[4]);
+                guardList.add(guard);
+            }
+        }
+        
+        // Set the guardList as the items for the TableView
+        Security_tv.setItems(guardList);
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+}
 }

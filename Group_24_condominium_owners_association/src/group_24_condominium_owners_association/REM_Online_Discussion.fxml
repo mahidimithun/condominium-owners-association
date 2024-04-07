@@ -2,17 +2,14 @@
 
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="922.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.REM_Online_DiscussionController">
+<AnchorPane id="AnchorPane" prefHeight="922.0" prefWidth="1240.0" style="-fx-background-color: LEMONCHIFFON;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.REM_Online_DiscussionController">
    <children>
       <Text layoutX="493.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        Online Discussion Forum" wrappingWidth="305.4345703125">
          <font>
@@ -20,25 +17,20 @@
          </font>
       </Text>
       <Line endX="1133.0" endY="14.0" layoutX="107.0" layoutY="43.0" startX="-107.0" startY="6.0" strokeWidth="3.0" />
-      <PieChart fx:id="discussionTopicPieChart" layoutX="217.0" layoutY="547.0" prefHeight="351.0" prefWidth="860.0" />
-      <Text layoutX="507.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discussion Topic PieChart">
+      <PieChart fx:id="pieChart" layoutX="190.0" layoutY="237.0" prefHeight="520.0" prefWidth="860.0" />
+      <Text layoutX="507.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discussion Topic PieChart">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
       <Text layoutX="116.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Label layoutX="70.0" layoutY="101.0" text="Discussion Type:" />
-      <ComboBox fx:id="discussion_Type_Combobox" layoutX="198.0" layoutY="96.0" prefHeight="31.0" prefWidth="178.0" />
-      <TextArea fx:id="discussionTopicTextArea" layoutX="83.0" layoutY="180.0" prefHeight="99.0" prefWidth="819.0" />
-      <Label layoutX="446.0" layoutY="151.0" prefHeight="21.0" prefWidth="122.0" text="Discussion Topic" />
-      <Button layoutX="938.0" layoutY="172.0" mnemonicParsing="false" onAction="#viewDiscussionOnButtonClick" prefHeight="31.0" prefWidth="139.0" text="View Discussion" />
-      <Button layoutX="947.0" layoutY="229.0" mnemonicParsing="false" onAction="#cancelDiscussionOnButtonClick" prefHeight="31.0" prefWidth="153.0" text="Cancel" />
+      <Button layoutX="438.0" layoutY="112.0" mnemonicParsing="false" onAction="#loadPieChartButton" prefHeight="31.0" prefWidth="139.0" text="View Discussion" />
+      <Button layoutX="854.0" layoutY="112.0" mnemonicParsing="false" onAction="#cancelDiscussionOnButtonClick" prefHeight="31.0" prefWidth="153.0" text="Cancel" />
       <Button layoutX="1100.0" layoutY="13.0" mnemonicParsing="false" onAction="#LogOutButtonOnClick" text="Log Out" />
-      <TableView layoutX="139.0" layoutY="305.0" prefHeight="179.0" prefWidth="792.0">
-        <columns>
-          <TableColumn fx:id="discussionType_TableColumn" prefWidth="385.00001525878906" text="Discussion Type" />
-          <TableColumn fx:id="discussionTopic_TableColumn" prefWidth="408.0" text="Discussion Topic" />
-        </columns>
-      </TableView>
+      <Button layoutX="638.0" layoutY="113.0" mnemonicParsing="false" onAction="#addNewItemToChartButtonOnClick" text="Add Discussion to Chart" />
+      <TextField fx:id="newItemName" layoutX="42.0" layoutY="123.0" />
+      <Label layoutX="42.0" layoutY="107.0" text="Enter Discussion Type:" />
+      <TextField fx:id="newItemValue" layoutX="241.0" layoutY="120.0" />
+      <Label layoutX="241.0" layoutY="104.0" text="Discussion Percentage  " />
    </children>
 </AnchorPane>
