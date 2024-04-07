@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -33,7 +34,13 @@ public class Feedback_EMController implements Initializable {
     @FXML
     private TextField EmailTextField;
     @FXML
-    private TextField CommentTextField;
+    private TextArea FeedbackandReviewsTextArea;
+    @FXML
+    private CheckBox FourCheckBox;
+    @FXML
+    private CheckBox FiveCheckBox;
+    @FXML
+    private TextArea CommentTextArea;
 
     /**
      * Initializes the controller class.

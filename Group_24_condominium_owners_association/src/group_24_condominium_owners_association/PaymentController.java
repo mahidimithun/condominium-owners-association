@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
@@ -22,6 +23,8 @@ public class PaymentController implements Initializable {
     private PasswordField CardNumberPassTextField;
     @FXML
     private PasswordField ExpirationDateTextField;
+    @FXML
+    private TextArea PaymentMethodTextArea;
 
     /**
      * Initializes the controller class.
@@ -31,9 +34,6 @@ public class PaymentController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void BkashButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void SavePaymentMethodOnClick(ActionEvent event) {

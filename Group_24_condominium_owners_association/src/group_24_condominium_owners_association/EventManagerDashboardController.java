@@ -4,6 +4,7 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -30,129 +31,192 @@ public class EventManagerDashboardController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void EventTypeButtonOnClick(ActionEvent event) {
-        
-        
-   
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("EventType.fxml"));
-            Scene someScene = new Scene(root);
-
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-        
     
-
-    
-
     @FXML
     private void EventDetailsButtonOnClick(ActionEvent event) {
-    
- 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("EventDetails.fxml"));
-            Scene someScene = new Scene(root);
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EventDetails.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Event Details");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+        
+    }
+         
+    
+    @FXML
+    private void AnnouncementsButtonOnClick(ActionEvent event) {
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Announcements_EM.fxml"));
+        Parent root = loader.load();
 
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Announcements");
 
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        
+    } 
+        
+    
+    @FXML
+    private void EventParticipationButtonOnClick(ActionEvent event) {
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EventParticipationChart_EM.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Event Participation");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
+        
+                
+        
     @FXML
     private void ContactInformationButtonOnClick(ActionEvent event) {
-    
-       try {
-            Parent root = FXMLLoader.load(getClass().getResource("EM_ContactInfoFXML.fxml"));
-            Scene someScene = new Scene(root);
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ComOwnContact.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("ContactInformation");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+   
     }
 
     @FXML
-    private void FeedbackButtonOnClick(ActionEvent event) {
+    private void ResourceManagementButtonOnClick(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("EM_Feedback&Reviews.fxml"));
-            Scene someScene = new Scene(root);
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ResourceManagement_EM.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Resource Management");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
-
+    }
 
     @FXML
     private void PaymentButtonOnClick(ActionEvent event) {
-    
- 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Payment_EM.fxml"));
-            Scene someScene = new Scene(root);
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment_EM.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Payment");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
     @FXML
-    private void AnnouncementsButtonOnClick(ActionEvent event) {
-    
- 
+    private void FeedbackandReviewsButtonOnClick(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Announcements_EM.fxml"));
-            Scene someScene = new Scene(root);
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Feedback_EM.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Feedback & Reviews");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
     @FXML
-    private void EventRegistrationandTicketingButtonOnClick(ActionEvent event) {
-    
+    private void LogoutButtonOnClick(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("EventRegistrationandTicketing_EM.fxml"));
-            Scene someScene = new Scene(root);
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent root = loader.load();
 
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("logout");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        
+    }
     }
 
-    @FXML
-    private void logOutButtonOnClick(ActionEvent event) {
-    }
-}
     
     
 
