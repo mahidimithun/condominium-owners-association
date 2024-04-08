@@ -40,5 +40,7 @@
             <Font size="32.0" />
          </font>
       </Label>
+      <Button layoutX="32.0" layoutY="121.0" mnemonicParsing="false" onAction="#View" prefHeight="31.0" prefWidth="362.0" text="View Maintenance and Repair Coordinator Budget" />
+      <Button layoutX="32.0" layoutY="45.0" mnemonicParsing="false" onAction="#backFMBudgetOnClick" text="Back" />
    </children>
 </AnchorPane>

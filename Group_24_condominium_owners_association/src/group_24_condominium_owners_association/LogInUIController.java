@@ -146,7 +146,7 @@ public class LogInUIController implements Initializable {
             }
             
             
-
+        // dont go out there
         } else {
             System.out.println("Invalid username or password!");
         }
