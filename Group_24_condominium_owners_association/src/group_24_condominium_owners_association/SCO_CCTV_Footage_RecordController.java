@@ -9,6 +9,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -18,16 +20,20 @@ import javafx.scene.control.TextArea;
  *
  * @author ASUS
  */
-public class REM_AD_ListScenceController implements Initializable {
+public class SCO_CCTV_Footage_RecordController implements Initializable {
 
     @FXML
-    private TableView<?> DocumentationTable_tv;
+    private Label CCTVRecordOutput_Label;
     @FXML
-    private TableColumn<?, ?> DocumentName_tc;
+    private TextArea CCTVfootageFileDetails_TextArea;
     @FXML
-    private TableColumn<?, ?> DocumentDate_tc;
+    private DatePicker CCTVFileRecordDate_DatePicker;
     @FXML
-    private TextArea documentationOutput_label;
+    private TableView<?> CCTVFootage_TableView;
+    @FXML
+    private TableColumn<?, ?> CCTVFileDetails_TableColumn;
+    @FXML
+    private TableColumn<?, ?> fileRecordDate_TableColumn;
 
     /**
      * Initializes the controller class.
@@ -38,19 +44,23 @@ public class REM_AD_ListScenceController implements Initializable {
     }    
 
     @FXML
-    private void removeDocumentOnButtonClick(ActionEvent event) {
+    private void logOutButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void addDocumentOnButtonClick(ActionEvent event) {
+    private void addFootageFileRecordButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void goBackOnButtonClick(ActionEvent event) {
+    private void viewFootageFileRecordButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewDocumentOnButtonClick(ActionEvent event) {
+    private void removeFootageRecordButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void cancelFootageButtonOnClick(ActionEvent event) {
     }
     
 }

@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="345.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.RetailSpaceController">
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.RetailSpaceController">
    <children>
-      <Label layoutX="66.0" layoutY="71.0" text="Open Hours" />
-      <Label layoutX="66.0" layoutY="162.0" text="Product List" />
-      <Label layoutX="66.0" layoutY="259.0" text="Payment Option" />
-      <ComboBox fx:id="ProductListComboBox" layoutX="201.0" layoutY="158.0" onAction="#ProductListButtonOnClick" prefWidth="150.0" />
-      <Button layoutX="212.0" layoutY="255.0" mnemonicParsing="false" onAction="#CashButtonOnClick" text="Card" />
-      <Button layoutX="335.0" layoutY="255.0" mnemonicParsing="false" onAction="#BkashButtonOnClick" text="Bkash" />
-      <Button layoutX="461.0" layoutY="255.0" mnemonicParsing="false" onAction="#CashButtonOnClick" text="Cash" />
-      <CheckBox fx:id="DayRadioButtonOpenHours" layoutX="180.0" layoutY="71.0" mnemonicParsing="false" onAction="#DayOpenButtonOnClick" text="9am-2pm" />
-      <CheckBox fx:id="NightRadioButtonOpenHours" layoutX="382.0" layoutY="71.0" mnemonicParsing="false" onAction="#NightOpenButtonOnClick" text="4pm-10pm" />
+      <Label layoutX="44.0" layoutY="48.0" text="Product name" />
+      <Line endX="463.0" layoutX="121.0" layoutY="188.0" startX="-100.0" />
+      <TableView fx:id="ProductDetailsTableView" layoutX="135.0" layoutY="254.0" prefHeight="197.0" prefWidth="335.0">
+        <columns>
+          <TableColumn fx:id="ProductNameTC" prefWidth="115.0" text="Product Name" />
+            <TableColumn fx:id="PriceTC" prefWidth="114.0" text="Price" />
+            <TableColumn fx:id="ExpiryDatesTC" prefWidth="107.0" text="Expiry Dates" />
+        </columns>
+      </TableView>
+      <Button layoutX="532.0" layoutY="155.0" mnemonicParsing="false" onAction="#SaveButtonOnClickOnAction" text="save" />
+      <Label layoutX="68.0" layoutY="84.0" text="price" />
+      <Label layoutX="49.0" layoutY="125.0" text="expiry dates:" />
+      <TextField fx:id="ProductnameTextField" layoutX="154.0" layoutY="44.0" />
+      <TextField fx:id="PriceTextField" layoutX="154.0" layoutY="89.0" />
+      <TextField fx:id="expirydatesTextField" layoutX="154.0" layoutY="130.0" />
+      <Button layoutX="6.0" layoutY="2.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" prefHeight="25.0" prefWidth="54.0" text="back" />
+      <Label layoutX="237.0" layoutY="215.0" text="Product details" />
    </children>
 </AnchorPane>

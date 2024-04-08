@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
@@ -10,36 +11,40 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author Meem
  */
-public class SCO_PaymentDetailsController implements Initializable {
+public class ScheduledReminders_COController implements Initializable {
 
     @FXML
-    private TextField payment_tf;
+    private Label ReminderMessageLabel;
     @FXML
-    private TextField paymentAmount_tf;
+    private TextField ReminderMessageTF;
     @FXML
-    private DatePicker PaymentDate_dp;
+    private TextField TimeTF;
     @FXML
-    private RadioButton paid_rb;
+    private DatePicker DateDatePicker;
     @FXML
-    private RadioButton unpaid_rb;
+    private Label ReminderListLabel;
     @FXML
-    private TableColumn<?, ?> payment_tc;
+    private TableView<?> ReminderListTV;
     @FXML
-    private TableColumn<?, ?> paymentAmount_tc;
+    private TableColumn<?, ?> ReminderTitleTC;
     @FXML
-    private TableColumn<?, ?> paymentDate_tc;
+    private TableColumn<?, ?> DescriptionTC;
     @FXML
-    private TableColumn<?, ?> paymentStatus_tc;
+    private TableColumn<?, ?> DateTC;
+    @FXML
+    private TableColumn<?, ?> TimeTC;
+    @FXML
+    private TextField ReminderTitleTF;
 
     /**
      * Initializes the controller class.
@@ -50,23 +55,19 @@ public class SCO_PaymentDetailsController implements Initializable {
     }    
 
     @FXML
-    private void addPaymentOnButtonClick(ActionEvent event) {
+    private void AddReminderButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void cancelButtonOnClick(ActionEvent event) {
+    private void SaveButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void payment_tv(MouseEvent event) {
+    private void EditReminderButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void addButtonForTableViewOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void goBackToOnButtonClick(ActionEvent event) {
+    private void RefreshButtonOnAction(ActionEvent event) {
     }
     
 }

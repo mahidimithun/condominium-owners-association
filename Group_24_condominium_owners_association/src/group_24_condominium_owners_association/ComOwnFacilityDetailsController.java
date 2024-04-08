@@ -8,9 +8,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -20,24 +27,18 @@ import javafx.scene.control.TextField;
 public class ComOwnFacilityDetailsController implements Initializable {
 
     @FXML
-    private Label OpenHoursRadioButton;
-    @FXML
     private TextField LocationTextField;
     @FXML
-    private TextField MedicalPharmacyTextField;
+    private TextArea FacilitiesOutputTextArea;
     @FXML
-    private TextField BeautySalonTextField;
-    @FXML
-    private TextField RetailSpaceTextField;
-    @FXML
-    private TextField GymnasiumCenterTextField;
+    private ComboBox<String> OpenHoursComboBox;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        OpenHoursComboBox.getItems().addAll("8:00 AM - 5:00 PM", "9:00 AM - 6:00 PM", "10:00 AM - 7:00 PM");
     }    
 
     @FXML
@@ -45,7 +46,66 @@ public class ComOwnFacilityDetailsController implements Initializable {
     }
 
     @FXML
-    private void DoneButtonOnClick(ActionEvent event) {
+    private void SaveButtonOnAction(ActionEvent event) {
+        
+            
+            }
+    
+
+    @FXML
+    private void MedicalPharmacyButtonOnAction(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("MedicalPharmacy.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void BeautySalonButtonOnAction(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("BeautySalon.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void RetailSpaceButtonOnAction(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("RetailSpace.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void GymnasiumCenterButtonOnAction(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("GymnasiumCenter.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
 }

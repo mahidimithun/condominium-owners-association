@@ -24,12 +24,6 @@ import javafx.stage.Stage;
  */
 public class UwExtraServicesController implements Initializable {
 
-    @FXML
-    private ComboBox<?> cb_gymSwim;
-    @FXML
-    private ComboBox<?> cb_repair;
-    @FXML
-    private ComboBox<?> cb_maintenance;
 
     /**
      * Initializes the controller class.
@@ -39,9 +33,6 @@ public class UwExtraServicesController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void confrimOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void backExtraServices(ActionEvent event) throws IOException {
@@ -55,6 +46,32 @@ public class UwExtraServicesController implements Initializable {
 
         currentStage.setScene(studentScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void gymOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void repairOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UwRepair.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
+    }
+
+    @FXML
+    private void swimmingpoolOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void maintenanceOnClick(ActionEvent event) {
     }
     
 }

@@ -9,23 +9,31 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author Meem
  */
-public class REM_AssociationDocumentationController implements Initializable {
+public class CommonAreaBooking_COController implements Initializable {
 
     @FXML
-    private TextArea AssociationDocumentation_ta;
+    private RadioButton AvailabilityYesRadioButton;
     @FXML
-    private TextField documentName_tf;
+    private RadioButton AvailabilityNoRadioButton;
     @FXML
-    private DatePicker documentDate_dp;
+    private DatePicker BookingstatusDatePicker;
+    @FXML
+    private TextField TimeTextField;
+    @FXML
+    private ChoiceBox<?> UpcomingEventsChoiceBox;
+    @FXML
+    private TextArea CommomAreaBookingUpdatesTextArea;
 
     /**
      * Initializes the controller class.
@@ -35,16 +43,21 @@ public class REM_AssociationDocumentationController implements Initializable {
         // TODO
     }    
 
+
     @FXML
-    private void addDocumentOnButtonClick(ActionEvent event) {
+    private void BackButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void removeDocumentOnButtonClick(ActionEvent event) {
+    private void SubmitButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void goBackToHomePageOnButtonClick(ActionEvent event) {
+    private void CancelBookingButtonOnClickOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AddbookingButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

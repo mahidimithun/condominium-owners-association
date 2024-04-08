@@ -19,12 +19,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="117.0" layoutY="161.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="273.0" text="Association Documentation List">
+      <Button layoutX="117.0" layoutY="161.0" mnemonicParsing="false" onAction="#associationDocumentationListOnButtonClick" prefHeight="52.0" prefWidth="273.0" text="Association Documentation List">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="453.0" layoutY="161.0" mnemonicParsing="false" onAction="#AssociationDocumentationOnButtonClick" prefHeight="52.0" prefWidth="236.0" text="Association Policy and Rules">
+      <Button layoutX="453.0" layoutY="161.0" mnemonicParsing="false" onAction="#AssociationPolicyOnButtonClick" prefHeight="52.0" prefWidth="236.0" text="Association Policy and Rules">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

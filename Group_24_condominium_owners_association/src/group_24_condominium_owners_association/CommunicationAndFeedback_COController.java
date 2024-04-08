@@ -9,20 +9,30 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
- * @author ASUS
+ * @author Meem
  */
-public class REM_OnlineDiscussionForumController implements Initializable {
+public class CommunicationAndFeedback_COController implements Initializable {
 
     @FXML
-    private TableView<?> OnlineDiscussion_tv;
+    private TextField NameTextField;
     @FXML
-    private TextArea onlineDiscussion_tf;
+    private TextField EmailTextField;
+    @FXML
+    private TextField UnitnumberTextField;
+    @FXML
+    private TextField PhoneNumberTextField;
+    @FXML
+    private TextArea FeedbackmessageTextArea;
+    @FXML
+    private TextArea SuggestionsTextArea;
+    @FXML
+    private TextArea CommunicationFeedbackUpdatesTextArea;
 
     /**
      * Initializes the controller class.
@@ -33,23 +43,15 @@ public class REM_OnlineDiscussionForumController implements Initializable {
     }    
 
     @FXML
-    private void goBackOnButtonClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void addOnlineDiscussionOnButtonClick(ActionEvent event) {
+    private void LogoutOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void viewOnlineDiscussionOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void addOnlineOnButtonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void removeOnlineDiscussionOnButtonClick(ActionEvent event) {
+    private void ViewButtonOnAction(ActionEvent event) {
     }
     
 }

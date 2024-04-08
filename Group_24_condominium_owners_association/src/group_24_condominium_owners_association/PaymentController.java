@@ -6,7 +6,11 @@ package group_24_condominium_owners_association;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
@@ -15,6 +19,13 @@ import javafx.fxml.Initializable;
  */
 public class PaymentController implements Initializable {
 
+    @FXML
+    private PasswordField CardNumberPassTextField;
+    @FXML
+    private PasswordField ExpirationDateTextField;
+    @FXML
+    private TextArea PaymentMethodTextArea;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +33,10 @@ public class PaymentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+
+    @FXML
+    private void SavePaymentMethodOnClick(ActionEvent event) {
+    }
     
 }

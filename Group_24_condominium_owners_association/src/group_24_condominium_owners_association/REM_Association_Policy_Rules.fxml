@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="888.0" prefWidth="1060.0" style="-fx-background-color: LIGHTPINK;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.REM_Association_Policy_RulesController">
+   <children>
+      <Label layoutX="198.0" prefHeight="35.0" prefWidth="519.0" text="                      Association Policy and Rules">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Line endX="966.0" endY="-5.0" layoutX="94.0" layoutY="62.0" startX="-93.99998474121094" startY="-5.0" strokeWidth="3.0" />
+      <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackbuttonOnClick" prefHeight="31.0" prefWidth="69.0" text="Back" />
+      <Button layoutX="877.0" layoutY="14.0" mnemonicParsing="false" onAction="#LogOutButtonOnClick" text="Log Out" />
+      <Label layoutX="83.0" layoutY="111.0" text="New Rules:" />
+      <TextArea fx:id="newRules_TextArea" layoutX="181.0" layoutY="81.0" prefHeight="144.0" prefWidth="804.0" />
+      <Label layoutX="83.0" layoutY="264.0" text="New Policy:" />
+      <TextArea fx:id="newPolicy_TextArea" layoutX="183.0" layoutY="248.0" prefHeight="151.0" prefWidth="804.0" />
+      <Label layoutX="100.0" layoutY="423.0" text="Policy Add time:" />
+      <TextField fx:id="PolicyAddtime_TextField" layoutX="222.0" layoutY="418.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="105.0" layoutY="471.0" text="Policy Add Date:" />
+      <DatePicker fx:id="policyAddDate_Datepicker" layoutX="222.0" layoutY="466.0" />
+      <TableView fx:id="policyAndRules_TableView" layoutX="160.0" layoutY="571.0" prefHeight="280.0" prefWidth="796.0">
+        <columns>
+          <TableColumn fx:id="newPolicy_TableColumn" prefWidth="232.99998474121094" text="New policy" />
+          <TableColumn fx:id="newRules_TableColumn" prefWidth="191.0" text="New Rules" />
+            <TableColumn fx:id="policyAddtime_TableColumn" prefWidth="160.0" text="Policy Add time " />
+            <TableColumn fx:id="policyAddDate_TableColumn" prefWidth="211.0" text="Policy Add Date" />
+        </columns>
+      </TableView>
+      <Line endX="100.0" endY="-34.0" layoutX="603.0" layoutY="449.0" startX="100.0" startY="105.0" strokeWidth="3.0" />
+      <Button layoutX="739.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDetailsOnButtonClick" prefHeight="31.0" prefWidth="109.0" text="Add Details" />
+      <Button layoutX="739.0" layoutY="466.0" mnemonicParsing="false" onAction="#viewDetailsOnButtonClick" prefHeight="31.0" prefWidth="109.0" text="View Details" />
+      <Button layoutX="739.0" layoutY="515.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="31.0" prefWidth="109.0" text="Cancel" />
+   </children>
+</AnchorPane>

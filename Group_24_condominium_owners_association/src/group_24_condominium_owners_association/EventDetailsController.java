@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -25,7 +26,9 @@ public class EventDetailsController implements Initializable {
     @FXML
     private DatePicker DateTextField;
     @FXML
-    private ComboBox<?> EventNameTextField;
+    private ComboBox<?> EventNameComboBox;
+    @FXML
+    private TextArea EventDetailsUpdatesTextArea;
 
     /**
      * Initializes the controller class.
@@ -36,11 +39,11 @@ public class EventDetailsController implements Initializable {
     }    
 
     @FXML
-    private void BackButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void DoneButtonOnClick(ActionEvent event) {
+    private void DoneButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

@@ -4,8 +4,12 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +21,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
+import modelPack.UnitOwnerComplain;
+
 /**
  * FXML Controller class
  *
@@ -27,6 +33,10 @@ public class UnitOwnerDashboardController implements Initializable {
     @FXML
     private TextArea ta_writeComplain;
 
+    private static List<UnitOwnerComplain> messageList = new ArrayList<>();
+
+    private String filename = "unitOwnerComplain.txt";
+
     /**
      * Initializes the controller class.
      */
@@ -36,14 +46,48 @@ public class UnitOwnerDashboardController implements Initializable {
     }
 
     @FXML
-    private void submitComplainOnClick(ActionEvent event)  {
-        
+    private void submitComplainOnClick(ActionEvent event) {
+
+        String messageText = ta_writeComplain.getText();
+        UnitOwnerComplain messageModel = new UnitOwnerComplain();
+        messageModel.setMessage(messageText);
+
+        messageList.add(messageModel);
+
+        ta_writeComplain.clear();
+        writeToFile(messageText);
+
+    }
+    
+     public static List<UnitOwnerComplain> getMessageList() {
+        return messageList;
+    }
+     
+     private void writeToFile(String message) {
+       
+       BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(filename, true));
+            writer.write(message);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+               
+            }
+        }
     }
 
     @FXML
     private void paymentOnClick(ActionEvent event) throws IOException {
 
-        
     }
 
     @FXML
@@ -61,9 +105,8 @@ public class UnitOwnerDashboardController implements Initializable {
     }
 
     @FXML
-    private void bookingOnClick(ActionEvent event) throws IOException{
-        
-        
+    private void bookingOnClick(ActionEvent event) throws IOException {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("UwGardeningBooking.fxml"));
         Parent parent = loader.load();
 
@@ -73,12 +116,12 @@ public class UnitOwnerDashboardController implements Initializable {
 
         currentStage.setScene(studentScene);
         currentStage.show();
-        
+
     }
 
     @FXML
     private void backUnitOwnerDashboard(ActionEvent event) throws IOException {
-        
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
         Parent parent = loader.load();
 

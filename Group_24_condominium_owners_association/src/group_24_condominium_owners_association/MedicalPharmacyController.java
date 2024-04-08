@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -23,6 +24,8 @@ public class MedicalPharmacyController implements Initializable {
     private RadioButton MedicineAvailableRadioButton;
     @FXML
     private TextField OpenAndCloseTextField;
+    @FXML
+    private TextArea MedicineAvailabilityOutputTextArea;
 
     /**
      * Initializes the controller class.
@@ -41,7 +44,7 @@ public class MedicalPharmacyController implements Initializable {
     }
 
     @FXML
-    private void OkButtonOnClick(ActionEvent event) {
+    private void SaveButtonOnClickOnAction(ActionEvent event) {
     }
     
 }

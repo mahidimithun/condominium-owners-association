@@ -4,9 +4,16 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +25,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import modelPack.MRrepairOrder;
 
 /**
  * FXML Controller class
@@ -28,13 +38,13 @@ import javafx.stage.Stage;
 public class MRcoordinatorController implements Initializable {
 
     @FXML
-    private TableView<?> repairTable;
+    private TableView<MRrepairOrder> repairTable;
     @FXML
-    private TableColumn<?, ?> tc_repairUnitOwnerId;
+    private TableColumn<MRrepairOrder, String> tc_repairUnitOwnerId;
     @FXML
-    private TableColumn<?, ?> tc_repairProduct;
+    private TableColumn<MRrepairOrder, String> tc_repairProduct;
     @FXML
-    private TableColumn<?, ?> tc_repairDate;
+    private TableColumn<MRrepairOrder, LocalDate> tc_repairDate;
     @FXML
     private TableView<?> maintenanceTable;
     @FXML
@@ -50,13 +60,21 @@ public class MRcoordinatorController implements Initializable {
     @FXML
     private TextField tf_equipmentId;
 
+    ObservableList<MRrepairOrder> repairList;
+    private String filename = "repairOrder.txt";
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        tc_repairUnitOwnerId.setCellValueFactory(new PropertyValueFactory("yourId"));
+        tc_repairProduct.setCellValueFactory(new PropertyValueFactory("repairType"));
+        tc_repairDate.setCellValueFactory(new PropertyValueFactory("date"));
+
+        repairList = repairTable.getItems();
+    }
 
     @FXML
     private void cleanerAndCareTakerOnClick(ActionEvent event) {
@@ -67,7 +85,17 @@ public class MRcoordinatorController implements Initializable {
     }
 
     @FXML
-    private void budgetOnClick(ActionEvent event) {
+    private void budgetOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MrBudget.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
     }
 
     @FXML
@@ -76,7 +104,7 @@ public class MRcoordinatorController implements Initializable {
 
     @FXML
     private void maintenanceDashboradBack(ActionEvent event) throws IOException {
-        
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
         Parent parent = loader.load();
 
@@ -87,5 +115,57 @@ public class MRcoordinatorController implements Initializable {
         currentStage.setScene(studentScene);
         currentStage.show();
     }
-    
+
+    @FXML
+    private void veiwReapirOrderOnClick(ActionEvent event) {
+        StringBuilder data = new StringBuilder();
+        Scanner s = null;
+        
+         
+        try {
+
+            s = new Scanner(new BufferedReader(new FileReader(filename)));
+            repairList.clear();
+
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+                String[] parts = line.split(","); 
+                if (parts.length == 3) {
+                    String yourId = parts[0];
+                    String repairType = parts[1];
+                    String dateString = parts[2];
+                    LocalDate date = LocalDate.parse(dateString);
+                    repairList.add(new MRrepairOrder(yourId, repairType, date));
+                } else {
+                    System.out.println("Invalid data format: " + line);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } finally {
+            if (s != null) {
+                s.close();
+            }
+
+        }
+    }
+
+    @FXML
+    private void removeRepairListOnClick(ActionEvent event) {
+        
+        try {
+            File file = new File(filename);
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(""); 
+            fileWriter.close();
+            repairList.clear();
+//            lbl_recieve.setText("File cleared successfully.");
+        } catch (IOException e) {
+//            lbl_recieve.setText("Error while clearing file: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 }

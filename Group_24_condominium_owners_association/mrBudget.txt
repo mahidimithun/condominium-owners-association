@@ -1,0 +1,3 @@
+Maintenance,20,000 Tk
+Repair,40,000 Tk
+Utility,5600 TK

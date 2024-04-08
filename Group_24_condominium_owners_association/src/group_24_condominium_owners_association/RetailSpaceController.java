@@ -11,6 +11,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.SortEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -20,11 +25,19 @@ import javafx.scene.control.ComboBox;
 public class RetailSpaceController implements Initializable {
 
     @FXML
-    private ComboBox<?> ProductListComboBox;
+    private TableColumn<?, ?> ProductNameTC;
     @FXML
-    private CheckBox DayRadioButtonOpenHours;
+    private TableColumn<?, ?> PriceTC;
     @FXML
-    private CheckBox NightRadioButtonOpenHours;
+    private TableColumn<?, ?> ExpiryDatesTC;
+    @FXML
+    private TableView<?> ProductDetailsTableView;
+    @FXML
+    private TextField ProductnameTextField;
+    @FXML
+    private TextField PriceTextField;
+    @FXML
+    private TextField expirydatesTextField;
 
     /**
      * Initializes the controller class.
@@ -35,23 +48,20 @@ public class RetailSpaceController implements Initializable {
     }    
 
     @FXML
-    private void ProductListButtonOnClick(ActionEvent event) {
+    private void SaveButtonOnClickOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void CashButtonOnClick(ActionEvent event) {
+    private void BackButtonOnClickOnAction(ActionEvent event) {
     }
 
-    @FXML
-    private void BkashButtonOnClick(ActionEvent event) {
+
+    private static class C {
+
+        public C() {
+        }
     }
 
-    @FXML
-    private void DayOpenButtonOnClick(ActionEvent event) {
-    }
 
-    @FXML
-    private void NightOpenButtonOnClick(ActionEvent event) {
-    }
     
 }
