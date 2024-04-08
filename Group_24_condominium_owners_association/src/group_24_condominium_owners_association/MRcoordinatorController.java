@@ -85,7 +85,17 @@ public class MRcoordinatorController implements Initializable {
     }
 
     @FXML
-    private void budgetOnClick(ActionEvent event) {
+    private void budgetOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MrBudget.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
     }
 
     @FXML

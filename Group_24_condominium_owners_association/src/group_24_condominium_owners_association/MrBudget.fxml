@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MrBudgetController">
+<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.MrBudgetController">
    <children>
-      <Label layoutX="129.0" layoutY="30.0" text="MR coordinator Budget">
+      <Label layoutX="129.0" layoutY="30.0" text="MR coordinator Budget" textFill="#02e81d">
          <font>
-            <Font size="33.0" />
+            <Font size="39.0" />
          </font>
       </Label>
-      <Label layoutX="72.0" layoutY="118.0" text="Amont" />
-      <TextField fx:id="tf_amount" layoutX="135.0" layoutY="113.0" prefHeight="31.0" prefWidth="208.0" />
-      <Button layoutX="135.0" layoutY="230.0" mnemonicParsing="false" onAction="#BudgetInfoSentOnClick" prefHeight="31.0" prefWidth="208.0" text="Sent" />
+      <Label layoutX="66.0" layoutY="155.0" text="Amont">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="tf_amount" layoutX="155.0" layoutY="150.0" prefHeight="31.0" prefWidth="208.0" />
+      <Button layoutX="141.0" layoutY="283.0" mnemonicParsing="false" onAction="#BudgetInfoSentOnClick" prefHeight="31.0" prefWidth="208.0" text="Sent" />
+      <Button layoutX="40.0" layoutY="39.0" mnemonicParsing="false" onAction="#backOnClick" text="Back" />
+      <Label layoutX="30.0" layoutY="208.0" text="Budget Type">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cb_budgetType" layoutX="155.0" layoutY="208.0" prefHeight="31.0" prefWidth="208.0" />
+      <Label fx:id="lbl_notifiy" layoutX="413.0" layoutY="134.0" prefHeight="189.0" prefWidth="267.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
