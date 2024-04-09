@@ -10,69 +10,70 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author Meem
- */
 public class AdvertisingandPromotionOpportunities_COController implements Initializable {
 
     @FXML
-    private Label AdvertisementandPromotionManagementSectionLabel;
-    @FXML
     private TextField TitleTF;
     @FXML
-    private AnchorPane EndDateDatePicker;
+    private TableView<AdvertisingPromotion> Advertisement_TV;
     @FXML
-    private TableView<?> Advertisement_TV;
+    private TableColumn<AdvertisingPromotion, String> TitleTC;
     @FXML
-    private TableColumn<?, ?> TitleTC;
+    private TableColumn<AdvertisingPromotion, String> DescriptionTC;
     @FXML
-    private TableColumn<?, ?> DescriptionTC;
+    private TableColumn<AdvertisingPromotion, String> dateTC;
     @FXML
-    private TableColumn<?, ?> StartdateTC;
+    private TextField DescriptionTF;
     @FXML
-    private TableColumn<?, ?> EnddateTC;
-    @FXML
-    private TextArea DescriptionTA;
-    @FXML
-    private DatePicker StartDate_DatePicker;
-    @FXML
-    private DatePicker EndDate_DatePicker;
+    private DatePicker Date_DP;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Initialize columns to display data from AdvertisingPromotion
+        TitleTC.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
+        DescriptionTC.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
+        dateTC.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
     }    
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
+        // Handle Back button action
     }
 
     @FXML
     private void AddButtonOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void EditButtonOnAction(ActionEvent event) {
+        // Get data from input fields
+        String title = TitleTF.getText();
+        String description = DescriptionTF.getText();
+        String date = Date_DP.getValue().toString();
+        
+        // Create AdvertisingPromotion object
+        AdvertisingPromotion promotion = new AdvertisingPromotion(title, description, date);
+        
+        // Add the object to the TableView
+        Advertisement_TV.getItems().add(promotion);
+        
+        // Clear input fields after adding
+        clearFields();
     }
 
     @FXML
     private void DeleteButtonOnAction(ActionEvent event) {
+        // Handle Delete button action
     }
 
     @FXML
-    private void OkButtonOnAction(ActionEvent event) {
+    private void logoutButtonOnAction(ActionEvent event) {
+        // Handle logout button action
     }
     
+    private void clearFields() {
+        TitleTF.clear();
+        DescriptionTF.clear();
+        Date_DP.setValue(null);
+    }
 }

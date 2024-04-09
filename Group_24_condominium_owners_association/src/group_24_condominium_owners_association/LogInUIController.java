@@ -189,7 +189,7 @@ public class LogInUIController implements Initializable {
                 currentStage.show();
             }
             
-
+        // dont go out there
         } else {
             System.out.println("Invalid username or password!");
         }

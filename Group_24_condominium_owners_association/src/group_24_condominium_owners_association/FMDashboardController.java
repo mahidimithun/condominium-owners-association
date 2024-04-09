@@ -86,7 +86,16 @@ public class FMDashboardController implements Initializable {
     }
 
     @FXML
-    private void Click_Fm_Budget(ActionEvent event) {
+    private void Click_Fm_Budget(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FMBudget.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
     }
 
     @FXML

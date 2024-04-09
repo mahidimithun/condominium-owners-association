@@ -8,13 +8,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="1077.0" style="-fx-background-color: LIGHTGRAY;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.RuelsAndPolicyManagerDashboardController">
    <children>
-      <Label layoutX="126.0" layoutY="31.0" prefHeight="52.0" prefWidth="659.0" text="  Rules And Policy Enforcement Manager Dashboard">
+      <Label layoutX="152.0" layoutY="31.0" prefHeight="52.0" prefWidth="659.0" text="  Rules And Policy Enforcement Manager Dashboard">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
       <Line endX="896.5" endY="-26.0" layoutX="184.0" layoutY="143.0" startX="-184.0" startY="-26.0" strokeWidth="3.0" />
-      <Button layoutX="821.0" layoutY="31.0" mnemonicParsing="false" onAction="#goBackToHomePageOnButtonClick" prefHeight="45.0" prefWidth="214.0" text="Go Back to the Home page">
+      <Button layoutX="868.0" layoutY="40.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="34.0" prefWidth="146.0" text="LogOut">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -34,7 +34,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="112.0" layoutY="243.0" mnemonicParsing="false" onAction="#NewPolicyAssociationOnButtonClick" prefHeight="52.0" prefWidth="284.0" text="New Policy of the Association">
+      <Button layoutX="112.0" layoutY="243.0" mnemonicParsing="false" onAction="#NewPolicyAssociationOnButtonClick" prefHeight="52.0" prefWidth="301.0" text="New Policy and Complain mangement">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -44,12 +44,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="761.0" layoutY="243.0" mnemonicParsing="false" onAction="#RulesBreakingButtonOnClick" prefHeight="52.0" prefWidth="214.0" text="Rules Breaking Fine">
+      <Button layoutX="722.0" layoutY="243.0" mnemonicParsing="false" onAction="#RulesBreakingButtonOnClick" prefHeight="52.0" prefWidth="345.0" text="Rules Breaking and Violataion Management ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="305.0" layoutY="348.0" mnemonicParsing="false" onAction="#ArrangeMeetingButtonOnclick" prefHeight="45.0" prefWidth="236.0" text="Arrange Meeting">
+      <Button layoutX="305.0" layoutY="348.0" mnemonicParsing="false" onAction="#ManageMeetingButtonOnclick" prefHeight="45.0" prefWidth="253.0" text="Manage Meeting">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

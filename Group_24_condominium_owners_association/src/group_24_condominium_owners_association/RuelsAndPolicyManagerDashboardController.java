@@ -30,9 +30,6 @@ public class RuelsAndPolicyManagerDashboardController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void goBackToHomePageOnButtonClick(ActionEvent event) {
-    }
     
     @FXML
     private void associationDocumentationListOnButtonClick(ActionEvent event) {
@@ -123,24 +120,7 @@ public class RuelsAndPolicyManagerDashboardController implements Initializable {
 
     }
     
-
-    @FXML
-    private void ArrangeMeetingButtonOnclick(ActionEvent event) {
-         try {
-            Parent root = FXMLLoader.load(getClass().getResource("REM_Arrange_Meeting.fxml"));
-            Scene someScene = new Scene(root);
-
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-           someStage.setScene(someScene);
-           someStage.show();
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
-
-    }
-    
-
-    @FXML
+   @FXML
     private void OnlineDiscussionForumButtonOnClick(ActionEvent event) {
          try {
             Parent root = FXMLLoader.load(getClass().getResource("REM_Online_Discussion.fxml"));
@@ -153,6 +133,34 @@ public class RuelsAndPolicyManagerDashboardController implements Initializable {
            e.printStackTrace();
        }
 
+    }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+    }
+
+    @FXML
+    private void ManageMeetingButtonOnclick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("REM_Manage_Meeting.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
     }
      
