@@ -12,12 +12,12 @@
    <children>
       <Label layoutX="91.0" layoutY="54.0" text="Open and Close Hours" />
       <Label layoutX="108.0" layoutY="97.0" text="Service Offer" />
-      <Button layoutX="500.0" layoutY="175.0" mnemonicParsing="false" onAction="#BookedButtonOnClickOnAction" text="BOOKED" />
+      <Button layoutX="500.0" layoutY="175.0" mnemonicParsing="false" onAction="#BookedButtonOnClick" text="BOOKED" />
       <ComboBox fx:id="OpenandclosehoursComboBox" layoutX="242.0" layoutY="50.0" prefWidth="150.0" />
       <TextField fx:id="ServiceOfferTextField" layoutX="243.0" layoutY="93.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" text="back" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClick" text="back" />
       <Label layoutX="128.0" layoutY="135.0" prefHeight="17.0" prefWidth="63.0" text="date" />
       <TextArea fx:id="BeautySalonBookingUpdatesTextArea" layoutX="124.0" layoutY="214.0" prefHeight="200.0" prefWidth="353.0" />
-      <DatePicker fx:id="date_Datepicker" layoutX="230.0" layoutY="140.0" />
+      <DatePicker fx:id="date_DP" layoutX="230.0" layoutY="140.0" />
    </children>
 </AnchorPane>

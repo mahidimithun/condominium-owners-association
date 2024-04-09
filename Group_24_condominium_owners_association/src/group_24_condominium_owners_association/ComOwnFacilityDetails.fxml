@@ -3,23 +3,35 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
 <AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.ComOwnFacilityDetailsController">
    <children>
       <Label layoutX="53.0" layoutY="70.0" text="Location" />
       <Label layoutX="44.0" layoutY="122.0" text="Open Hours" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClick" text="Back" />
-      <Button layoutX="254.0" layoutY="290.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="save" />
+      <Button layoutX="267.0" layoutY="252.0" mnemonicParsing="false" onAction="#DoneButtonOnAction" text="Done" />
       <TextField fx:id="LocationTextField" layoutX="118.0" layoutY="66.0" />
-      <Button layoutX="333.0" layoutY="87.0" mnemonicParsing="false" onAction="#MedicalPharmacyButtonOnAction" text="Medical Pharmacy" />
-      <Button layoutX="349.0" layoutY="146.0" mnemonicParsing="false" onAction="#BeautySalonButtonOnAction" text="BeautySalon" />
-      <Button layoutX="351.0" layoutY="197.0" mnemonicParsing="false" onAction="#RetailSpaceButtonOnAction" text="RetailSpace" />
-      <Button layoutX="333.0" layoutY="256.0" mnemonicParsing="false" onAction="#GymnasiumCenterButtonOnAction" text="GymnasiumCenter" />
-      <TextArea fx:id="FacilitiesOutputTextArea" layoutX="103.0" layoutY="331.0" prefHeight="200.0" prefWidth="367.0" />
-      <Label layoutX="21.0" layoutY="307.0" text="Facilities Output:" />
+      <Button layoutX="391.0" layoutY="66.0" mnemonicParsing="false" onAction="#MedicalPharmacyButtonOnAction" text="Medical Pharmacy" />
+      <Button layoutX="406.0" layoutY="110.0" mnemonicParsing="false" onAction="#BeautySalonButtonOnAction" text="BeautySalon" />
+      <Button layoutX="409.0" layoutY="155.0" mnemonicParsing="false" onAction="#RetailSpaceButtonOnAction" text="RetailSpace" />
+      <Button layoutX="390.0" layoutY="197.0" mnemonicParsing="false" onAction="#GymnasiumCenterButtonOnAction" text="GymnasiumCenter" />
+      <Label layoutX="32.0" layoutY="277.0" text="Facilities Output:" />
       <ComboBox fx:id="OpenHoursComboBox" layoutX="137.0" layoutY="118.0" prefWidth="150.0" />
+      <Label layoutX="52.0" layoutY="180.0" text="Services offer:" />
+      <TextField fx:id="ServicesOfferTF" layoutX="138.0" layoutY="168.0" />
+      <TableView fx:id="FacilitiesOutputTV" layoutX="26.0" layoutY="304.0" prefHeight="200.0" prefWidth="455.0">
+        <columns>
+          <TableColumn fx:id="LocationTC" prefWidth="115.0" text="Location" />
+          <TableColumn fx:id="OpenHoursTC" prefWidth="180.0" text="Open Hours" />
+            <TableColumn fx:id="ServicesOfferTC" prefWidth="159.0" text="Services offer" />
+        </columns>
+      </TableView>
+      <Button layoutX="504.0" layoutY="492.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" text="Logout" />
+      <Line endX="52.0" endY="100.0" layoutX="300.0" layoutY="155.0" startX="52.0" startY="-134.0" />
    </children>
 </AnchorPane>

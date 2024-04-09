@@ -21,37 +21,73 @@ import javafx.scene.control.TextField;
  */
 public class GymnasiumCenterController implements Initializable {
 
+   
     @FXML
-    private RadioButton ServiceOfferRadioButton;
-    @FXML
-    private ComboBox<?> OpenhoursComboBox;
+    private ComboBox<String> OpenhoursComboBox; // Changed ComboBox<?> to ComboBox<String> assuming it holds String values
     @FXML
     private TextField NecessaryEqTextField;
     @FXML
     private TextArea GymnasiumUpdatesTextArea;
+    @FXML
+    private RadioButton ServiceOffer_AvailableRB;
+    @FXML
+    private RadioButton ServiceOffer_UnavailableRB;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        OpenhoursComboBox.getItems().addAll(
+            "8:00 AM - 10:00 AM",
+            "12:00 PM - 2:00 PM",
+            "4:00 PM - 6:00 PM"
+            
+        );
     }    
 
-    @FXML
     private void AvailableButtonOnClick(ActionEvent event) {
+        
+        ServiceOffer_AvailableRB.setSelected(true);
+      ServiceOffer_AvailableRB.setSelected(false);
     }
 
-    @FXML
     private void UnavailableButtonOnClick(ActionEvent event) {
+
+      ServiceOffer_UnavailableRB.setSelected(false);
+        ServiceOffer_UnavailableRB.setSelected(true);
+    }
+
+
+       
+    @FXML
+    private void BackButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void BackButtonOnClickOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void SaveButtonOnAction(ActionEvent event) {
+         String serviceStatus;
+    
+    if (ServiceOffer_AvailableRB.isSelected()) {
+        serviceStatus = "Service Available";
+    } else {
+        serviceStatus = "Service Unavailable";
     }
     
+    String openHours = OpenhoursComboBox.getValue();
+    String necessaryEquipment = NecessaryEqTextField.getText();
+    
+    // Formulate the update text
+    String updateText = "Service Status: " + serviceStatus + "\n" +
+                        "Open Hours: " + openHours + "\n" +
+                        "Necessary Equipment: " + necessaryEquipment;
+    
+    // Update the TextArea
+    GymnasiumUpdatesTextArea.setText(updateText);
 }
+    }
+    
+
+    
+

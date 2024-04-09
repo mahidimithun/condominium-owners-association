@@ -23,9 +23,14 @@ public class MedicalPharmacyController implements Initializable {
     @FXML
     private RadioButton MedicineAvailableRadioButton;
     @FXML
+    private RadioButton MedicineUnavailableRadioButton;
+    @FXML
     private TextField OpenAndCloseTextField;
     @FXML
     private TextArea MedicineAvailabilityOutputTextArea;
+
+    
+    private boolean isMedicineAvailable = false;
 
     /**
      * Initializes the controller class.
@@ -37,14 +42,38 @@ public class MedicalPharmacyController implements Initializable {
 
     @FXML
     private void MedicineAvailableButtonOnClick(ActionEvent event) {
+        isMedicineAvailable = true;
+        updateMedicineAvailabilityOutput();
     }
 
     @FXML
     private void MedicineUnavailableButtonOnClick(ActionEvent event) {
+        isMedicineAvailable = false;
+        updateMedicineAvailabilityOutput();
     }
 
     @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+    private void SaveButtonOnAction(ActionEvent event) {
+        String openCloseTime = OpenAndCloseTextField.getText();
+        String radioButtonStatus = "";
+        if (MedicineAvailableRadioButton.isSelected()) {
+            radioButtonStatus = "Medicine status: Available\n";
+        } else if (MedicineUnavailableRadioButton.isSelected()) {
+            radioButtonStatus = "Medicine status: Unavailable\n";
+        }
+        MedicineAvailabilityOutputTextArea.setText(radioButtonStatus + "Open/Close time: " + openCloseTime);
     }
-    
+
+   
+    private void updateMedicineAvailabilityOutput() {
+        if (isMedicineAvailable) {
+            MedicineAvailabilityOutputTextArea.setText("Medicine is available.");
+        } else {
+            MedicineAvailabilityOutputTextArea.setText("Medicine is unavailable.");
+        }
+    }
 }
+
+
+    
+
