@@ -13,10 +13,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -25,26 +24,32 @@ import javafx.stage.Stage;
  *
  * @author ASUS
  */
-public class REM_Association_Policy_RulesController implements Initializable {
+public class REM_Manage_MeetingController implements Initializable {
 
     @FXML
-    private TextArea newRules_TextArea;
+    private TextField MeetDocumentName_TextField;
     @FXML
-    private TextArea newPolicy_TextArea;
+    private TextField MeetType_TextField;
     @FXML
-    private TextField PolicyAddtime_TextField;
+    private TextField meetingTitle_TextField;
     @FXML
-    private DatePicker policyAddDate_Datepicker;
+    private TextField meetingTime_TextField;
     @FXML
-    private TableView<?> policyAndRules_TableView;
+    private TableView<?> meetingDocumentation_TV;
     @FXML
-    private TableColumn<?, ?> newPolicy_TableColumn;
+    private TableColumn<?, ?> meetDocumentationName_Tc;
     @FXML
-    private TableColumn<?, ?> newRules_TableColumn;
+    private TableColumn<?, ?> meetingType_Tc;
     @FXML
-    private TableColumn<?, ?> policyAddtime_TableColumn;
+    private TableColumn<?, ?> meetingTitle_Tc;
     @FXML
-    private TableColumn<?, ?> policyAddDate_TableColumn;
+    private TableColumn<?, ?> meetingTime_Tc;
+    @FXML
+    private TextField TypePie_TextField;
+    @FXML
+    private TextField Typepercentage_TextField;
+    @FXML
+    private PieChart piechart;
 
     /**
      * Initializes the controller class.
@@ -55,7 +60,7 @@ public class REM_Association_Policy_RulesController implements Initializable {
     }    
 
     @FXML
-    private void BackbuttonOnClick(ActionEvent event) {
+    private void backButtonOnClck(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("RuelsAndPolicyManagerDashboard.fxml"));
             Scene someScene = new Scene(root);
@@ -66,10 +71,12 @@ public class REM_Association_Policy_RulesController implements Initializable {
        } catch (Exception e) {
            e.printStackTrace();
        }
+
+
     }
 
     @FXML
-    private void LogOutButtonOnClick(ActionEvent event) {
+    private void logOutButtonOnClick(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
             Scene someScene = new Scene(root);
@@ -83,15 +90,23 @@ public class REM_Association_Policy_RulesController implements Initializable {
     }
 
     @FXML
-    private void addDetailsOnButtonClick(ActionEvent event) {
+    private void viewDocumentPercentageOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewDetailsOnButtonClick(ActionEvent event) {
+    private void addNewTypeOnButtonClick(ActionEvent event) {
     }
 
     @FXML
-    private void cancelButtonOnClick(ActionEvent event) {
+    private void addDocumentaionOnButtonClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void RemoveDocumenOnButtonClick(ActionEvent event) {
     }
     
 }

@@ -38,7 +38,7 @@
       <Button layoutX="621.0" layoutY="296.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="27.0" prefWidth="137.0" text="Cancel" />
       <TextField fx:id="documentName_TextField" layoutX="262.0" layoutY="125.0" prefHeight="31.0" prefWidth="218.0" />
       <DatePicker fx:id="document_dp" layoutX="762.0" layoutY="125.0" />
-      <ComboBox fx:id="documentTopic_TextField" layoutX="263.0" layoutY="205.0" prefHeight="31.0" prefWidth="218.0" />
       <ComboBox fx:id="fileType_Combobox" layoutX="747.0" layoutY="205.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="documentTopic_TextField" layoutX="262.0" layoutY="205.0" prefHeight="31.0" prefWidth="201.0" />
    </children>
 </AnchorPane>

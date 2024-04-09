@@ -42,7 +42,7 @@ public class SignUpUIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        signUP_Cb.getItems().addAll("RulesAndPolicyManager");
+        signUP_Cb.getItems().addAll("UnitOwner","MR","FinancialManager","MedicalResponseCoordinator","RuelsAndPolicyManager","SecurityControlOfficer","EventManager","CommercialOwner");
     }    
 
     @FXML

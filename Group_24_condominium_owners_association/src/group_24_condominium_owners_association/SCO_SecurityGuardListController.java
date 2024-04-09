@@ -73,6 +73,7 @@ public class SCO_SecurityGuardListController implements Initializable {
     guardType_tc.setCellValueFactory(new PropertyValueFactory<>("type"));
     guardJoiningDate_tc.setCellValueFactory(new PropertyValueFactory<>("joiningDate"));
     dutyTime_tc.setCellValueFactory(new PropertyValueFactory<>("dutyTime"));
+    
  
     securityGuardType_cb.getItems().addAll("Type A", "Type B", "Type C");
     }    

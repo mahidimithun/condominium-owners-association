@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -28,15 +29,27 @@ public class WorkScheduleListUI_SCOController implements Initializable {
     @FXML
     private DatePicker scheduleDate_dp;
     @FXML
-    private TextArea scheduleList_ta;
-    @FXML
     private TableView<?> scheduleTable_tv;
     @FXML
     private TableColumn<?, ?> scheduleName_tc;
     @FXML
     private TableColumn<?, ?> schduleDate_tc;
     @FXML
-    private Label workScheduleOutput_Label;
+    private TableColumn<?, ?> workType_tc;
+    @FXML
+    private TableColumn<?, ?> shiftStartTime_tc;
+    @FXML
+    private TableColumn<?, ?> shiftEndTime_tc;
+    @FXML
+    private TableColumn<?, ?> location_TableColumn;
+    @FXML
+    private ComboBox<?> workTypeCombobox;
+    @FXML
+    private TextField shiftStartTime_TextField;
+    @FXML
+    private TextField shiftEndTime_TextField;
+    @FXML
+    private TextField location_TextField;
 
     /**
      * Initializes the controller class.
@@ -50,24 +63,22 @@ public class WorkScheduleListUI_SCOController implements Initializable {
     private void goBackToHomePageOnButtonClick(ActionEvent event) {
     }
 
-    @FXML
-    private void addNewScheduleOnButonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void cancelScheduleOnButtonClick(ActionEvent event) {
-    }
 
     @FXML
     private void addNewScheduleOnButtonClick(ActionEvent event) {
     }
 
-    @FXML
-    private void removeScheduleOnButtonClick(ActionEvent event) {
-    }
 
     @FXML
     private void viewScheduleOnButtonClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void cancelButtonOnClick(ActionEvent event) {
     }
     
 }

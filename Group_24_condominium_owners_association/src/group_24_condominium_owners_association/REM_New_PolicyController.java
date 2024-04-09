@@ -13,9 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,26 +24,18 @@ import javafx.stage.Stage;
  *
  * @author ASUS
  */
-public class REM_Association_Policy_RulesController implements Initializable {
+public class REM_New_PolicyController implements Initializable {
 
     @FXML
-    private TextArea newRules_TextArea;
+    private TextArea policyDescription_TextArea;
     @FXML
-    private TextArea newPolicy_TextArea;
+    private TextArea complainManagemnet_TextArea;
     @FXML
-    private TextField PolicyAddtime_TextField;
+    private DatePicker Policy_Dp;
     @FXML
-    private DatePicker policyAddDate_Datepicker;
+    private TextField newPolicy_TextField;
     @FXML
-    private TableView<?> policyAndRules_TableView;
-    @FXML
-    private TableColumn<?, ?> newPolicy_TableColumn;
-    @FXML
-    private TableColumn<?, ?> newRules_TableColumn;
-    @FXML
-    private TableColumn<?, ?> policyAddtime_TableColumn;
-    @FXML
-    private TableColumn<?, ?> policyAddDate_TableColumn;
+    private ComboBox<?> policyType_Combobox;
 
     /**
      * Initializes the controller class.
@@ -55,7 +46,7 @@ public class REM_Association_Policy_RulesController implements Initializable {
     }    
 
     @FXML
-    private void BackbuttonOnClick(ActionEvent event) {
+    private void backButtonOnClick(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("RuelsAndPolicyManagerDashboard.fxml"));
             Scene someScene = new Scene(root);
@@ -69,7 +60,7 @@ public class REM_Association_Policy_RulesController implements Initializable {
     }
 
     @FXML
-    private void LogOutButtonOnClick(ActionEvent event) {
+    private void logoutButtonOnClick(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
             Scene someScene = new Scene(root);
@@ -82,16 +73,18 @@ public class REM_Association_Policy_RulesController implements Initializable {
        }
     }
 
+
     @FXML
-    private void addDetailsOnButtonClick(ActionEvent event) {
+    private void addPolicyButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewDetailsOnButtonClick(ActionEvent event) {
+    private void viewButtonOnClick(ActionEvent event) {
     }
 
     @FXML
     private void cancelButtonOnClick(ActionEvent event) {
     }
+
     
 }

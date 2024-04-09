@@ -12,17 +12,17 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="966.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_SecurityGuardListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="826.0" prefWidth="1246.0" style="-fx-background-color: LEMONCHIFFON;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_SecurityGuardListController">
    <children>
       <Button layoutX="67.0" layoutY="23.0" mnemonicParsing="false" onAction="#goBackButtonOnClick" text="Go Back" />
-      <Button layoutX="654.0" layoutY="244.0" mnemonicParsing="false" onAction="#viewOnButtonClick" prefHeight="31.0" prefWidth="155.0" text="View " />
-      <Button layoutX="661.0" layoutY="180.0" mnemonicParsing="false" onAction="#CancelSecurityOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="Cancel" />
-      <Button layoutX="661.0" layoutY="119.0" mnemonicParsing="false" onAction="#addGuardDetailsOnButtonClick" text="Add Guard Details" />
+      <Button layoutX="762.0" layoutY="260.0" mnemonicParsing="false" onAction="#viewOnButtonClick" prefHeight="31.0" prefWidth="155.0" text="View " />
+      <Button layoutX="762.0" layoutY="180.0" mnemonicParsing="false" onAction="#CancelSecurityOnButtonClick" prefHeight="31.0" prefWidth="141.0" text="Cancel" />
+      <Button layoutX="753.0" layoutY="104.0" mnemonicParsing="false" onAction="#addGuardDetailsOnButtonClick" text="Add Guard Details" />
       <TextField fx:id="securityGuardName_tf" layoutX="239.0" layoutY="104.0" />
       <Label layoutX="79.0" layoutY="109.0" text="Security Guard Name:" />
       <Label layoutX="73.0" layoutY="249.0" text="Guard Joining Date:" />
-      <Line endX="1171.5" endY="5.9999847412109375" layoutX="101.0" layoutY="76.0" startX="-101.0" startY="6.0" strokeWidth="3.0" />
-      <Label layoutX="477.0" layoutY="14.0" text="Security Guard List">
+      <Line endX="1145.0" endY="6.0000152587890625" layoutX="101.0" layoutY="76.0" startX="-101.0" startY="6.0" strokeWidth="3.0" />
+      <Label layoutX="477.0" layoutY="14.0" text="Security Guard List" textFill="#1222d0">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
@@ -45,5 +45,8 @@
       <TextField fx:id="dutytime_tf" layoutX="152.0" layoutY="296.0" prefHeight="31.0" prefWidth="74.0" />
       <RadioButton fx:id="AM_rb" layoutX="249.0" layoutY="301.0" mnemonicParsing="false" text="AM" />
       <RadioButton fx:id="PM_rb" layoutX="316.0" layoutY="301.0" mnemonicParsing="false" text="PM" />
+      <Button layoutX="1081.0" layoutY="23.0" mnemonicParsing="false" text="LogOut" />
+      <Line endX="-100.0" endY="253.29290771484375" layoutX="710.0" layoutY="119.0" startX="-100.0" startY="-34.878662109375" strokeWidth="3.0" />
+      <Line endX="1147.0" endY="25.0" layoutX="99.0" layoutY="354.0" startX="-99.0" startY="19.0" strokeWidth="3.0" />
    </children>
 </AnchorPane>

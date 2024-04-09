@@ -3,37 +3,33 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="911.0" prefWidth="1162.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_CCTV_Footage_RecordController">
+<AnchorPane id="AnchorPane" prefHeight="911.0" prefWidth="1162.0" style="-fx-background-color: LEMONCHIFFON;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_CCTV_Footage_RecordController">
    <children>
       <Button layoutX="913.0" layoutY="15.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="Log Out" />
-      <Button layoutX="826.0" layoutY="158.0" mnemonicParsing="false" onAction="#addFootageFileRecordButtonOnClick" prefHeight="31.0" prefWidth="210.0" text="Add Footage File Record" />
       <Label layoutX="361.0" layoutY="15.0" prefHeight="30.0" prefWidth="303.0" text="       CCTV Footage File Record">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Line endX="1063.5" endY="-5.0" layoutX="100.0" layoutY="76.0" startX="-100.0" startY="-13.0" strokeWidth="3.0" />
-      <Label fx:id="CCTVRecordOutput_Label" layoutX="221.0" layoutY="678.0" prefHeight="209.0" prefWidth="702.0" style="-fx-background-color: aqua;" />
-      <Button layoutX="837.0" layoutY="488.0" mnemonicParsing="false" onAction="#viewFootageFileRecordButtonOnClick" prefHeight="31.0" prefWidth="210.0" text="View Footage File Record" />
-      <TextArea fx:id="CCTVfootageFileDetails_TextArea" layoutX="66.0" layoutY="164.0" prefHeight="196.0" prefWidth="669.0" />
-      <Button layoutX="837.0" layoutY="425.0" mnemonicParsing="false" onAction="#removeFootageRecordButtonOnClick" prefHeight="31.0" prefWidth="218.0" text="Remove Footage File Record" />
-      <DatePicker fx:id="CCTVFileRecordDate_DatePicker" layoutX="194.0" layoutY="93.0" />
-      <Label layoutX="28.0" layoutY="98.0" prefHeight="21.0" prefWidth="157.0" text="CCTV File Record Date:" />
-      <Label layoutX="66.0" layoutY="137.0" text="CCTV File Details:" />
-      <TableView fx:id="CCTVFootage_TableView" layoutX="164.0" layoutY="410.0" prefHeight="187.0" prefWidth="569.0">
-        <columns>
-          <TableColumn fx:id="CCTVFileDetails_TableColumn" prefWidth="267.0000305175781" text="CCTV File Details" />
-          <TableColumn fx:id="fileRecordDate_TableColumn" prefWidth="301.0" text="File Record Date" />
-        </columns>
-      </TableView>
-      <Button layoutX="826.0" layoutY="215.0" mnemonicParsing="false" onAction="#cancelFootageButtonOnClick" prefHeight="31.0" prefWidth="210.0" text="Cancel" />
-      <Label layoutX="226.0" layoutY="640.0" text="File Record:" />
+      <Label layoutX="71.0" layoutY="182.0" prefHeight="21.0" prefWidth="157.0" text="CCTV File Record Date:" />
+      <Button layoutX="34.0" layoutY="15.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="31.0" prefWidth="59.0" text="Back" />
+      <Label layoutX="49.0" layoutY="108.0" text="File Name:" />
+      <Label layoutX="427.0" layoutY="108.0" text="Footage time:" />
+      <Label layoutX="42.0" layoutY="243.0" text="Add some comment on the  Record:" />
+      <TextArea fx:id="commentRecord_TextArea" layoutX="60.0" layoutY="274.0" prefHeight="123.0" prefWidth="1031.0" />
+      <Button layoutX="243.0" layoutY="456.0" mnemonicParsing="false" onAction="#addfileDetailsButtonOnClick" text="Add File Details" />
+      <Button layoutX="437.0" layoutY="456.0" mnemonicParsing="false" onAction="#viewfileButtonOnClick" text="View File Details" />
+      <Button layoutX="635.0" layoutY="456.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="31.0" prefWidth="103.0" text="Cancel" />
+      <TextArea layoutX="87.0" layoutY="511.0" prefHeight="337.0" prefWidth="954.0" />
+      <TextField fx:id="fileName_TextField" layoutX="149.0" layoutY="103.0" />
+      <TextField fx:id="FootageTime_TextField" layoutX="529.0" layoutY="103.0" prefHeight="31.0" prefWidth="157.0" />
+      <DatePicker fx:id="FileRecord_dp" layoutX="255.0" layoutY="177.0" />
    </children>
 </AnchorPane>

@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -23,17 +24,13 @@ import javafx.scene.control.TextArea;
 public class SCO_CCTV_Footage_RecordController implements Initializable {
 
     @FXML
-    private Label CCTVRecordOutput_Label;
+    private TextArea commentRecord_TextArea;
     @FXML
-    private TextArea CCTVfootageFileDetails_TextArea;
+    private TextField fileName_TextField;
     @FXML
-    private DatePicker CCTVFileRecordDate_DatePicker;
+    private TextField FootageTime_TextField;
     @FXML
-    private TableView<?> CCTVFootage_TableView;
-    @FXML
-    private TableColumn<?, ?> CCTVFileDetails_TableColumn;
-    @FXML
-    private TableColumn<?, ?> fileRecordDate_TableColumn;
+    private DatePicker FileRecord_dp;
 
     /**
      * Initializes the controller class.
@@ -48,19 +45,19 @@ public class SCO_CCTV_Footage_RecordController implements Initializable {
     }
 
     @FXML
-    private void addFootageFileRecordButtonOnClick(ActionEvent event) {
+    private void backButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewFootageFileRecordButtonOnClick(ActionEvent event) {
+    private void addfileDetailsButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void removeFootageRecordButtonOnClick(ActionEvent event) {
+    private void viewfileButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void cancelFootageButtonOnClick(ActionEvent event) {
+    private void cancelButtonOnClick(ActionEvent event) {
     }
     
 }
