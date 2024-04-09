@@ -11,63 +11,62 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author Meem
- */
 public class ScheduledReminders_COController implements Initializable {
 
     @FXML
-    private Label ReminderMessageLabel;
-    @FXML
-    private TextField ReminderMessageTF;
-    @FXML
     private TextField TimeTF;
     @FXML
-    private DatePicker DateDatePicker;
+    private TableView<ScheduledReminders> ReminderListTV;
     @FXML
-    private Label ReminderListLabel;
+    private TableColumn<ScheduledReminders, String> ReminderTitleTC;
     @FXML
-    private TableView<?> ReminderListTV;
+    private TableColumn<ScheduledReminders, String> DateTC;
     @FXML
-    private TableColumn<?, ?> ReminderTitleTC;
-    @FXML
-    private TableColumn<?, ?> DescriptionTC;
-    @FXML
-    private TableColumn<?, ?> DateTC;
-    @FXML
-    private TableColumn<?, ?> TimeTC;
+    private TableColumn<ScheduledReminders, String> TimeTC;
     @FXML
     private TextField ReminderTitleTF;
+    @FXML
+    private DatePicker Date_DP;
+    @FXML
+    private TableColumn<ScheduledReminders, String> Schedule_TypeTC;
+    @FXML
+    private TextField ScheduleTypeTF;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Initialize TableView columns
+        ReminderTitleTC.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
+        DateTC.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        TimeTC.setCellValueFactory(cellData -> cellData.getValue().timeProperty());
+        Schedule_TypeTC.setCellValueFactory(cellData -> cellData.getValue().scheduleTypeProperty());
     }    
 
     @FXML
     private void AddReminderButtonOnAction(ActionEvent event) {
+        String title = ReminderTitleTF.getText();
+        String date = Date_DP.getValue().toString(); // Assuming DatePicker is set up to return a date string
+        String time = TimeTF.getText();
+        String scheduleType = ScheduleTypeTF.getText();
+        
+        // Create a new Reminder object
+        ScheduledReminders newReminder = new   ScheduledReminders(title, date, time, scheduleType);
+        
+        // Add the new Reminder to the TableView
+        ReminderListTV.getItems().add(newReminder);
+    }
+        
+    
+    @FXML
+    private void LogoutButtonOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void SaveButtonOnAction(ActionEvent event) {
+    private void BackButtonOnAction(ActionEvent event) {
     }
 
-    @FXML
-    private void EditReminderButtonOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void RefreshButtonOnAction(ActionEvent event) {
-    }
     
 }

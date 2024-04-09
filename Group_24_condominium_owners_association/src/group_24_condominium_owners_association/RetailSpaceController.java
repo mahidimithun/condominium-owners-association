@@ -6,62 +6,72 @@ package group_24_condominium_owners_association;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.SortEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author Meem
- */
 public class RetailSpaceController implements Initializable {
 
+   @FXML
+    private TextField ProductNameTF;
     @FXML
-    private TableColumn<?, ?> ProductNameTC;
+    private TextField PriceTF;
     @FXML
-    private TableColumn<?, ?> PriceTC;
+    private TextField ExpiryDatesTF;
     @FXML
-    private TableColumn<?, ?> ExpiryDatesTC;
+    private TableView<RetailSpace> ProductDetailsTV;
     @FXML
-    private TableView<?> ProductDetailsTableView;
+    private TableColumn<RetailSpace, String> Product_NameTC;
     @FXML
-    private TextField ProductnameTextField;
+    private TableColumn<RetailSpace, Double> PriceTC;
     @FXML
-    private TextField PriceTextField;
-    @FXML
-    private TextField expirydatesTextField;
+    private TableColumn<RetailSpace, String> ExpiryDatesTC;
 
-    /**
-     * Initializes the controller class.
-     */
+    // ObservableList 
+    private ObservableList<RetailSpace> retailSpaces = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+       
+        Product_NameTC.setCellValueFactory(cellData -> cellData.getValue().productNameProperty());
+        PriceTC.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
+        ExpiryDatesTC.setCellValueFactory(cellData -> cellData.getValue().expiryDatesProperty());
 
-    @FXML
-    private void SaveButtonOnClickOnAction(ActionEvent event) {
+
+        ProductDetailsTV.setItems(retailSpaces);
     }
 
     @FXML
-    private void BackButtonOnClickOnAction(ActionEvent event) {
+    private void DoneButtonOnClick(ActionEvent event) {
+        
+        String productName = ProductNameTF.getText();
+        double price = Double.parseDouble(PriceTF.getText());
+        String expiryDates = ExpiryDatesTF.getText();
+
+       
+        RetailSpace newProduct = new RetailSpace(productName, price, expiryDates);
+
+   
+        retailSpaces.add(newProduct);
+
+      
+        ProductNameTF.clear();
+        PriceTF.clear();
+        ExpiryDatesTF.clear();
+
+       
     }
 
-
-    private static class C {
-
-        public C() {
-        }
+    @FXML
+    private void LogoutButtonOnClick(ActionEvent event) {
     }
 
-
-    
+    @FXML
+    private void BackButtonOnClick(ActionEvent event) {
+    }
 }

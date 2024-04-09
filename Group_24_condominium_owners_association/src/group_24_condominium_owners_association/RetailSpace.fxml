@@ -7,25 +7,31 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.RetailSpaceController">
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.RetailSpaceController">
    <children>
-      <Label layoutX="44.0" layoutY="48.0" text="Product name" />
-      <Line endX="463.0" layoutX="121.0" layoutY="188.0" startX="-100.0" />
-      <TableView fx:id="ProductDetailsTableView" layoutX="135.0" layoutY="254.0" prefHeight="197.0" prefWidth="335.0">
+      <Label layoutX="97.0" layoutY="88.0" text="Product Name:" />
+      <Label layoutX="97.0" layoutY="128.0" text="Price" />
+      <Label layoutX="97.0" layoutY="168.0" text="ExpiryDates:" />
+      <TextField fx:id="ProductNameTF" layoutX="188.0" layoutY="84.0" />
+      <TextField fx:id="PriceTF" layoutX="188.0" layoutY="124.0" />
+      <TextField fx:id="ExpiryDatesTF" layoutX="196.0" layoutY="164.0" />
+      <Button layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#BackButtonOnClick" text="Back" />
+      <Line endX="543.0" layoutX="110.0" layoutY="224.0" startX="-110.0" />
+      <Button layoutX="578.0" layoutY="189.0" mnemonicParsing="false" onAction="#DoneButtonOnClick" text="Done" />
+      <TableView fx:id="ProductDetailsTV" layoutX="97.0" layoutY="275.0" prefHeight="200.0" prefWidth="423.0">
         <columns>
-          <TableColumn fx:id="ProductNameTC" prefWidth="115.0" text="Product Name" />
-            <TableColumn fx:id="PriceTC" prefWidth="114.0" text="Price" />
-            <TableColumn fx:id="ExpiryDatesTC" prefWidth="107.0" text="Expiry Dates" />
+          <TableColumn fx:id="Product_NameTC" prefWidth="140.0" text="Product_Name" />
+            <TableColumn fx:id="PriceTC" prefWidth="154.0" text="Price" />
+          <TableColumn fx:id="ExpiryDatesTC" prefWidth="128.0" text="Expiry Dates" />
         </columns>
       </TableView>
-      <Button layoutX="532.0" layoutY="155.0" mnemonicParsing="false" onAction="#SaveButtonOnClickOnAction" text="save" />
-      <Label layoutX="68.0" layoutY="84.0" text="price" />
-      <Label layoutX="49.0" layoutY="125.0" text="expiry dates:" />
-      <TextField fx:id="ProductnameTextField" layoutX="154.0" layoutY="44.0" />
-      <TextField fx:id="PriceTextField" layoutX="154.0" layoutY="89.0" />
-      <TextField fx:id="expirydatesTextField" layoutX="154.0" layoutY="130.0" />
-      <Button layoutX="6.0" layoutY="2.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" prefHeight="25.0" prefWidth="54.0" text="back" />
-      <Label layoutX="237.0" layoutY="215.0" text="Product details" />
+      <Label layoutX="256.0" layoutY="240.0" prefHeight="21.0" prefWidth="137.0" text="Product Details">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="560.0" layoutY="463.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="25.0" prefWidth="65.0" text="Logout" />
    </children>
 </AnchorPane>
