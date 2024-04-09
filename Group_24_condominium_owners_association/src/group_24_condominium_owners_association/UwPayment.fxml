@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.UwPaymentController">
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.UwPaymentController">
    <children>
       <Label layoutX="186.0" layoutY="34.0" text="Payment">
          <font>
@@ -19,5 +18,6 @@
       <Label layoutX="81.0" layoutY="214.0" text="Total amount" />
       <Label fx:id="lbl_showTotalAmount" layoutX="212.0" layoutY="214.0" prefHeight="119.0" prefWidth="337.0" />
       <Button layoutX="211.0" layoutY="415.0" mnemonicParsing="false" onAction="#payNowOnClick" prefHeight="31.0" prefWidth="361.0" text="Pay Now" />
+      <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#backOnClick" text="Back" />
    </children>
 </AnchorPane>
