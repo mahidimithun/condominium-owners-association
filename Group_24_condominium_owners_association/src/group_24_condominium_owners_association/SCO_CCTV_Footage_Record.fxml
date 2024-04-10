@@ -27,7 +27,7 @@
       <Button layoutX="243.0" layoutY="456.0" mnemonicParsing="false" onAction="#addfileDetailsButtonOnClick" text="Add File Details" />
       <Button layoutX="437.0" layoutY="456.0" mnemonicParsing="false" onAction="#viewfileButtonOnClick" text="View File Details" />
       <Button layoutX="635.0" layoutY="456.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="31.0" prefWidth="103.0" text="Cancel" />
-      <TextArea layoutX="87.0" layoutY="511.0" prefHeight="337.0" prefWidth="954.0" />
+      <TextArea fx:id="CCTV_Output_TextArea" layoutX="87.0" layoutY="511.0" prefHeight="337.0" prefWidth="954.0" />
       <TextField fx:id="fileName_TextField" layoutX="149.0" layoutY="103.0" />
       <TextField fx:id="FootageTime_TextField" layoutX="529.0" layoutY="103.0" prefHeight="31.0" prefWidth="157.0" />
       <DatePicker fx:id="FileRecord_dp" layoutX="255.0" layoutY="177.0" />
