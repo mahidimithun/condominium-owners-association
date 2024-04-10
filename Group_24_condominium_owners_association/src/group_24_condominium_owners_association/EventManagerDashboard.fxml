@@ -19,7 +19,7 @@
       <Button layoutX="70.0" layoutY="213.0" mnemonicParsing="false" onAction="#ContactInformationButtonOnClick" prefHeight="37.0" prefWidth="154.0" text="ContactInformation" />
       <Button layoutX="248.0" layoutY="213.0" mnemonicParsing="false" onAction="#ResourceManagementButtonOnClick" prefHeight="37.0" prefWidth="168.0" text="Resource Management" />
       <Button layoutX="434.0" layoutY="213.0" mnemonicParsing="false" onAction="#PaymentButtonOnClick" prefHeight="37.0" prefWidth="125.0" text="Payment" />
-      <Button layoutX="223.0" layoutY="283.0" mnemonicParsing="false" onAction="#FeedbackandReviewsButtonOnClick" prefHeight="37.0" prefWidth="168.0" text="Feedback &amp; Reviews" />
+      <Button layoutX="223.0" layoutY="283.0" mnemonicParsing="false" onAction="#ReviewsandFeedbackButtonOnClick" prefHeight="37.0" prefWidth="168.0" text="Reviews and Feedback" />
       <Button layoutX="497.0" layoutY="337.0" mnemonicParsing="false" onAction="#LogoutButtonOnClick" prefHeight="26.0" prefWidth="75.0" text="logout" />
       <Line endX="475.0" layoutX="118.0" layoutY="68.0" startX="-111.0" strokeWidth="3.0" />
    </children>

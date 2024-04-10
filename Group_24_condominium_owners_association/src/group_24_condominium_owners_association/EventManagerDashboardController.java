@@ -171,27 +171,7 @@ public class EventManagerDashboardController implements Initializable {
     }
     }
 
-    @FXML
-    private void FeedbackandReviewsButtonOnClick(ActionEvent event) {
-        try {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Feedback_EM.fxml"));
-        Parent root = loader.load();
-
-        
-        Stage newStage = new Stage();
-        newStage.setTitle("Feedback & Reviews");
-
-      
-        Scene scene = new Scene(root);
-        newStage.setScene(scene);
-
-        
-        newStage.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    }
+    
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
@@ -215,7 +195,31 @@ public class EventManagerDashboardController implements Initializable {
     }
         
     }
+
+    @FXML
+    private void ReviewsandFeedbackButtonOnClick(ActionEvent event) {
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EventManager_ReviewsandFeedback.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("Reviews and Feedback");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+    }
+}
+
+    
 
     
     

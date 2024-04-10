@@ -6,11 +6,14 @@ package group_24_condominium_owners_association;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 /**
@@ -25,19 +28,43 @@ public class EM_ContactInfoFXMLController implements Initializable {
     @FXML
     private TextField PhoneNumberTextField;
     @FXML
-    private ComboBox<?> OfficehoursCB;
+    private ComboBox<String> OfficehoursCB;
     @FXML
     private TextField NameTF;
     @FXML
-    private TextArea EM_ContactInfoDetailsTextArea;
+    private TableView<EM_ContactInfo> EM_ContactInfoDetailsTV;
+    @FXML
+    private TableColumn<EM_ContactInfo, String> NameTC;
+    @FXML
+    private TableColumn<EM_ContactInfo, String> GmailTC;
+    @FXML
+    private TableColumn<EM_ContactInfo, String> PhoneNumberTC;
+    @FXML
+    private TableColumn<EM_ContactInfo, String> OfficeHoursTC;
+
+    private ObservableList<EM_ContactInfo> contactInfoList;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+      
+        OfficehoursCB.setItems(FXCollections.observableArrayList(
+                "8:00 AM - 12:00 PM", "1:00 PM - 5:00 PM", "7:00 PM-11:00 PM")
+        );
+
+ 
+        contactInfoList = FXCollections.observableArrayList();
+        EM_ContactInfoDetailsTV.setItems(contactInfoList);
+
+        
+        NameTC.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        GmailTC.setCellValueFactory(cellData -> cellData.getValue().gmailProperty());
+        PhoneNumberTC.setCellValueFactory(cellData -> cellData.getValue().phoneNumberProperty());
+        OfficeHoursTC.setCellValueFactory(cellData -> cellData.getValue().officeHoursProperty());
+    }
+
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
@@ -49,6 +76,18 @@ public class EM_ContactInfoFXMLController implements Initializable {
 
     @FXML
     private void ViewButtonOnClick(ActionEvent event) {
+        
+    String name = NameTF.getText();
+    String gmail = GmailTextField.getText();
+    String phoneNumber = PhoneNumberTextField.getText();
+    String officeHours = OfficehoursCB.getValue();
+
+
+    EM_ContactInfo contactInfo = new EM_ContactInfo(name, gmail, phoneNumber, officeHours);
+
+
+    contactInfoList.add(contactInfo);
+
     }
     
 }

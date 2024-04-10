@@ -9,9 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -19,26 +19,28 @@ import javafx.scene.control.TextField;
  *
  * @author Meem
  */
-public class ComOwnContactController implements Initializable {
+public class EventManager_ReviewsandFeedbackController implements Initializable {
 
     @FXML
-    private TextField GmailTF;
+    private TextField NameTextField;
     @FXML
-    private TextField PhoneTF;
+    private TextField EmailTextField;
     @FXML
-    private ComboBox<?> OfficehoursCB;
+    private ComboBox<?> EventsComboBox;
     @FXML
-    private TextField NameTF;
+    private TextArea CommentTextArea;
     @FXML
-    private TableView<?> CommercialOwner_ContactInfoDetailsTV;
+    private CheckBox RatingOneCB;
     @FXML
-    private TableColumn<?, ?> NameTableColumn;
+    private CheckBox RatingTwoCB;
     @FXML
-    private TableColumn<?, ?> GmailTableColumn;
+    private CheckBox RatingThreeCB;
     @FXML
-    private TableColumn<?, ?> OfficeHoursTableColumn;
+    private CheckBox RatingFourCB;
     @FXML
-    private TableColumn<?, ?> PhoneNumberTableColumn;
+    private CheckBox RatingFiveCB;
+    @FXML
+    private TextArea EventManager_ReviewsandFeedbackTextArea;
 
     /**
      * Initializes the controller class.
@@ -49,11 +51,11 @@ public class ComOwnContactController implements Initializable {
     }    
 
     @FXML
-    private void BackButtonOnAction(ActionEvent event) {
+    private void BackButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void ViewButtonOnAction(ActionEvent event) {
+    private void SubmitButtonOnClick(ActionEvent event) {
     }
 
     @FXML
