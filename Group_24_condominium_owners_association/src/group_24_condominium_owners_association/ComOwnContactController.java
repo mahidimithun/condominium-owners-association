@@ -4,52 +4,82 @@
  */
 package group_24_condominium_owners_association;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author Meem
- */
 public class ComOwnContactController implements Initializable {
 
     @FXML
     private TextField GmailTF;
+
     @FXML
     private TextField PhoneTF;
+
     @FXML
-    private ComboBox<?> OfficehoursCB;
+    private ComboBox<String> OfficehoursCB;
+
     @FXML
     private TextField NameTF;
-    @FXML
-    private TextArea CommercialOwnerContactInfoDetailsTextArea;
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private TableView<ComOwnContact> CommercialOwner_ContactInfoDetailsTV;
+
+    @FXML
+    private TableColumn<ComOwnContact, String> NameTableColumn;
+
+    @FXML
+    private TableColumn<ComOwnContact, String> GmailTableColumn;
+
+    @FXML
+    private TableColumn<ComOwnContact, String> OfficeHoursTableColumn;
+
+    @FXML
+    private TableColumn<ComOwnContact, String> PhoneNumberTableColumn;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+
+        OfficehoursCB.getItems().addAll("9 AM - 12 PM", "1 PM - 4 PM", "6 PM - 10 PM");
+
+      
+        NameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        GmailTableColumn.setCellValueFactory(new PropertyValueFactory<>("gmail"));
+        OfficeHoursTableColumn.setCellValueFactory(new PropertyValueFactory<>("officeHours"));
+        PhoneNumberTableColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+    }
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
+       
     }
 
     @FXML
     private void ViewButtonOnAction(ActionEvent event) {
+     
+        String name = NameTF.getText();
+        String gmail = GmailTF.getText();
+        String phone = PhoneTF.getText();
+        String officeHours = OfficehoursCB.getValue();
+
+  
+       ComOwnContact contactInfo = new ComOwnContact(name, gmail, phone, officeHours);
+
+      
+        CommercialOwner_ContactInfoDetailsTV.getItems().add(contactInfo);
     }
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
+       
     }
-    
 }
+    
+

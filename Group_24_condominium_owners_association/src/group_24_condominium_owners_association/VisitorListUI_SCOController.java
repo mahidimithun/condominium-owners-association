@@ -4,144 +4,140 @@
  */
 package group_24_condominium_owners_association;
 
-import java.io.*;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
+import java.io.*;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-/**
- * FXML Controller class
- *
- * @author ASUS
- */
 public class VisitorListUI_SCOController implements Initializable {
-
     @FXML
     private TableView<Visitor> Visitor_tv;
     @FXML
     private TableColumn<Visitor, String> visitorName_tc;
     @FXML
-    private TableColumn<Visitor, String> visitingDate_tc;
+    private TableColumn<Visitor, LocalDate> visitingDate_tc;
+    @FXML
+    private TableColumn<Visitor, String> visitingTime_TC;
+    @FXML
+    private TableColumn<Visitor, String> visitorDesignation_TC;
+    @FXML
+    private TableColumn<Visitor, String> visitingUnitNumbers_TC;
     @FXML
     private TextField VisitorName_tf;
     @FXML
     private DatePicker visitorDate_dp;
-
-    private final String FILE_PATH = "VisitorList.txt";
+    @FXML
+    private TextField visitorTime_tf;
+    @FXML
+    private TextField visitorDesignation_tf;
+    @FXML
+    private TextField visitingUnitNumber_tf;
 
     private ObservableList<Visitor> visitorList;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+     
         visitorList = FXCollections.observableArrayList();
-        Visitor_tv.setItems(visitorList);
+
+       
         visitorName_tc.setCellValueFactory(new PropertyValueFactory<>("name"));
-        visitingDate_tc.setCellValueFactory(new PropertyValueFactory<>("date"));
-        loadVisitorListFromFile();
+        visitingDate_tc.setCellValueFactory(new PropertyValueFactory<>("visitingDate"));
+        visitingTime_TC.setCellValueFactory(new PropertyValueFactory<>("visitingTime"));
+        visitorDesignation_TC.setCellValueFactory(new PropertyValueFactory<>("designation"));
+        visitingUnitNumbers_TC.setCellValueFactory(new PropertyValueFactory<>("unitNumbers"));
+
+        
+        Visitor_tv.setItems(visitorList);
     }
 
     @FXML
     private void gOBackOnButtonClick(ActionEvent event) {
-        // Handle "Go Back" button click
+      
     }
 
     @FXML
     private void cancelOnButtonClick(ActionEvent event) {
-         try {
-            Parent root = FXMLLoader.load(getClass().getResource("VisitorListUI_SCO.fxml"));
-            Scene someScene = new Scene(root);
-
-            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            someStage.setScene(someScene);
-            someStage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    VisitorName_tf.clear();
+    visitorDate_dp.getEditor().clear();
+    visitorTime_tf.clear();
+    visitorDesignation_tf.clear();
+    visitingUnitNumber_tf.clear();
     }
-
-    @FXML
-    private void removeVisitorOnButtonClick(ActionEvent event) {
-        // Handle "View Visitor" button click
-        loadVisitorListFromFile();
-}
 
     @FXML
     private void viewVisitorOnButtonClick(ActionEvent event) {
-    try {
-        List<Visitor> visitors = Files.lines(Paths.get("VisitorList.txt"))
-                .map(line -> {
-                    String[] parts = line.split(",");
-                    return new Visitor(parts[0], parts[1]);
-                })
-                .collect(Collectors.toList());
-
-        ObservableList<Visitor> visitorList = FXCollections.observableArrayList(visitors);
-        Visitor_tv.setItems(visitorList);
-
-        System.out.println("Visitors loaded successfully");
-    } catch (IOException e) {
-        e.printStackTrace();
-        System.out.println("Error occurred while loading visitors");
-    }
-
-    // Set up cell value factory for date column
-    visitingDate_tc.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVisitingDate()));
-    }
+        
+       visitorList.clear();
+       readVisitorsFromFile();
+      
+}
+    
 
     @FXML
     private void addVisitorOnButtonClick(ActionEvent event) {
     String visitorName = VisitorName_tf.getText();
-    String visitingDate = visitorDate_dp.getValue().toString();
+    LocalDate visitingDate = visitorDate_dp.getValue();
+    String visitingTime = visitorTime_tf.getText();
+    String visitorDesignation = visitorDesignation_tf.getText();
+    String visitingUnitNumbers = visitingUnitNumber_tf.getText();
 
-    if (visitorName.isEmpty() || visitingDate.isEmpty()) {
-        System.out.println("Please fill in all fields");
-        return;
+   
+    Visitor visitor = new Visitor(visitorName, visitingDate, visitingTime, visitorDesignation, visitingUnitNumbers);
+
+  
+    writeVisitorToFile(visitor);
+
+    
+    
     }
 
-    Visitor visitor = new Visitor(visitorName, visitingDate);
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("VisitorList.txt", true))) {
-        writer.write(visitor.getName() + "," + visitor.getVisitingDate() + "\n");
-        System.out.println("Visitor added successfully");
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) {
+        
+    }
+
+    private void writeVisitorToFile(Visitor visitor) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("VisitorDetails.txt", true))) {
+        writer.write(visitor.getName() + "," +
+                     visitor.getVisitingDate() + "," +
+                     visitor.getVisitingTime() + "," +
+                     visitor.getDesignation() + "," +
+                     visitor.getUnitNumbers());
+        writer.newLine();
     } catch (IOException e) {
         e.printStackTrace();
-        System.out.println("Error occurred while adding visitor");
     }
 }
 
-    private void saveVisitorListToFile() {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
-            outputStream.writeObject(new ArrayList<>(visitorList));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void loadVisitorListFromFile() {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
-            List<Visitor> list = (List<Visitor>) inputStream.readObject();
-            visitorList.setAll(list);
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+private void readVisitorsFromFile() {
+    visitorList.clear();
+    try (BufferedReader reader = new BufferedReader(new FileReader("VisitorDetails.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 5) {
+                String name = parts[0];
+                LocalDate visitingDate = LocalDate.parse(parts[1]);
+                String visitingTime = parts[2];
+                String designation = parts[3];
+                String unitNumbers = parts[4];
+
+                Visitor visitor = new Visitor(name, visitingDate, visitingTime, designation, unitNumbers);
+                visitorList.add(visitor);
+            }
         }
+    } catch (IOException e) {
+        e.printStackTrace();
     }
+   
+}
 }

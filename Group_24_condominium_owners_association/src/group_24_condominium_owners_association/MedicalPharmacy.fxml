@@ -12,10 +12,10 @@
    <children>
       <Label layoutX="32.0" layoutY="59.0" text="Medicine Availability" />
       <Label layoutX="40.0" layoutY="125.0" text="Open and Close Hours" />
-      <RadioButton fx:id="MedicineAvailableRadioButton" layoutX="178.0" layoutY="59.0" mnemonicParsing="false" onAction="#MedicineAvailableButtonOnClick" text="available" />
-      <RadioButton fx:id="MedicineAvailableRadioButton" layoutX="325.0" layoutY="59.0" mnemonicParsing="false" onAction="#MedicineUnavailableButtonOnClick" text="unavailable" />
+      <RadioButton fx:id="MedicineAvailableRadioButton" layoutX="178.0" layoutY="59.0" mnemonicParsing="false" text="available" />
+      <RadioButton fx:id="MedicineUnavailableRadioButton" layoutX="325.0" layoutY="59.0" mnemonicParsing="false" text="unavailable" />
       <TextField fx:id="OpenAndCloseTextField" layoutX="194.0" layoutY="121.0" />
-      <Button layoutX="406.0" layoutY="179.0" mnemonicParsing="false" onAction="#SaveButtonOnClickOnAction" prefHeight="31.0" prefWidth="87.0" text="save">
+      <Button layoutX="406.0" layoutY="179.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" prefHeight="31.0" prefWidth="87.0" text="save">
          <font>
             <Font size="15.0" />
          </font>

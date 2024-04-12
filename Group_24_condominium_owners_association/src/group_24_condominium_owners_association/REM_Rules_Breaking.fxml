@@ -34,8 +34,8 @@
       <DatePicker fx:id="rulesBreaking_DatePicker" layoutX="181.0" layoutY="213.0" prefHeight="31.0" prefWidth="204.0" />
       <TableView fx:id="RulesBreaking_TableView" layoutX="66.0" layoutY="381.0" prefHeight="470.0" prefWidth="1038.0">
         <columns>
-          <TableColumn fx:id="PolicyName_TableColumn" prefWidth="268.9999694824219" text="Policy Name" />
-          <TableColumn fx:id="ViolationName_TableColumn" prefWidth="180.0" text="Violation Name" />
+          <TableColumn fx:id="PolicyName_TableColumn" prefWidth="233.0" text="Policy Name" />
+          <TableColumn fx:id="ViolationName_TableColumn" prefWidth="216.0" text="Violation Name" />
             <TableColumn fx:id="rulesViolation_TableColumn" prefWidth="243.0" text="Rules Violation Type" />
             <TableColumn fx:id="ViolatorName_TableColumn" prefWidth="166.00006103515625" text="Name of  the violator " />
             <TableColumn fx:id="rulesBreakingDate_DatePicker" prefWidth="179.0" text="Rules Breaking Date" />

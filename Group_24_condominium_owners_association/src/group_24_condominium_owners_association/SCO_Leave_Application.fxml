@@ -38,10 +38,10 @@
       <TextField fx:id="enterApplicationType_TextField" layoutX="85.0" layoutY="503.0" prefHeight="31.0" prefWidth="160.0" />
       <Label layoutX="255.0" layoutY="468.0" prefHeight="21.0" prefWidth="220.0" text="Application Records Percentage:" />
       <TextField fx:id="Percentage_TextField" layoutX="274.0" layoutY="503.0" prefHeight="31.0" prefWidth="153.0" />
-      <Button layoutX="473.0" layoutY="503.0" mnemonicParsing="false" onAction="#vewRecordsButtonOnClick" prefHeight="31.0" prefWidth="113.0" text="View Records" />
-      <Button layoutX="617.0" layoutY="503.0" mnemonicParsing="false" onAction="#addRecordsOnButtonClick" prefHeight="31.0" prefWidth="187.0" text="Add Records  to Chart" />
-      <Button layoutX="820.0" layoutY="503.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="31.0" prefWidth="80.0" text="Cancel" />
-      <BarChart fx:id="BarChart" layoutX="84.0" layoutY="547.0" prefHeight="404.0" prefWidth="729.0">
+      <Button layoutX="473.0" layoutY="503.0" mnemonicParsing="false" onAction="#viewRecordsButtonBarChartOnClick" prefHeight="31.0" prefWidth="113.0" text="View Records" />
+      <Button layoutX="617.0" layoutY="503.0" mnemonicParsing="false" onAction="#addRecordsBarChartOnButtonClick" prefHeight="31.0" prefWidth="187.0" text="Add Records  to Chart" />
+      <Button layoutX="820.0" layoutY="503.0" mnemonicParsing="false" onAction="#cancelBarChartButtonOnClick" prefHeight="31.0" prefWidth="80.0" text="Cancel" />
+      <BarChart fx:id="barChart" layoutX="84.0" layoutY="547.0" prefHeight="404.0" prefWidth="729.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
