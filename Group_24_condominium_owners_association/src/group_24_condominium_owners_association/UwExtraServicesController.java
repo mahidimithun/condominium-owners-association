@@ -71,7 +71,17 @@ public class UwExtraServicesController implements Initializable {
     }
 
     @FXML
-    private void maintenanceOnClick(ActionEvent event) {
+    private void maintenanceOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UwMaintenance.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
     }
     
 }

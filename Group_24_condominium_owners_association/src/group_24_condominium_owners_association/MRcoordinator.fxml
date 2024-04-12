@@ -24,10 +24,11 @@
         </columns>
       </TableView>
       <Label layoutX="48.0" layoutY="130.0" prefHeight="21.0" prefWidth="101.0" text="Repair Order" />
-      <TableView fx:id="maintenanceTable" layoutX="606.0" layoutY="179.0" prefHeight="200.0" prefWidth="370.0">
+      <TableView fx:id="maintenanceTable" layoutX="574.0" layoutY="179.0" prefHeight="200.0" prefWidth="402.0">
         <columns>
-          <TableColumn fx:id="tc_maintenance" prefWidth="142.0" text="Unit Owner Id" />
-          <TableColumn fx:id="tc_maintenance" minWidth="0.0" prefWidth="227.0" text="Maintenance" />
+          <TableColumn fx:id="tc_maintenanceUnitOnwerId" prefWidth="130.0" text="Unit Owner Id" />
+          <TableColumn fx:id="tc_maintenanceType" minWidth="0.0" prefWidth="139.0" text="Maintenance" />
+            <TableColumn fx:id="tc_maintenanceDate" minWidth="0.0" prefWidth="139.0" text="Date" />
         </columns>
       </TableView>
       <Label layoutX="48.0" layoutY="406.0" text="Equiment" />
@@ -48,5 +49,7 @@
       <Button layoutX="32.0" layoutY="26.0" mnemonicParsing="false" onAction="#maintenanceDashboradBack" text="Back" />
       <Button layoutX="149.0" layoutY="126.0" mnemonicParsing="false" onAction="#veiwReapirOrderOnClick" text="Veiw Reapir Order" />
       <Button layoutX="310.0" layoutY="126.0" mnemonicParsing="false" onAction="#removeRepairListOnClick" text="Remove Repair List" />
+      <Button layoutX="712.0" layoutY="136.0" mnemonicParsing="false" onAction="#viewMaintenanceOnClick" text="Veiw" />
+      <Button layoutX="866.0" layoutY="136.0" mnemonicParsing="false" onAction="#removeMaintenanceOnClick" text="Remove" />
    </children>
 </AnchorPane>

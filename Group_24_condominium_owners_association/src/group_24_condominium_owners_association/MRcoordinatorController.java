@@ -30,6 +30,8 @@ import javafx.stage.Stage;
 
 import modelPack.MRrepairOrder;
 
+import modelPack.MRmaintenanceOrder;
+
 /**
  * FXML Controller class
  *
@@ -46,9 +48,7 @@ public class MRcoordinatorController implements Initializable {
     @FXML
     private TableColumn<MRrepairOrder, LocalDate> tc_repairDate;
     @FXML
-    private TableView<?> maintenanceTable;
-    @FXML
-    private TableColumn<?, ?> tc_maintenance;
+    private TableView<MRmaintenanceOrder> maintenanceTable;
     @FXML
     private ComboBox<?> cb_equipmentList;
     @FXML
@@ -61,7 +61,19 @@ public class MRcoordinatorController implements Initializable {
     private TextField tf_equipmentId;
 
     ObservableList<MRrepairOrder> repairList;
+    
+    ObservableList<MRmaintenanceOrder> maintenanceList;
+    
     private String filename = "repairOrder.txt";
+     private String filenameM = "maintenanceOrder.txt";
+    
+    
+    @FXML
+    private TableColumn<MRmaintenanceOrder, String> tc_maintenanceDate;
+    @FXML
+    private TableColumn<MRmaintenanceOrder, String> tc_maintenanceUnitOnwerId;
+    @FXML
+    private TableColumn<MRmaintenanceOrder, LocalDate> tc_maintenanceType;
 
     /**
      * Initializes the controller class.
@@ -69,11 +81,20 @@ public class MRcoordinatorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        // Repair
         tc_repairUnitOwnerId.setCellValueFactory(new PropertyValueFactory("yourId"));
         tc_repairProduct.setCellValueFactory(new PropertyValueFactory("repairType"));
         tc_repairDate.setCellValueFactory(new PropertyValueFactory("date"));
 
         repairList = repairTable.getItems();
+        
+        //Maintenance
+        tc_maintenanceUnitOnwerId.setCellValueFactory(new PropertyValueFactory("yourId"));
+        tc_maintenanceType.setCellValueFactory(new PropertyValueFactory("maintenanceType"));
+        tc_maintenanceDate.setCellValueFactory(new PropertyValueFactory("date"));
+
+        maintenanceList = maintenanceTable.getItems();
+        
     }
 
     @FXML
@@ -160,6 +181,8 @@ public class MRcoordinatorController implements Initializable {
             }
 
         }
+        
+        
     }
 
     @FXML
@@ -171,9 +194,68 @@ public class MRcoordinatorController implements Initializable {
             fileWriter.write(""); 
             fileWriter.close();
             repairList.clear();
-//            lbl_recieve.setText("File cleared successfully.");
+
         } catch (IOException e) {
-//            lbl_recieve.setText("Error while clearing file: " + e.getMessage());
+
+            e.printStackTrace();
+        }
+        
+        
+        
+    }
+
+    @FXML
+    private void viewMaintenanceOnClick(ActionEvent event) {
+        
+        
+        StringBuilder data = new StringBuilder();
+        Scanner s = null;
+        
+         
+        try {
+
+            s = new Scanner(new BufferedReader(new FileReader(filenameM)));
+            maintenanceList.clear();
+
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+                String[] parts = line.split(","); 
+                if (parts.length == 3) {
+                    String yourId = parts[0];
+                    String maintenanceType = parts[1];
+                    String dateString = parts[2];
+                    LocalDate date = LocalDate.parse(dateString);
+                    maintenanceList.add(new MRmaintenanceOrder(yourId, maintenanceType, date));
+                } else {
+                    System.out.println("Invalid data format: " + line);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } finally {
+            if (s != null) {
+                s.close();
+            }
+
+        }
+        
+        
+    }
+
+    @FXML
+    private void removeMaintenanceOnClick(ActionEvent event) {
+        
+         try {
+            File file = new File(filenameM);
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(""); 
+            fileWriter.close();
+            maintenanceList.clear();
+
+        } catch (IOException e) {
+
             e.printStackTrace();
         }
     }
