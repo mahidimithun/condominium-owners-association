@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+=======
+Maintenance,20000 Tk
+Repair,40000 Tk
+Utility,5600 TK
+Utility,5000 tk
+>>>>>>> 9856501f26536c3f7b4831481a9351f36a839a57

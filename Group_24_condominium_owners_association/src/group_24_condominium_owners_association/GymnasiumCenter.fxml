@@ -13,11 +13,11 @@
       <Label layoutX="100.0" layoutY="58.0" text="Necessary Equipments" />
       <Label layoutX="128.0" layoutY="105.0" text="Open Hours" />
       <Label layoutX="126.0" layoutY="152.0" text="Service Offer" />
-      <RadioButton fx:id="ServiceOfferRadioButton" layoutX="241.0" layoutY="152.0" mnemonicParsing="false" onAction="#AvailableButtonOnClick" text="available" />
-      <RadioButton fx:id="ServiceOfferRadioButton" layoutX="351.0" layoutY="152.0" mnemonicParsing="false" onAction="#UnavailableButtonOnClick" text="unavailable" />
+      <RadioButton fx:id="ServiceOffer_AvailableRB" layoutX="241.0" layoutY="152.0" mnemonicParsing="false" text="available" />
+      <RadioButton fx:id="ServiceOffer_UnavailableRB" layoutX="351.0" layoutY="152.0" mnemonicParsing="false" text="unavailable" />
       <TextArea fx:id="GymnasiumUpdatesTextArea" layoutX="78.0" layoutY="238.0" prefHeight="200.0" prefWidth="437.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" prefHeight="25.0" prefWidth="65.0" text="back" />
-      <Button layoutX="269.0" layoutY="199.0" mnemonicParsing="false" onAction="#SaveButtonOnClickOnAction" text="save" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="25.0" prefWidth="65.0" text="back" />
+      <Button layoutX="269.0" layoutY="199.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="save" />
       <ComboBox fx:id="OpenhoursComboBox" layoutX="241.0" layoutY="101.0" prefWidth="150.0" />
       <TextField fx:id="NecessaryEqTextField" layoutX="251.0" layoutY="54.0" />
    </children>

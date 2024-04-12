@@ -22,28 +22,44 @@ import javafx.scene.control.TextField;
 public class BeautySalonController implements Initializable {
 
     @FXML
-    private ComboBox<?> OpenandclosehoursComboBox;
+    private ComboBox<String> OpenandclosehoursComboBox; 
     @FXML
     private TextField ServiceOfferTextField;
     @FXML
     private TextArea BeautySalonBookingUpdatesTextArea;
     @FXML
-    private DatePicker date_Datepicker;
+    private DatePicker date_DP;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Initialize ComboBox options
+        OpenandclosehoursComboBox.getItems().addAll(
+            "9:00 AM - 6:00 PM",
+            "10:00 AM - 7:00 PM",
+            "11:00 AM - 8:00 PM"
+        );
     }    
 
     @FXML
-    private void BookedButtonOnClickOnAction(ActionEvent event) {
+    private void BackButtonOnClick(ActionEvent event) {
+       
     }
 
     @FXML
-    private void BackButtonOnClickOnAction(ActionEvent event) {
-    }
+    private void BookedButtonOnClick(ActionEvent event) {
+       
+    String selectedHour = OpenandclosehoursComboBox.getValue();
+    String serviceOffer = ServiceOfferTextField.getText();
+    String bookingDate = date_DP.getValue().toString();
+    String bookingUpdate = "Booking details:\n" +
+                            "Selected hour: " + selectedHour + "\n" +
+                            "Service offer: " + serviceOffer + "\n" +
+                            "Booking date: " + bookingDate + "\n";
+
+   
+    BeautySalonBookingUpdatesTextArea.appendText(bookingUpdate);
+      
+        
+    }   
     
 }

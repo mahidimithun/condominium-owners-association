@@ -4,16 +4,19 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -23,17 +26,15 @@ import javafx.scene.control.TextArea;
 public class SCO_CCTV_Footage_RecordController implements Initializable {
 
     @FXML
-    private Label CCTVRecordOutput_Label;
+    private TextArea commentRecord_TextArea;
     @FXML
-    private TextArea CCTVfootageFileDetails_TextArea;
+    private TextField fileName_TextField;
     @FXML
-    private DatePicker CCTVFileRecordDate_DatePicker;
+    private TextField FootageTime_TextField;
     @FXML
-    private TableView<?> CCTVFootage_TableView;
+    private DatePicker FileRecord_dp;
     @FXML
-    private TableColumn<?, ?> CCTVFileDetails_TableColumn;
-    @FXML
-    private TableColumn<?, ?> fileRecordDate_TableColumn;
+    private TextArea CCTV_Output_TextArea;
 
     /**
      * Initializes the controller class.
@@ -48,19 +49,48 @@ public class SCO_CCTV_Footage_RecordController implements Initializable {
     }
 
     @FXML
-    private void addFootageFileRecordButtonOnClick(ActionEvent event) {
+    private void backButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewFootageFileRecordButtonOnClick(ActionEvent event) {
+    private void addfileDetailsButtonOnClick(ActionEvent event) {
+         String fileName = fileName_TextField.getText();
+        String footageTime = FootageTime_TextField.getText();
+        String fileRecordDate = FileRecord_dp.getValue().toString();
+        String comment = commentRecord_TextArea.getText();
+
+        String fileDetails = fileName + "," + footageTime + "," + fileRecordDate + "," + comment + "\n";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("CCTVFootageRecord.txt", true))) {
+            writer.write(fileDetails);
+            System.out.println("CCTV footage record added successfully");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error occurred while adding CCTV footage record");
+        }
     }
 
     @FXML
-    private void removeFootageRecordButtonOnClick(ActionEvent event) {
+    private void viewfileButtonOnClick(ActionEvent event) {
+          StringBuilder content = new StringBuilder();
+    try (BufferedReader reader = new BufferedReader(new FileReader("CCTVFootageRecord.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            content.append(line).append("\n");
+        }
+        CCTV_Output_TextArea.setText(content.toString()); 
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.out.println("Error occurred while reading CCTV footage records");
     }
-
+    }
+    
     @FXML
-    private void cancelFootageButtonOnClick(ActionEvent event) {
+    private void cancelButtonOnClick(ActionEvent event) {
+ fileName_TextField.clear();
+        FootageTime_TextField.clear();
+        FileRecord_dp.getEditor().clear();
+        commentRecord_TextArea.clear();
     }
     
 }

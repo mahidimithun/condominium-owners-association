@@ -4,17 +4,26 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -23,51 +32,124 @@ import javafx.scene.control.TextField;
  */
 public class WorkScheduleListUI_SCOController implements Initializable {
 
-    @FXML
+   @FXML
     private TextField scheduleName_tf;
     @FXML
     private DatePicker scheduleDate_dp;
     @FXML
-    private TextArea scheduleList_ta;
+    private TableView<WorkScheduleList_SCO> scheduleTable_tv;
     @FXML
-    private TableView<?> scheduleTable_tv;
+    private TableColumn<WorkScheduleList_SCO, String> scheduleName_tc;
     @FXML
-    private TableColumn<?, ?> scheduleName_tc;
+    private TableColumn<WorkScheduleList_SCO, LocalDate> schduleDate_tc;
     @FXML
-    private TableColumn<?, ?> schduleDate_tc;
+    private TableColumn<WorkScheduleList_SCO, String> workType_tc;
     @FXML
-    private Label workScheduleOutput_Label;
+    private TableColumn<WorkScheduleList_SCO, String> shiftStartTime_tc;
+    @FXML
+    private TableColumn<WorkScheduleList_SCO, String> shiftEndTime_tc;
+    @FXML
+    private TableColumn<WorkScheduleList_SCO, String> location_TableColumn;
+    @FXML
+    private ComboBox<String> workTypeCombobox;
+    @FXML
+    private TextField shiftStartTime_TextField;
+    @FXML
+    private TextField shiftEndTime_TextField;
+    @FXML
+    private TextField location_TextField;
 
-    /**
-     * Initializes the controller class.
-     */
+    private ObservableList<WorkScheduleList_SCO> scheduleList;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        scheduleList = FXCollections.observableArrayList();
+
+        scheduleName_tc.setCellValueFactory(new PropertyValueFactory<>("scheduleName"));
+        schduleDate_tc.setCellValueFactory(new PropertyValueFactory<>("scheduleDate"));
+        workType_tc.setCellValueFactory(new PropertyValueFactory<>("workType"));
+        shiftStartTime_tc.setCellValueFactory(new PropertyValueFactory<>("shiftStartTime"));
+        shiftEndTime_tc.setCellValueFactory(new PropertyValueFactory<>("shiftEndTime"));
+        location_TableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
+
+        scheduleTable_tv.setItems(scheduleList);
+        workTypeCombobox.getItems().addAll("Type A", "Type B", "Type C");
+    }
+       
 
     @FXML
     private void goBackToHomePageOnButtonClick(ActionEvent event) {
     }
 
-    @FXML
-    private void addNewScheduleOnButonClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void cancelScheduleOnButtonClick(ActionEvent event) {
-    }
 
     @FXML
     private void addNewScheduleOnButtonClick(ActionEvent event) {
+        String scheduleName = scheduleName_tf.getText();
+        LocalDate scheduleDate = scheduleDate_dp.getValue();
+        String workType = workTypeCombobox.getValue().toString();
+        String shiftStartTime = shiftStartTime_TextField.getText();
+        String shiftEndTime = shiftEndTime_TextField.getText();
+        String location = location_TextField.getText();
+
+       
+        writeScheduleDetailsToFile(new WorkScheduleList_SCO(scheduleName, scheduleDate, workType, shiftStartTime, shiftEndTime, location));
+
+        
+        scheduleName_tf.clear();
+        scheduleDate_dp.getEditor().clear();
+        workTypeCombobox.getSelectionModel().clearSelection();
+        shiftStartTime_TextField.clear();
+        shiftEndTime_TextField.clear();
+        location_TextField.clear();
     }
 
-    @FXML
-    private void removeScheduleOnButtonClick(ActionEvent event) {
-    }
 
     @FXML
     private void viewScheduleOnButtonClick(ActionEvent event) {
+    scheduleList.clear(); 
+    readScheduleDetailsFromFile(); 
+    scheduleTable_tv.setItems(scheduleList); 
+    }
+     private void writeScheduleDetailsToFile(WorkScheduleList_SCO schedule) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Guard_WorkScheduleDetails.txt", true))) {
+            writer.write(schedule.toString());
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+
+    private void readScheduleDetailsFromFile() {
+        scheduleList.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader("Guard_WorkScheduleDetails.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 6) {
+                    LocalDate scheduleDate = LocalDate.parse(parts[1]);
+                    WorkScheduleList_SCO schedule = new WorkScheduleList_SCO(parts[0], scheduleDate, parts[2], parts[3], parts[4], parts[5]);
+                    scheduleList.add(schedule);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void cancelButtonOnClick(ActionEvent event) {
+    scheduleName_tf.clear();
+    scheduleDate_dp.getEditor().clear();
+    workTypeCombobox.getSelectionModel().clearSelection();
+    shiftStartTime_TextField.clear();
+    shiftEndTime_TextField.clear();
+    location_TextField.clear();
     }
     
 }

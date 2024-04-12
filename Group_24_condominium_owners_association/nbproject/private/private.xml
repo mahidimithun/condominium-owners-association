@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/LogInUIController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRbudget.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboardController.java</file>
@@ -15,6 +16,16 @@
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/LogInModel.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMviewMRbudgetController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMviewMRbudget.fxml</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRmaintenanceOrder.java</file>
+=======
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/LogInUIController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/Main.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/TrainingSessionGuard_SCOController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/VisitorListUI_SCOController.java</file>
+>>>>>>> f791de9ed70ef62f0dcbc038b10e07fcba721051
+>>>>>>> 9856501f26536c3f7b4831481a9351f36a839a57
         </group>
     </open-files>
 </project-private>

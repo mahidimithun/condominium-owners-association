@@ -10,38 +10,38 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.ScheduledReminders_COController">
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.ScheduledReminders_COController">
    <children>
-      <Label layoutX="215.0" layoutY="14.0" prefHeight="17.0" prefWidth="152.0" text="Scheduled Reminders">
+      <Label layoutX="214.0" layoutY="14.0" prefHeight="17.0" prefWidth="152.0" text="Scheduled Reminders">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="458.0" layoutY="65.0" mnemonicParsing="false" onAction="#AddReminderButtonOnAction" text="Add Reminder" />
-      <Label fx:id="ReminderMessageLabel" layoutX="37.0" layoutY="380.0" text="Reminder message:" />
-      <TextField fx:id="ReminderMessageTF" layoutX="31.0" layoutY="410.0" prefHeight="46.0" prefWidth="539.0" />
-      <Button layoutX="537.0" layoutY="469.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="Save" />
+      <Button layoutX="472.0" layoutY="128.0" mnemonicParsing="false" onAction="#AddReminderButtonOnAction" text="Add Reminder" />
+      <Button layoutX="478.0" layoutY="420.0" mnemonicParsing="false" onAction="#LogoutButtonOnAction" prefHeight="25.0" prefWidth="80.0" text="Logout" />
       <Label layoutX="63.0" layoutY="290.0" text="Date:" />
       <Label layoutX="63.0" layoutY="325.0" text="Time:" />
       <TextField fx:id="TimeTF" layoutX="114.0" layoutY="321.0" />
-      <DatePicker fx:id="DateDatePicker" layoutX="102.0" layoutY="286.0" />
-      <Label fx:id="ReminderListLabel" layoutX="43.0" layoutY="45.0" text="Reminder List" textFill="#b24731">
+      <DatePicker fx:id="Date_DP" layoutX="102.0" layoutY="286.0" />
+      <Label layoutX="43.0" layoutY="45.0" text="Reminder List" textFill="#b24731">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="ReminderListTV" layoutX="36.0" layoutY="71.0" prefHeight="152.0" prefWidth="359.0">
+      <TableView fx:id="ReminderListTV" layoutX="36.0" layoutY="71.0" prefHeight="152.0" prefWidth="394.0">
         <columns>
           <TableColumn fx:id="ReminderTitleTC" prefWidth="110.0" text="Reminder Title" />
-          <TableColumn fx:id="DescriptionTC" prefWidth="97.0" text="Description" />
             <TableColumn fx:id="DateTC" prefWidth="75.0" text="Date" />
             <TableColumn fx:id="TimeTC" prefWidth="75.0" text="Time" />
+            <TableColumn fx:id="Schedule_TypeTC" prefWidth="133.0" text="Schedule Type" />
         </columns>
       </TableView>
-      <Button layoutX="459.0" layoutY="111.0" mnemonicParsing="false" onAction="#EditReminderButtonOnAction" text="Edit Reminder" />
-      <Button layoutX="477.0" layoutY="159.0" mnemonicParsing="false" onAction="#RefreshButtonOnAction" text="Refresh" />
-      <Line endX="-2.0" endY="101.0" layoutX="431.0" layoutY="138.0" startX="-2.0" startY="-96.0" />
+      <Line endX="-2.0" endY="101.0" layoutX="460.0" layoutY="138.0" startX="-2.0" startY="-96.0" />
       <Label layoutX="39.0" layoutY="251.0" text="Reninder Title:" />
       <TextField fx:id="ReminderTitleTF" layoutX="126.0" layoutY="247.0" />
+      <Label layoutX="49.0" layoutY="369.0" text="Schedule Type:" />
+      <TextField fx:id="ScheduleTypeTF" layoutX="141.0" layoutY="365.0" />
+      <Line endX="455.0" layoutX="141.0" layoutY="35.0" startX="-141.0" />
+      <Button layoutX="16.0" layoutY="2.0" mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
    </children>
 </AnchorPane>
