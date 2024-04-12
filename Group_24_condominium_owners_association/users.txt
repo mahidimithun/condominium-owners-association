@@ -3,4 +3,5 @@ mh,123,MR
 mh,345,UnitOwner
 sb,123,EventManagerDashboard
 sb,111,CommercialOwnerDashboard
+jb,786,FinancialManager
 
