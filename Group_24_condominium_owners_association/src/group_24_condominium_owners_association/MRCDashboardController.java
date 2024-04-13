@@ -26,14 +26,6 @@ import javafx.stage.Stage;
 public class MRCDashboardController implements Initializable {
 
     @FXML
-    private Label lbl_MRC_UnitOwnerId;
-    @FXML
-    private Label lbl_MRC_ServiceType;
-    @FXML
-    private Label lbl_MRC_Phone;
-    @FXML
-    private Label lbl_MRC_Location;
-    @FXML
     private ComboBox<?> cb_MRC_ConfirmationType;
 
     /**
