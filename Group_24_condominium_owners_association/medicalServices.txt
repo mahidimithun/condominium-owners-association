@@ -1,0 +1,2 @@
+Fever,1000
+Headache,2000

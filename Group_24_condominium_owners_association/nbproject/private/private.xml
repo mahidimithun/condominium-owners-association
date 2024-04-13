@@ -6,14 +6,9 @@
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwNotificationController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/UnitOwnerComplain.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwMaintenanceController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwNotification.fxml</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwRepairController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRCmedicalFees.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/UwMedicalServices.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboardController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwMedicalServicesController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwExtraServicesController.java</file>
-            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/MRcoordinatorController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MrTechnician.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRrepairOrder.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/MrTechinicianListController.java</file>
         </group>
     </open-files>
 </project-private>
