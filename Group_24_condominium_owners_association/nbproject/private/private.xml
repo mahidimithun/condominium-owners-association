@@ -3,16 +3,31 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwNotificationController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/UnitOwnerComplain.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwMaintenanceController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwNotification.fxml</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRmakePayment.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/MRbudget.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/Main.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMBudgetController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/FMDashboardController.java</file>
+            <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/MrMakePaymentController.java</file>
+=======
+>>>>>>> 90f4c3cea6d10bf59b9bb0c4cf1c59b88f90603a
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwRepairController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/modelPack/UwMedicalServices.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UnitOwnerDashboardController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwMedicalServicesController.java</file>
+<<<<<<< HEAD
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/UwExtraServicesController.java</file>
             <file>file:/C:/condominium-owners-association/Group_24_condominium_owners_association/src/group_24_condominium_owners_association/MRcoordinatorController.java</file>
+=======
+>>>>>>> 34fac35123cb2a01665eda0b911c058bac7bb8bc
+>>>>>>> 90f4c3cea6d10bf59b9bb0c4cf1c59b88f90603a
         </group>
     </open-files>
 </project-private>

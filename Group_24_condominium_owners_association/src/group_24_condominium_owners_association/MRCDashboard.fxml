@@ -13,14 +13,6 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="136.0" text="Unit Owner Id" />
-      <Label layoutX="332.0" layoutY="136.0" text="Service Type" />
-      <Label fx:id="lbl_MRC_UnitOwnerId" layoutX="165.0" layoutY="136.0" prefHeight="21.0" prefWidth="120.0" />
-      <Label fx:id="lbl_MRC_ServiceType" layoutX="442.0" layoutY="136.0" prefHeight="21.0" prefWidth="120.0" />
-      <Label layoutX="589.0" layoutY="136.0" prefHeight="21.0" prefWidth="100.0" text="Phone " />
-      <Label fx:id="lbl_MRC_Phone" layoutX="712.0" layoutY="137.0" prefHeight="21.0" prefWidth="93.0" />
-      <Label layoutX="878.0" layoutY="137.0" prefHeight="21.0" prefWidth="100.0" text="Location" />
-      <Label fx:id="lbl_MRC_Location" layoutX="1008.0" layoutY="136.0" prefHeight="21.0" prefWidth="93.0" />
       <Label layoutX="83.0" layoutY="280.0" prefHeight="31.0" prefWidth="174.0" text="Confirmation Type" />
       <Button layoutX="304.0" layoutY="362.0" mnemonicParsing="false" onAction="#MRC_Send" prefHeight="31.0" prefWidth="120.0" text="Send" />
       <ComboBox fx:id="cb_MRC_ConfirmationType" layoutX="266.0" layoutY="280.0" prefHeight="31.0" prefWidth="174.0" />

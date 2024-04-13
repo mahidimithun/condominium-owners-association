@@ -4,4 +4,4 @@ mh,123,UnitOwner
 sb,123,EventManagerDashboard
 sb,111,CommercialOwnerDashboard
 jb,786,FinancialManager
-
+jb,343,MedicalResponseCoordinator

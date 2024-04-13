@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="811.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MRCmedicalFeesController">
+   <children>
+      <TextArea fx:id="ta_writeMedeicalfee" layoutX="70.0" layoutY="335.0" prefHeight="200.0" prefWidth="583.0" />
+      <Button layoutX="30.0" layoutY="38.0" mnemonicParsing="false" onAction="#MRCmdeicalfeeBackOnClick" text="Back" />
+      <Button layoutX="261.0" layoutY="102.0" mnemonicParsing="false" text="Save Text File" />
+      <Button layoutX="537.0" layoutY="555.0" mnemonicParsing="false" onAction="#MRCmdeicalfeeSentAmountOnClick" text="Sent Amount" />
+      <ComboBox layoutX="292.0" layoutY="297.0" prefWidth="150.0" />
+      <TextField layoutX="274.0" layoutY="177.0" />
+      <TextField layoutX="274.0" layoutY="235.0" />
+      <Label layoutX="81.0" layoutY="182.0" prefHeight="21.0" prefWidth="163.0" text="Unit Owner Id" />
+      <Label layoutX="153.0" layoutY="240.0" prefHeight="21.0" prefWidth="105.0" text="Amount" />
+      <Label layoutX="117.0" layoutY="302.0" prefHeight="21.0" prefWidth="127.0" text="Problem Type" />
+      <Label layoutX="281.0" layoutY="27.0" prefHeight="35.0" prefWidth="218.0" text="Create Medical Fee">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="70.0" layoutY="555.0" mnemonicParsing="false" onAction="#MRCmdeicalfeeClearOnClick" prefHeight="31.0" prefWidth="109.0" text="Clear" />
+   </children>
+</AnchorPane>
