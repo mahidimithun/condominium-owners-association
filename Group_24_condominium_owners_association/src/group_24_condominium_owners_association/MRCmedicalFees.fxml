@@ -26,5 +26,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button layoutX="70.0" layoutY="555.0" mnemonicParsing="false" onAction="#MRCmdeicalfeeClearOnClick" prefHeight="31.0" prefWidth="109.0" text="Clear" />
    </children>
 </AnchorPane>

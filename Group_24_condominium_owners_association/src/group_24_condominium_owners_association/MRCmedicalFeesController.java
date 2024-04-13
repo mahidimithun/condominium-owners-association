@@ -36,5 +36,9 @@ public class MRCmedicalFeesController implements Initializable {
     @FXML
     private void MRCmdeicalfeeSentAmountOnClick(ActionEvent event) {
     }
+
+    @FXML
+    private void MRCmdeicalfeeClearOnClick(ActionEvent event) {
+    }
     
 }
