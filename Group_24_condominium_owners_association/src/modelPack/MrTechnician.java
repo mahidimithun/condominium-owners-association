@@ -14,14 +14,15 @@ public class MrTechnician {
 
     private String techName;
     private String techPhoneNo;
-    private LocalDate date;
+   
     private String techType;
+     private LocalDate date;
 
-    public MrTechnician(String techName, String techPhoneNo, LocalDate date, String techType) {
+    public MrTechnician(String techName, String techPhoneNo, String techType, LocalDate date) {
         this.techName = techName;
         this.techPhoneNo = techPhoneNo;
-        this.date = date;
         this.techType = techType;
+        this.date = date;
     }
 
     public String getTechName() {
@@ -40,14 +41,6 @@ public class MrTechnician {
         this.techPhoneNo = techPhoneNo;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     public String getTechType() {
         return techType;
     }
@@ -56,10 +49,20 @@ public class MrTechnician {
         this.techType = techType;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        return "MrTechnician{" + "techName=" + techName + ", techPhoneNo=" + techPhoneNo + ", date=" + date + ", techType=" + techType + '}';
+        return "MrTechnician{" + "techName=" + techName + ", techPhoneNo=" + techPhoneNo + ", techType=" + techType + ", date=" + date + '}';
     }
+
+    
     
     
 
