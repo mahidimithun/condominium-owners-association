@@ -45,6 +45,6 @@
       <PieChart fx:id="piechart" layoutX="81.0" layoutY="597.0" prefHeight="333.0" prefWidth="994.0" />
       <Button layoutX="109.0" layoutY="214.0" mnemonicParsing="false" onAction="#addDocumentaionOnButtonClick" text="Add Document" />
       <Button layoutX="408.0" layoutY="222.0" mnemonicParsing="false" onAction="#viewButtonOnClick" text="View Document" />
-      <Button layoutX="658.0" layoutY="222.0" mnemonicParsing="false" onAction="#RemoveDocumenOnButtonClick" text="Remove Document" />
+      <Button layoutX="658.0" layoutY="222.0" mnemonicParsing="false" onAction="#CancelOnButtonClick" prefHeight="31.0" prefWidth="69.0" text="Cancel" />
    </children>
 </AnchorPane>

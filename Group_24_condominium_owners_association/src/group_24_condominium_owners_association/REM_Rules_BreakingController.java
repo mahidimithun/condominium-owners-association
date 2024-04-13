@@ -67,7 +67,7 @@ public class REM_Rules_BreakingController implements Initializable {
         ViolatorName_TableColumn.setCellValueFactory(new PropertyValueFactory<>("violatorName"));
         rulesBreakingDate_DatePicker.setCellValueFactory(new PropertyValueFactory<>("rulesBreakingDate"));
 
-        Rulesviolation_ComboBox.getItems().addAll("Type A", "Type B", "Type C");
+        Rulesviolation_ComboBox.getItems().addAll("Unauthorized parking", "Noise disturbance", "Failure to maintain property","Failure to pay association fees");
     }
 
     @FXML
@@ -106,28 +106,31 @@ public class REM_Rules_BreakingController implements Initializable {
     String violatorName = ViolatorName_TextField.getText();
     LocalDate rulesBreakingDate = rulesBreaking_DatePicker.getValue();
 
-   
     REM_Rules_Break rulesBreak = new REM_Rules_Break(policyName, violationName, rulesViolation, violatorName, rulesBreakingDate);
+
+    writeRulesBreakToFile(rulesBreak);
 
     }
 
     @FXML
     private void viewDetailsButtonOnClick(ActionEvent event) {
-     rulesBreakingList.clear();
-
-      readRulesBreakFromFile();
-
+    rulesBreakingList.clear();
+    readRulesBreakFromFile();
+}
     
-     RulesBreaking_TableView.setItems(rulesBreakingList);
-    }
 
     @FXML
     private void cancelButtonOnClick(ActionEvent event) {
+    PolicyName_TextField.clear();
+    violationName_TextField.clear();
+    ViolatorName_TextField.clear();
+    Rulesviolation_ComboBox.getSelectionModel().clearSelection();
+    rulesBreaking_DatePicker.setValue(null);
         
     }
 
     private void writeRulesBreakToFile(REM_Rules_Break rulesBreak) {
-       try (BufferedWriter writer = new BufferedWriter(new FileWriter("RulesBreakDetails.txt", true))) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("RulesBreakDetails.txt", true))) {
         String policyName = rulesBreak.getPolicyName() != null ? rulesBreak.getPolicyName() : "";
         String violationName = rulesBreak.getViolationName() != null ? rulesBreak.getViolationName() : "";
         String rulesViolation = rulesBreak.getRulesViolation() != null ? rulesBreak.getRulesViolation() : "";
@@ -139,25 +142,24 @@ public class REM_Rules_BreakingController implements Initializable {
     } catch (IOException e) {
         e.printStackTrace();
     }
-    }
+}
 
-    private void readRulesBreakFromFile() {
-        rulesBreakingList.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader("RulesBreakDetails.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length == 5) {
-                    REM_Rules_Break rulesBreak = new REM_Rules_Break(parts[0], parts[1], parts[2], parts[3], LocalDate.parse(parts[4]));
-                    rulesBreakingList.add(rulesBreak);
-                }
+private void readRulesBreakFromFile() {
+    try (BufferedReader reader = new BufferedReader(new FileReader("RulesBreakDetails.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 5) {
+                REM_Rules_Break rulesBreak = new REM_Rules_Break(parts[0], parts[1], parts[2], parts[3], LocalDate.parse(parts[4]));
+                rulesBreakingList.add(rulesBreak);
             }
-
-            RulesBreaking_TableView.setItems(rulesBreakingList);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
+
+        RulesBreaking_TableView.setItems(rulesBreakingList);
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (Exception ex) {
+        ex.printStackTrace();
     }
+}
 }
