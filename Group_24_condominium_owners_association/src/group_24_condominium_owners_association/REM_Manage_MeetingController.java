@@ -4,9 +4,17 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +25,8 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -35,28 +45,44 @@ public class REM_Manage_MeetingController implements Initializable {
     @FXML
     private TextField meetingTime_TextField;
     @FXML
-    private TableView<?> meetingDocumentation_TV;
+    private TableView<REM_Manage_Meet> meetingDocumentation_TV;
     @FXML
-    private TableColumn<?, ?> meetDocumentationName_Tc;
+    private TableColumn<REM_Manage_Meet, String > meetDocumentationName_Tc;
     @FXML
-    private TableColumn<?, ?> meetingType_Tc;
+    private TableColumn<REM_Manage_Meet, String > meetingType_Tc;
     @FXML
-    private TableColumn<?, ?> meetingTitle_Tc;
+    private TableColumn<REM_Manage_Meet,  String> meetingTitle_Tc;
     @FXML
-    private TableColumn<?, ?> meetingTime_Tc;
+    private TableColumn<REM_Manage_Meet,String > meetingTime_Tc;
     @FXML
     private TextField TypePie_TextField;
     @FXML
     private TextField Typepercentage_TextField;
     @FXML
     private PieChart piechart;
+    
+    private ObservableList<REM_Manage_Meet> meetingList;
+    private ObservableList<PieChart.Data> pieChartData;
+
 
     /**
      * Initializes the controller class.
      */
+    private ObservableList <PieChart.Data> list = FXCollections.observableArrayList();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        meetingList = FXCollections.observableArrayList();
+        meetingDocumentation_TV.setItems(meetingList);
+
+        meetDocumentationName_Tc.setCellValueFactory(new PropertyValueFactory<>("meetDocumentName"));
+        meetingType_Tc.setCellValueFactory(new PropertyValueFactory<>("meetType"));
+        meetingTitle_Tc.setCellValueFactory(new PropertyValueFactory<>("meetingTitle"));
+        meetingTime_Tc.setCellValueFactory(new PropertyValueFactory<>("meetingTime"));
+        
+        pieChartData = FXCollections.observableArrayList();
+        piechart.setData(pieChartData);
     }    
 
     @FXML
@@ -91,22 +117,83 @@ public class REM_Manage_MeetingController implements Initializable {
 
     @FXML
     private void viewDocumentPercentageOnButtonClick(ActionEvent event) {
+        
+   pieChartData.clear();
+    
+    
+    String type = TypePie_TextField.getText();
+    double percentage = Double.parseDouble(Typepercentage_TextField.getText());
+    
+   
+    pieChartData.add(new PieChart.Data(type, percentage));
     }
 
     @FXML
     private void addNewTypeOnButtonClick(ActionEvent event) {
+    String type = TypePie_TextField.getText();
+    double percentage = Double.parseDouble(Typepercentage_TextField.getText());
+    pieChartData.add(new PieChart.Data(type, percentage));
     }
+    
 
     @FXML
     private void addDocumentaionOnButtonClick(ActionEvent event) {
+    String meetDocumentName = MeetDocumentName_TextField.getText();
+    String meetType = MeetType_TextField.getText();
+    String meetingTitle = meetingTitle_TextField.getText();
+    String meetingTime = meetingTime_TextField.getText();
+
+    REM_Manage_Meet meeting = new REM_Manage_Meet(meetDocumentName, meetType, meetingTitle, meetingTime);
+    
+    
+    writeMeetingToFile(meeting);
+    
+    
+   
     }
 
     @FXML
     private void viewButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void RemoveDocumenOnButtonClick(ActionEvent event) {
+         meetingList.clear();
+         readMeetingFromFile();
     }
     
+
+    @FXML
+    private void CancelOnButtonClick(ActionEvent event) {
+    MeetDocumentName_TextField.clear();
+    MeetType_TextField.clear();
+    meetingTitle_TextField.clear();
+    meetingTime_TextField.clear();
+    }
+      private void writeMeetingToFile(REM_Manage_Meet meeting) {
+      try (BufferedWriter writer = new BufferedWriter(new FileWriter("rem_MeetingDetailsRulesManager.txt", true))) {
+        writer.write(meeting.getMeetDocumentName() + "," + meeting.getMeetType() + "," + meeting.getMeetingTitle() + "," + meeting.getMeetingTime() + "\n");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    
+      }
+    private void readMeetingFromFile() {
+       try (BufferedReader reader = new BufferedReader(new FileReader("rem_MeetingDetailsRulesManager.txt"))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 4) {
+                String meetDocumentName = parts[0];
+                String meetType = parts[1];
+                String meetingTitle = parts[2];
+                String meetingTime = parts[3];
+
+                REM_Manage_Meet meeting = new REM_Manage_Meet(meetDocumentName, meetType, meetingTitle, meetingTime);
+                meetingList.add(meeting);
+                
+                
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
 }
+
