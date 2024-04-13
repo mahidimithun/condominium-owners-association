@@ -57,7 +57,16 @@ public class MRCDashboardController implements Initializable {
     }
 
     @FXML
-    private void MRC_EmergencyTreatmentRequest(ActionEvent event) {
+    private void MRC_EmergencyTreatmentRequest(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MRCemergencyTreatmentRequest.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
     }
 
     @FXML
