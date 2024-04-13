@@ -110,11 +110,15 @@ private void viewDetailsOnButtonClick(ActionEvent event) {
 
 @FXML
 private void cancelButtonOnClick(ActionEvent event) {
+     newPolicy_TextArea.clear();
+    newRules_TextArea.clear();
+    PolicyAddtime_TextField.clear();
+    policyAddDate_Datepicker.setValue(null);
     
 }
 
 private void writePolicyRulesToFile(REM_Association_Policy_Rules policyRules) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("PolicyRulesDetails.txt", true))) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("rem_PolicyRulesDetails.txt", true))) {
         String newPolicy = policyRules.getNewPolicy() != null ? policyRules.getNewPolicy() : "";
         String newRules = policyRules.getNewRules() != null ? policyRules.getNewRules() : "";
         String policyAddTime = policyRules.getPolicyAddTime() != null ? policyRules.getPolicyAddTime() : "";
@@ -128,7 +132,7 @@ private void writePolicyRulesToFile(REM_Association_Policy_Rules policyRules) {
 
 private void readPolicyRulesFromFile() {
     policyAndRulesList.clear();
-    try (BufferedReader reader = new BufferedReader(new FileReader("PolicyRulesDetails.txt"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader("rem_PolicyRulesDetails.txt"))) {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");

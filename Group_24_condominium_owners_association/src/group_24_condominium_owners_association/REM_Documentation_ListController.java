@@ -84,8 +84,13 @@ public class REM_Documentation_ListController implements Initializable {
 
     @FXML
     private void cancelButtonOnClick(ActionEvent event) {
+    documentName_TextField.clear();
+    document_dp.setValue(null);
+    documentTopic_TextField.clear();
+    fileType_Combobox.getSelectionModel().clearSelection();
+}
       
-    }
+    
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {
@@ -116,7 +121,7 @@ public class REM_Documentation_ListController implements Initializable {
     }
 
     private void writeDocumentToFile(REM_Documentation document) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("DocumentDetails.txt", true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("rem_DocumentDetails.txt", true))) {
             String documentName = document.getDocumentName() != null ? document.getDocumentName() : "";
             LocalDate documentDate = document.getDocumentDate() != null ? document.getDocumentDate() : null;
             String documentTopic = document.getDocumentTopic() != null ? document.getDocumentTopic() : "";
@@ -130,7 +135,7 @@ public class REM_Documentation_ListController implements Initializable {
 
     private void readDocumentFromFile() {
         documentList.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader("DocumentDetails.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("rem_DocumentDetails.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");

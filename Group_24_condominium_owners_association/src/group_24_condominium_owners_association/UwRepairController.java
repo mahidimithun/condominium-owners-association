@@ -83,7 +83,7 @@ public class UwRepairController implements Initializable {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("repairOrder.txt", true))) {
             writer.write(order.getRepairType() + "," + order.getYourId() + "," + order.getDate());
-            writer.newLine(); // Add a newline for each entry
+            writer.newLine(); 
             lbl_error.setText(" Add succesfully");
         } catch (IOException e) {
             e.printStackTrace();
