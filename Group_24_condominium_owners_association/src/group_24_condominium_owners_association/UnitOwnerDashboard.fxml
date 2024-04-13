@@ -19,5 +19,10 @@
       <Button layoutX="327.0" layoutY="535.0" mnemonicParsing="false" onAction="#extraServicesOnClick" prefHeight="31.0" prefWidth="166.0" text="Extra Services" />
       <Button layoutX="607.0" layoutY="535.0" mnemonicParsing="false" onAction="#bookingOnClick" prefHeight="31.0" prefWidth="117.0" text="Booking" />
       <Button layoutX="25.0" layoutY="44.0" mnemonicParsing="false" onAction="#backUnitOwnerDashboard" text="Back" />
+      <Button layoutX="594.0" layoutY="44.0" mnemonicParsing="false" onAction="#checkNotificationOnClick" prefHeight="31.0" prefWidth="152.0" text="Check Notification" textFill="RED" wrapText="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
