@@ -2,3 +2,4 @@
 5600,Gym,8000,jb10
 10005,Maintenance,1000 Tk,jb6060
 ut60,Utility,1500 Tk,jb999
+10001,Utility,2500 Tk,45
