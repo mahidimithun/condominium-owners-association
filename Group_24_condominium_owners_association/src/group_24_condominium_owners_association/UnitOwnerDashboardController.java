@@ -158,4 +158,18 @@ public class UnitOwnerDashboardController implements Initializable {
         currentStage.show();
     }
 
+    @FXML
+    private void chartOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Uwchart.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
+    }
+
 }
