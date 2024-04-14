@@ -65,6 +65,7 @@ public class FMBudgetController implements Initializable {
 
     @FXML
     private void addFMBudgetOnClick(ActionEvent event) {
+        
     }
 
     @FXML
