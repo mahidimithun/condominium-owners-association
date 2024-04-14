@@ -10,35 +10,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="787.0" prefWidth="777.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group_24_condominium_owners_association.MrTechinicianListController">
+<AnchorPane id="AnchorPane" prefHeight="787.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.MrTechinicianListController">
    <children>
-      <Label layoutX="29.0" layoutY="373.0" text="Technician Name" />
-      <Label layoutX="401.0" layoutY="373.0" text="Techinician Phone No" />
-      <Label layoutX="31.0" layoutY="462.0" text="Techinician Type" />
-      <TextField fx:id="tf_inputTechName" layoutX="181.0" layoutY="368.0" />
-      <TextField fx:id="tf_inputTechPhoneNo" layoutX="581.0" layoutY="368.0" />
-      <ComboBox fx:id="cb_inputTechType" layoutX="181.0" layoutY="457.0" prefHeight="31.0" prefWidth="176.0" />
-      <TableView fx:id="techTable" layoutX="31.0" layoutY="532.0" prefHeight="200.0" prefWidth="584.0">
+      <Label layoutX="43.0" layoutY="187.0" text="Technician Name" />
+      <Label layoutX="22.0" layoutY="255.0" text="Techinician Phone No" />
+      <Label layoutX="39.0" layoutY="404.0" text="Techinician Type" />
+      <TextField fx:id="tf_inputTechName" layoutX="207.0" layoutY="193.0" />
+      <TextField fx:id="tf_inputTechPhoneNo" layoutX="207.0" layoutY="250.0" />
+      <ComboBox fx:id="cb_inputTechType" layoutX="189.0" layoutY="389.0" prefHeight="31.0" prefWidth="176.0" />
+      <TableView fx:id="techTable" layoutX="31.0" layoutY="532.0" prefHeight="200.0" prefWidth="737.0">
         <columns>
-          <TableColumn fx:id="tc_techPhone" minWidth="0.0" prefWidth="172.0" text="Phone" />
-            <TableColumn fx:id="tc_TechType" prefWidth="155.0" text="Type" />
-          <TableColumn fx:id="tc_TechName" prefWidth="256.0" text="Name" />
+          <TableColumn fx:id="tc_techPhone" minWidth="0.0" prefWidth="171.0" text="Phone" />
+            <TableColumn fx:id="tc_TechType" prefWidth="123.0" text="Type" />
+          <TableColumn fx:id="tc_TechName" prefWidth="266.0" text="Name" />
+            <TableColumn fx:id="tc_hireDate" prefWidth="176.0" text="Date" />
         </columns>
       </TableView>
-      <Label layoutX="23.0" layoutY="76.0" text="Hire Date" />
-      <DatePicker fx:id="techHireDate" layoutX="104.0" layoutY="71.0" />
-      <Label layoutX="23.0" layoutY="153.0" text="Techinician Type" />
-      <ComboBox fx:id="cb_oldTechType" layoutX="154.0" layoutY="148.0" prefHeight="31.0" prefWidth="176.0" />
+      <Label layoutX="37.0" layoutY="336.0" text="Hire Date" />
+      <DatePicker fx:id="techHireDate" layoutX="199.0" layoutY="331.0" prefHeight="31.0" prefWidth="176.0" />
       <Button layoutX="452.0" layoutY="447.0" mnemonicParsing="false" onAction="#addNewTechOnClick" prefHeight="31.0" prefWidth="304.0" text="Add New Techician" />
-      <Label fx:id="lbl_showTechName" layoutX="141.0" layoutY="200.0" prefHeight="50.0" prefWidth="176.0" />
-      <Label layoutX="55.0" layoutY="225.0" text="Name" />
-      <Label layoutX="42.0" layoutY="309.0" text="Phone No" />
-      <Label fx:id="showTechPhone" layoutX="164.0" layoutY="284.0" prefHeight="50.0" prefWidth="187.0" />
       <Label layoutX="300.0" layoutY="14.0" text="Techinician">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
+      <Button layoutX="43.0" layoutY="21.0" mnemonicParsing="false" onAction="#backOnClick" text="Back" />
+      <Button layoutX="68.0" layoutY="447.0" mnemonicParsing="false" onAction="#viewOnClick" prefHeight="31.0" prefWidth="187.0" text="View Technician" />
+      <Label fx:id="lbl_error" layoutX="467.0" layoutY="198.0" prefHeight="209.0" prefWidth="271.0" />
    </children>
 </AnchorPane>

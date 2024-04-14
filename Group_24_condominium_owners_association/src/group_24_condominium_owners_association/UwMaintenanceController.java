@@ -97,7 +97,7 @@ public class UwMaintenanceController implements Initializable {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("maintenanceOrder.txt", true))) {
             writer.write(order.getMaintenanceType() + "," + order.getYourId() + "," + order.getDate());
-            writer.newLine(); // Add a newline for each entry
+            writer.newLine(); 
             lbl_error.setText(" Add succesfully");
         } catch (IOException e) {
             e.printStackTrace();

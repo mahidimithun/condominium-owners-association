@@ -102,7 +102,19 @@ public class MRcoordinatorController implements Initializable {
     }
 
     @FXML
-    private void technicianOnClick(ActionEvent event) {
+    private void technicianOnClick(ActionEvent event) throws IOException {
+        
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("MrTechinicianList.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
+        
+        
     }
 
     @FXML
