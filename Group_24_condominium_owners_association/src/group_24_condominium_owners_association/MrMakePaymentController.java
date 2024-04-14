@@ -4,8 +4,13 @@
  */
 package group_24_condominium_owners_association;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,6 +68,8 @@ public class MrMakePaymentController implements Initializable {
     private String filename = "mrMakePayment.txt";
 
     private String dest = "MRmakePayment.pdf";
+    
+
 
     /**
      * Initializes the controller class.
@@ -179,6 +186,30 @@ public class MrMakePaymentController implements Initializable {
 
     @FXML
     private void savePdfOnClick(ActionEvent event) {
+        
+        try {
+            PdfWriter writer = new PdfWriter(dest);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+           
+            try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    line = line.replace(",", " - ");
+                    document.add(new Paragraph(line));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            document.close();
+            lbl_notify.setText("Pdf generate succesfully");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        
+    }
+        
     }
 
 }
