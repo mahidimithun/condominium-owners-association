@@ -16,7 +16,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
@@ -24,6 +28,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -75,11 +80,21 @@ public class SCO_SecurityGuardListController implements Initializable {
     dutyTime_tc.setCellValueFactory(new PropertyValueFactory<>("dutyTime"));
     
  
-    securityGuardType_cb.getItems().addAll("Type A", "Type B", "Type C");
+    securityGuardType_cb.getItems().addAll("Senior guard", "Junior guard", "Emergency guard");
     }    
 
     @FXML
     private void goBackButtonOnClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
     @FXML
@@ -137,7 +152,7 @@ private void readGuardDetailsFromFile() {
             }
         }
         
-        // Set the guardList as the items for the TableView
+        
         Security_tv.setItems(guardList);
     } catch (IOException e) {
         e.printStackTrace();
@@ -145,4 +160,19 @@ private void readGuardDetailsFromFile() {
         ex.printStackTrace();
     }
 }
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+        
+    }
 }

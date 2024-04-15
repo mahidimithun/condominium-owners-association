@@ -29,13 +29,14 @@
       <Button layoutX="785.0" layoutY="198.0" mnemonicParsing="false" onAction="#addPolicyButtonOnClick" text="Add policy" />
       <Button layoutX="785.0" layoutY="252.0" mnemonicParsing="false" onAction="#viewButtonOnClick" text="View Policy" />
       <Button layoutX="785.0" layoutY="303.0" mnemonicParsing="false" onAction="#cancelButtonOnClick" prefHeight="31.0" prefWidth="95.0" text="Cancel" />
-      <Label layoutX="391.0" layoutY="454.0" prefHeight="31.0" prefWidth="460.0" text="                         Complain Management">
+      <Label layoutX="324.0" layoutY="454.0" prefHeight="31.0" prefWidth="460.0" text="                         Complain Management">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextArea fx:id="complainManagemnet_TextArea" layoutX="180.0" layoutY="496.0" prefHeight="285.0" prefWidth="892.0" />
+      <TextArea fx:id="complainManagemnet_TextArea" layoutX="63.0" layoutY="510.0" prefHeight="292.0" prefWidth="919.0" />
       <Label layoutX="768.0" layoutY="129.0" prefHeight="21.0" prefWidth="83.0" text="Policy Type:" />
       <ComboBox fx:id="policyType_Combobox" layoutX="856.0" layoutY="124.0" prefHeight="31.0" prefWidth="197.0" />
+      <Button layoutX="466.0" layoutY="836.0" mnemonicParsing="false" onAction="#sentButtonOnClick" prefHeight="31.0" prefWidth="175.0" text="Sent" />
    </children>
 </AnchorPane>

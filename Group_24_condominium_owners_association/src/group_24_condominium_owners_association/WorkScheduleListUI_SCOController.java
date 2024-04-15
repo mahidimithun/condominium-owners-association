@@ -11,19 +11,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -73,12 +77,22 @@ public class WorkScheduleListUI_SCOController implements Initializable {
         location_TableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
 
         scheduleTable_tv.setItems(scheduleList);
-        workTypeCombobox.getItems().addAll("Type A", "Type B", "Type C");
+        workTypeCombobox.getItems().addAll("Monitoring", "Responding to Emergencies:", "Risk Assessment:");
     }
        
 
     @FXML
     private void goBackToHomePageOnButtonClick(ActionEvent event) {
+          try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
 
@@ -95,12 +109,6 @@ public class WorkScheduleListUI_SCOController implements Initializable {
         writeScheduleDetailsToFile(new WorkScheduleList_SCO(scheduleName, scheduleDate, workType, shiftStartTime, shiftEndTime, location));
 
         
-        scheduleName_tf.clear();
-        scheduleDate_dp.getEditor().clear();
-        workTypeCombobox.getSelectionModel().clearSelection();
-        shiftStartTime_TextField.clear();
-        shiftEndTime_TextField.clear();
-        location_TextField.clear();
     }
 
 
@@ -140,6 +148,16 @@ public class WorkScheduleListUI_SCOController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
     @FXML

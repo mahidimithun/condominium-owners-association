@@ -15,13 +15,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -54,43 +60,49 @@ public class SCO_Guard_Complain_ListController implements Initializable {
     /**
      * Initializes the controller class.
      */
-     private ObservableList<GuardComplain> guardComplainList = FXCollections.observableArrayList();
+     private ObservableList<GuardComplain> guardComplainList ;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        complainType_Combobox.getItems().addAll("Type A", "Type B", "Type C");
+        guardComplainList = FXCollections.observableArrayList();
+        complainType_Combobox.getItems().addAll("Complaints about Visitors:", "Complaints about Employees:", "Safety Concerns","Incident Reports");
         
-        complainBy_TableColumn.setCellValueFactory(cellData -> cellData.getValue().complainByProperty());
-        complainType_TableColumn.setCellValueFactory(cellData -> cellData.getValue().complainTypeProperty());
-        complainDate_TableColumn.setCellValueFactory(cellData -> cellData.getValue().complainDateProperty());
-        complainStatus_TableColumn.setCellValueFactory(cellData -> cellData.getValue().complainStatusProperty());
+       complainBy_TableColumn.setCellValueFactory(new PropertyValueFactory<>("complainBy"));
+       complainType_TableColumn.setCellValueFactory(new PropertyValueFactory<>("complainType"));
+       complainDate_TableColumn.setCellValueFactory(new PropertyValueFactory<>("complainDate"));
+       complainStatus_TableColumn.setCellValueFactory(new PropertyValueFactory<>("complainStatus"));
     }    
 
     @FXML
     private void LogOutButtonOnClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
-    @FXML
+     @FXML
     private void addGuardComplainButtonOnClick(ActionEvent event) {
         String complainBy = complainBy_TextField.getText();
         String complainType = complainType_Combobox.getValue();
         String complainDate = complainDate_DatePicker.getValue().toString();
         String complainStatus = addressedRadioButton.isSelected() ? "Addressed" : "Not Addressed";
 
-        // Create a new GuardComplain object
         GuardComplain newComplain = new GuardComplain(complainBy, complainType, complainDate, complainStatus);
-        
-        // Add the new complain to the list and update TableView
         guardComplainList.add(newComplain);
-        guardComplain_TableView.setItems(guardComplainList);
 
-        // Save the updated list to the file
-        saveComplainsToFile();
+        writeComplainsToFile();
     }
 
     @FXML
     private void viewGuardComplainButtonOnClick(ActionEvent event) {
-        loadComplainsFromFile();
+        readComplainsFromFile();
     }
 
     @FXML
@@ -101,25 +113,22 @@ public class SCO_Guard_Complain_ListController implements Initializable {
         addressedRadioButton.setSelected(false);
         notAddressedRadioButton.setSelected(false);
     }
-    
-    private void saveComplainsToFile() {
-        // Write the data from guardComplainList to the file
+
+    private void writeComplainsToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("GuardComplain.txt"))) {
             for (GuardComplain complain : guardComplainList) {
                 writer.write(complain.getComplainBy() + "," +
-                             complain.getComplainType() + "," +
-                             complain.getComplainDate() + "," +
-                             complain.getComplainStatus() + "\n");
+                        complain.getComplainType() + "," +
+                        complain.getComplainDate() + "," +
+                        complain.getComplainStatus() + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void loadComplainsFromFile() {
-        // Read data from the file and populate guardComplainList
-        guardComplainList.clear(); // Clear existing data
-        
+    private void readComplainsFromFile() {
+        guardComplainList.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader("GuardComplain.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -128,11 +137,24 @@ public class SCO_Guard_Complain_ListController implements Initializable {
                     guardComplainList.add(new GuardComplain(parts[0], parts[1], parts[2], parts[3]));
                 }
             }
+            guardComplain_TableView.setItems(guardComplainList);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        // Update TableView
-        guardComplain_TableView.setItems(guardComplainList);
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            someStage.setScene(someScene);
+            someStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
+

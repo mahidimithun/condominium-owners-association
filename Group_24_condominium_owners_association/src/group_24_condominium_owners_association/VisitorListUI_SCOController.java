@@ -15,6 +15,11 @@ import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class VisitorListUI_SCOController implements Initializable {
     @FXML
@@ -60,6 +65,16 @@ public class VisitorListUI_SCOController implements Initializable {
 
     @FXML
     private void gOBackOnButtonClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
       
     }
 
@@ -101,11 +116,21 @@ public class VisitorListUI_SCOController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
         
     }
 
     private void writeVisitorToFile(Visitor visitor) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("VisitorDetails.txt", true))) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("VisitorList.txt", true))) {
         writer.write(visitor.getName() + "," +
                      visitor.getVisitingDate() + "," +
                      visitor.getVisitingTime() + "," +
@@ -120,7 +145,7 @@ public class VisitorListUI_SCOController implements Initializable {
 
 private void readVisitorsFromFile() {
     visitorList.clear();
-    try (BufferedReader reader = new BufferedReader(new FileReader("VisitorDetails.txt"))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader("VisitorList.txt"))) {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");

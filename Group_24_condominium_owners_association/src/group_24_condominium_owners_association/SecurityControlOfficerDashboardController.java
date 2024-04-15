@@ -63,7 +63,7 @@ public class SecurityControlOfficerDashboardController implements Initializable 
     @FXML
     private void PaymentDetailsOnButtonClick(ActionEvent event) {
  try {
-            Parent root = FXMLLoader.load(getClass().getResource("SCO_Payment Details.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("SCO_payementDetails.fxml"));
             Scene someScene = new Scene(root);
 
             Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -150,7 +150,7 @@ public class SecurityControlOfficerDashboardController implements Initializable 
     @FXML
     private void GoBackToHomePageOnButtonClick(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(".fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("LogInUI.fxml"));
             Scene someScene = new Scene(root);
 
             Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

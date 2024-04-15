@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="848.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_Guard_Complain_ListController">
+<AnchorPane id="AnchorPane" prefHeight="848.0" prefWidth="1123.0" style="-fx-background-color: lemonchiffon;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.SCO_Guard_Complain_ListController">
    <children>
       <Label layoutX="454.0" layoutY="14.0" text="Guard Complain">
          <font>
@@ -42,5 +42,6 @@
       </TableView>
       <Button layoutX="430.0" layoutY="354.0" mnemonicParsing="false" onAction="#viewGuardComplainButtonOnClick" prefHeight="31.0" prefWidth="124.0" text="View Complain" />
       <Button layoutX="438.0" layoutY="409.0" mnemonicParsing="false" onAction="#cancelGuardComplainButtonOnClick" prefHeight="31.0" prefWidth="124.0" text="Cancel" />
+      <Button layoutX="49.0" layoutY="6.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
    </children>
 </AnchorPane>

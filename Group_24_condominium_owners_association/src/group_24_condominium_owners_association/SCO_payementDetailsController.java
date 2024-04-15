@@ -15,7 +15,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
@@ -23,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class SCO_payementDetailsController implements Initializable {
 
@@ -69,11 +74,8 @@ public class SCO_payementDetailsController implements Initializable {
     paymentAmount_TC.setCellValueFactory(new PropertyValueFactory<>("paymentAmount"));
     paymentDate_TC.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
     payemntApproval_TC.setCellValueFactory(new PropertyValueFactory<>("paymentApproval"));
-    
-   
-    paymentDetails_TV.setItems(payementList);
-        guardDesignation_Combobox.getItems().addAll("Senior Guard ", " Junior Guard ", "Emergency Guard ");
-        paymentApproval_Combobox.getItems().addAll("Approved", "Pending", "Rejected");
+    guardDesignation_Combobox.getItems().addAll("Senior Guard ", " Junior Guard ", "Emergency Guard ");
+    paymentApproval_Combobox.getItems().addAll("Approved", "Pending", "Rejected");
         
       
         readPaymentDetailsFromFile();
@@ -84,11 +86,31 @@ public class SCO_payementDetailsController implements Initializable {
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {
-       
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+        
     }
 
     @FXML
     private void logOutOnButtonClick(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
         
     }
 
@@ -105,11 +127,6 @@ public class SCO_payementDetailsController implements Initializable {
     writePaymentDetailsToFile(new SCO_Payement(guardName, guardDesignation, paymentStatus, paymentAmount, paymentDate, paymentApproval));
 
    
-    guardName_TextField.clear();
-    guardDesignation_Combobox.getSelectionModel().clearSelection();
-    paymentAmount_TextField.clear();
-    payment_dp.getEditor().clear();
-    paymentApproval_Combobox.getSelectionModel().clearSelection();
     }
 
     @FXML
@@ -127,7 +144,7 @@ public class SCO_payementDetailsController implements Initializable {
     payment_dp.getEditor().clear();
     paymentApproval_Combobox.getSelectionModel().clearSelection();
 
-    paymentDetails_TV.getSelectionModel().clearSelection();
+  
 }
     
 

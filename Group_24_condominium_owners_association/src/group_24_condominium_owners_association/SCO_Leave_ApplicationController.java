@@ -18,6 +18,11 @@ import javafx.scene.control.TextField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class SCO_Leave_ApplicationController implements Initializable {
 
@@ -65,18 +70,30 @@ public class SCO_Leave_ApplicationController implements Initializable {
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {
-        // Handle back button click
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       
+    }
+        
     }
 
     @FXML
     private void logoutButtonOnClick(ActionEvent event) {
-        // Handle logout button click
+        
+        
     }
 
     @FXML
     private void addRecordsButttonOnClick(ActionEvent event) {
-        // Handle add records button click
-        String record = ""; // Get the record data
+       
+        String record = ""; 
         recordsOutput_TextArea.appendText(record + "\n");
     }
 
@@ -87,13 +104,13 @@ public class SCO_Leave_ApplicationController implements Initializable {
     String leaveApplication = leaveApplication_Combobox.getValue();
     String applicationApproval = applicationapproval_Combobox.getValue();
 
-    // Create a string representation of the output
+    
     String output = "Guard Name: " + guardName + "\n" +
                     "Guard Designation: " + guardDesignation + "\n" +
                     "Leave Application: " + leaveApplication + "\n" +
                     "Application Approval: " + applicationApproval;
 
-    // Show the output in the recordsOutput_TextArea
+   
     recordsOutput_TextArea.setText(output);
     }
 
@@ -135,16 +152,10 @@ public class SCO_Leave_ApplicationController implements Initializable {
     }
 
     private void displayRecordsOnBarChart() {
-        // You need to implement the logic to retrieve records from the data source and then add them to the bar chart.
-        // Since the data source retrieval mechanism is not provided, I'll demonstrate with a sample dataset.
-        // For demonstration purposes, let's assume the data is retrieved from some external source or database.
-        // In a real application, replace this with your actual data retrieval logic.
-
-        // For demonstration, let's assume we have the following data:
+     
         String applicationType = enterApplicationType_TextField.getText();
         int percentage = Integer.parseInt(Percentage_TextField.getText());
 
-        // Add data to BarChart
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>(applicationType, percentage));
         barChart.getData().add(series);

@@ -132,10 +132,10 @@ public class REM_Feedback_SuggestionController implements Initializable {
         FeedbackandSuggestions_TextArea.clear();
     }
     private void readFeedbackSuggestionsFromFile() {
-    // Clear existing items in the list
+    
     feedbackSuggestionList.clear();
 
-    // Read data from file and add it to the list
+ 
     try (BufferedReader reader = new BufferedReader(new FileReader("rem_FeedbackDetailsRulesManager.txt"))) {
         String line;
         while ((line = reader.readLine()) != null) {
@@ -158,7 +158,7 @@ public class REM_Feedback_SuggestionController implements Initializable {
    
     private void writeFeedbackToFile(REM_Feedback_Suggest feedback) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("rem_FeedbackDetailsRulesManager.txt", true))) {
-            // Write feedback data to file
+            
             writer.write(feedback.toString());
             writer.newLine();
         } catch (IOException e) {

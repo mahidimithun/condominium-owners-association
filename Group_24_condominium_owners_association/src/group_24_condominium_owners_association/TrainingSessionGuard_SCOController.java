@@ -54,6 +54,16 @@ public class TrainingSessionGuard_SCOController implements Initializable {
 
     @FXML
     private void goBackToHomeOnButtonClick(ActionEvent event) {
+          try {
+            Parent root = FXMLLoader.load(getClass().getResource("SecurityControlOfficerDashboard.fxml"));
+            Scene someScene = new Scene(root);
+
+            Stage someStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           someStage.setScene(someScene);
+           someStage.show();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
     @FXML

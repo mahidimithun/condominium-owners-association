@@ -31,7 +31,7 @@
       <TableView fx:id="Security_tv" layoutX="114.0" layoutY="492.0" prefHeight="210.0" prefWidth="1038.0">
         <columns>
           <TableColumn fx:id="guardName_tc" prefWidth="231.00001525878906" text="Security Guard Name" />
-          <TableColumn fx:id="guardID_tc" minWidth="0.0" prefWidth="213.0" text="        Security Guard ID:" />
+          <TableColumn fx:id="guardID_tc" minWidth="0.0" prefWidth="213.0" text="        Security Guard ID" />
             <TableColumn fx:id="guardType_tc" prefWidth="218.0" text="Security Guard Type" />
             <TableColumn fx:id="guardJoiningDate_tc" prefWidth="202.0" text="Guard Joining Date" />
             <TableColumn fx:id="dutyTime_tc" prefWidth="173.0" text="Duty Time" />
@@ -45,7 +45,7 @@
       <TextField fx:id="dutytime_tf" layoutX="152.0" layoutY="296.0" prefHeight="31.0" prefWidth="74.0" />
       <RadioButton fx:id="AM_rb" layoutX="249.0" layoutY="301.0" mnemonicParsing="false" text="AM" />
       <RadioButton fx:id="PM_rb" layoutX="316.0" layoutY="301.0" mnemonicParsing="false" text="PM" />
-      <Button layoutX="1081.0" layoutY="23.0" mnemonicParsing="false" text="LogOut" />
+      <Button layoutX="1081.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="LogOut" />
       <Line endX="-100.0" endY="253.29290771484375" layoutX="710.0" layoutY="119.0" startX="-100.0" startY="-34.878662109375" strokeWidth="3.0" />
       <Line endX="1147.0" endY="25.0" layoutX="99.0" layoutY="354.0" startX="-99.0" startY="19.0" strokeWidth="3.0" />
    </children>
