@@ -39,10 +39,6 @@ public class MRCDashboardController implements Initializable {
     );
     }    
 
-    @FXML
-    private void MRC_Send(ActionEvent event) throws IOException {
- 
-    }
 
     @FXML
     private void MRC_ContactMedicalOfficer(ActionEvent event) {
@@ -94,6 +90,10 @@ public class MRCDashboardController implements Initializable {
 
         currentStage.setScene(studentScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void MRC_SendOnClick(ActionEvent event) {
     }
     
 }
