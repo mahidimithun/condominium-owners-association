@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="859.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.FMDashboardController">
+<AnchorPane id="AnchorPane" prefHeight="859.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.FMDashboardController">
    <children>
       <Label layoutX="362.0" layoutY="23.0" prefHeight="83.0" prefWidth="279.0" text=" Financial Manager">
          <font>
@@ -42,5 +42,6 @@
       <Button layoutX="667.0" layoutY="259.0" mnemonicParsing="false" onAction="#SendBill" text="Send Bill" />
       <Button layoutX="225.0" layoutY="106.0" mnemonicParsing="false" onAction="#Click_Fm_Budget" prefHeight="31.0" prefWidth="129.0" text="Budget" />
       <Button layoutX="51.0" layoutY="40.0" mnemonicParsing="false" onAction="#backFM" text="Back" />
+      <Button layoutX="693.0" layoutY="698.0" mnemonicParsing="false" onAction="#dueUitilityOnClick" prefHeight="31.0" prefWidth="312.0" text="Due Utility" />
    </children>
 </AnchorPane>

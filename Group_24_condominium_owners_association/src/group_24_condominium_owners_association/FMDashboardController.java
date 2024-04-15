@@ -19,6 +19,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+
 /**
  * FXML Controller class
  *
@@ -103,6 +105,20 @@ public class FMDashboardController implements Initializable {
         
          
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent parent = loader.load();
+
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene studentScene = new Scene(parent);
+
+        currentStage.setScene(studentScene);
+        currentStage.show();
+    }
+
+    @FXML
+    private void dueUitilityOnClick(ActionEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FMsentDueUtility.fxml"));
         Parent parent = loader.load();
 
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
