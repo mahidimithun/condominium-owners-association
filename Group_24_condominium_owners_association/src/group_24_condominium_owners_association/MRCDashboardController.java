@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class MRCDashboardController implements Initializable {
 
     @FXML
-    private ComboBox<?> cb_MRC_ConfirmationType;
+    private ComboBox<String> cb_MRC_ConfirmationType;
 
     /**
      * Initializes the controller class.
@@ -34,11 +34,11 @@ public class MRCDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cb_MRC_ConfirmationType.getItems().addAll(
+        "Diagnostic Testing","Clinical Examination","Medical Imaging","Laboratory Tests","Medical Records Review","Response to Treatment"
+    );
     }    
 
-    @FXML
-    private void MRC_Send(ActionEvent event) {
-    }
 
     @FXML
     private void MRC_ContactMedicalOfficer(ActionEvent event) {
@@ -90,6 +90,10 @@ public class MRCDashboardController implements Initializable {
 
         currentStage.setScene(studentScene);
         currentStage.show();
+    }
+
+    @FXML
+    private void MRC_SendOnClick(ActionEvent event) {
     }
     
 }

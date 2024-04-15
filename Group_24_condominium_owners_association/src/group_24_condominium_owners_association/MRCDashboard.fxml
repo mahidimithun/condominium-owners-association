@@ -13,8 +13,8 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="280.0" prefHeight="31.0" prefWidth="174.0" text="Confirmation Type" />
-      <Button layoutX="304.0" layoutY="362.0" mnemonicParsing="false" onAction="#MRC_Send" prefHeight="31.0" prefWidth="120.0" text="Send" />
+      <Label layoutX="116.0" layoutY="280.0" prefHeight="31.0" prefWidth="128.0" text="Confirmation Type" />
+      <Button layoutX="304.0" layoutY="362.0" mnemonicParsing="false" onAction="#MRC_SendOnClick" prefHeight="31.0" prefWidth="120.0" text="Send" />
       <ComboBox fx:id="cb_MRC_ConfirmationType" layoutX="266.0" layoutY="280.0" prefHeight="31.0" prefWidth="174.0" />
       <Button layoutX="41.0" layoutY="496.0" mnemonicParsing="false" onAction="#MRC_ContactMedicalOfficer" text="Contact Medical Officer" />
       <Button layoutX="915.0" layoutY="496.0" mnemonicParsing="false" onAction="#MRC_MedicalFees" prefHeight="31.0" prefWidth="160.0" text="Medical Fees" />
