@@ -11,15 +11,15 @@
 
 <AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group_24_condominium_owners_association.CommunityInvestmentOpportunities_COController">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnClickOnAction" text="back" />
-      <Label fx:id="CommunityUpdatesRadioButton" layoutX="110.0" layoutY="54.0" text="Community Update:" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackButtonOnAction" text="back" />
+      <Label layoutX="110.0" layoutY="54.0" text="Community Update:" />
       <Label layoutX="178.0" layoutY="137.0" text="List of available opportunities">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <RadioButton layoutX="236.0" layoutY="54.0" mnemonicParsing="false" onAction="#CommunitymeetingsRadioButtonOnClickOnAction" text="community meetings" />
-      <RadioButton layoutX="236.0" layoutY="88.0" mnemonicParsing="false" onAction="#RegularchangesRadioButtonOnClickOnAction" text="regular changes" />
+      <RadioButton fx:id="CommunitymeetingsRadioButton" layoutX="236.0" layoutY="54.0" mnemonicParsing="false" text="community meetings" />
+      <RadioButton fx:id="RegularchangesRadioButton" layoutX="236.0" layoutY="88.0" mnemonicParsing="false" text="regular changes" />
       <Label layoutX="62.0" layoutY="189.0" text="name:" />
       <Label layoutX="66.0" layoutY="260.0" />
       <Label layoutX="35.0" layoutY="248.0" text="Invested amount:" />
@@ -29,7 +29,7 @@
       <TextField fx:id="InvestedAmountTextField" layoutX="143.0" layoutY="244.0" />
       <TextField fx:id="ExpectedAreaTextField" layoutX="164.0" layoutY="297.0" />
       <ComboBox fx:id="DurationComboBox" layoutX="164.0" layoutY="337.0" prefWidth="150.0" />
-      <Button layoutX="546.0" layoutY="346.0" mnemonicParsing="false" onAction="#SaveButtonOnClickOnAction" text="save" />
+      <Button layoutX="546.0" layoutY="346.0" mnemonicParsing="false" onAction="#SaveButtonOnAction" text="save" />
       <TextArea fx:id="CommunityInvestmentOpportunitiesOutputTextArea" layoutX="127.0" layoutY="390.0" prefHeight="200.0" prefWidth="330.0" />
    </children>
 </AnchorPane>

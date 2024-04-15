@@ -4,15 +4,20 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AdvertisingandPromotionOpportunities_COController implements Initializable {
 
@@ -33,7 +38,7 @@ public class AdvertisingandPromotionOpportunities_COController implements Initia
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initialize columns to display data from AdvertisingPromotion
+
         TitleTC.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
         DescriptionTC.setCellValueFactory(cellData -> cellData.getValue().descriptionProperty());
         dateTC.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
@@ -41,39 +46,67 @@ public class AdvertisingandPromotionOpportunities_COController implements Initia
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
-        // Handle Back button action
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CommercialOwnerDashboard.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setTitle("back");
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
     }
 
     @FXML
     private void AddButtonOnAction(ActionEvent event) {
-        // Get data from input fields
+        
         String title = TitleTF.getText();
         String description = DescriptionTF.getText();
         String date = Date_DP.getValue().toString();
         
-        // Create AdvertisingPromotion object
+    
         AdvertisingPromotion promotion = new AdvertisingPromotion(title, description, date);
         
-        // Add the object to the TableView
+      
         Advertisement_TV.getItems().add(promotion);
         
-        // Clear input fields after adding
-        clearFields();
+        
     }
 
     @FXML
     private void DeleteButtonOnAction(ActionEvent event) {
-        // Handle Delete button action
-    }
+        TitleTF.clear();
+    DescriptionTF.clear();
+    Date_DP.setValue(null);
+}
+      
+    
 
     @FXML
     private void logoutButtonOnAction(ActionEvent event) {
-        // Handle logout button action
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("logout");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        
     }
-    
-    private void clearFields() {
-        TitleTF.clear();
-        DescriptionTF.clear();
-        Date_DP.setValue(null);
     }
 }
+    
+    

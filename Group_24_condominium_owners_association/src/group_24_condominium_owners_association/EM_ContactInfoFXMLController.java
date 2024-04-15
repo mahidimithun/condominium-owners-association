@@ -4,17 +4,22 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -68,10 +73,39 @@ public class EM_ContactInfoFXMLController implements Initializable {
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EventManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setTitle("back");
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("logout");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 
     @FXML

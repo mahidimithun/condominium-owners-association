@@ -4,6 +4,7 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class ComOwnFacilityDetailsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initialize ComboBox with open hours
+    
         OpenHoursComboBox.getItems().addAll("8:00 AM - 5:00 PM", "9:00 AM - 6:00 PM", "10:00 AM - 7:00 PM");
 
         // Initialize TableView columns
@@ -59,6 +60,17 @@ public class ComOwnFacilityDetailsController implements Initializable {
 
     @FXML
     private void BackButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CommercialOwnerDashboard.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setTitle("back");
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     
@@ -153,6 +165,25 @@ public class ComOwnFacilityDetailsController implements Initializable {
 
     @FXML
     private void LogoutButtonOnClick(ActionEvent event) {
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("logout");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+       
+    }
     }
     
 }

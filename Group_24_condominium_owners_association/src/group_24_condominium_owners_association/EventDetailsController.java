@@ -4,18 +4,23 @@
  */
 package group_24_condominium_owners_association;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class EventDetailsController implements Initializable {
 
@@ -36,10 +41,10 @@ public class EventDetailsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initialize your ComboBox with some event names
+
         EventNameComboBox.getItems().addAll("Event 1", "Event 2", "Event 3");
         
-        // Initialize TableView columns
+       
         EventNameTableColumn.setCellValueFactory(cellData -> cellData.getValue().eventNameProperty());
         TimeTableColumn.setCellValueFactory(cellData -> cellData.getValue().timeProperty());
         DateTableColumn.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
@@ -47,7 +52,18 @@ public class EventDetailsController implements Initializable {
 
     @FXML
     private void BackButtonOnAction(ActionEvent event) {
-        // Implement back button functionality here if needed
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EventManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setTitle("back");
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+       
     }
 
     @FXML
@@ -56,16 +72,34 @@ public class EventDetailsController implements Initializable {
         String time = TimeTextField.getText();
         String date = Date_DP.getValue().toString();
 
-        // Create a new EventDetails object with the retrieved data
+      
         EventDetails eventDetails = new EventDetails(eventName, time, date);
 
-        // Add the EventDetails object to the TableView
+      
         Event_Details_Updates_TableView.getItems().add(eventDetails);
     }
 
     @FXML
     private void LogoutButtonOnAction(ActionEvent event) {
-        // Implement logout button functionality here if needed
+        try {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LogInUI.fxml"));
+        Parent root = loader.load();
+
+        
+        Stage newStage = new Stage();
+        newStage.setTitle("logout");
+
+      
+        Scene scene = new Scene(root);
+        newStage.setScene(scene);
+
+        
+        newStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+   
     }
 }
     
