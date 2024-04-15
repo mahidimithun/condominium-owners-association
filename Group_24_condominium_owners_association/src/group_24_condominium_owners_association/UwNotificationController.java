@@ -33,6 +33,8 @@ public class UwNotificationController implements Initializable {
     private Label lbl_showNotification;
 
     private String filename = "sentMedicalFee.txt";
+    private String filename1 = "sentWarning.txt";
+    private String filename2 = "dueUtilityBill.txt";
 
     private static MRCmedicalFees receivedMessage;
 
@@ -87,10 +89,48 @@ public class UwNotificationController implements Initializable {
 
     @FXML
     private void warningOnClick(ActionEvent event) {
+        
+         StringBuilder data = new StringBuilder();
+        Scanner s = null;
+        String line;
+        
+          try {
+
+            s = new Scanner(new BufferedReader(new FileReader(filename1)));
+
+            while (s.hasNext()) {
+                data.append(s.nextLine()).append("\n");
+            }
+            s.close();
+            lbl_showNotification.setText(data.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        
     }
 
     @FXML
     private void utilityOnClick(ActionEvent event) {
+        
+         StringBuilder data = new StringBuilder();
+        Scanner s = null;
+        String line;
+        
+          try {
+
+            s = new Scanner(new BufferedReader(new FileReader(filename2)));
+
+            while (s.hasNext()) {
+                data.append(s.nextLine()).append("\n");
+            }
+            s.close();
+            lbl_showNotification.setText(data.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        
     }
 
 }
