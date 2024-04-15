@@ -23,5 +23,10 @@
          <font>
             <Font name="System Bold Italic" size="32.0" />
          </font></Label>
+      <Label fx:id="lbl_error" layoutX="119.0" layoutY="408.0" prefHeight="123.0" prefWidth="345.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

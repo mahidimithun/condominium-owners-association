@@ -43,6 +43,8 @@ public class LogInUIController implements Initializable {
 
 //    private static final String USERS_FILE = "C:\\Users\\HP\\Desktop\\users.txt";
     private static final String USERS_FILE = "users.txt";
+    @FXML
+    private Label lbl_error;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -200,9 +202,10 @@ public class LogInUIController implements Initializable {
                 currentStage.show();
             }
             
-        // dont go out there
+        
         } else {
             System.out.println("Invalid username or password!");
+            lbl_error.setText("Please Input Valid username or password!!!");
         }
 
     }
